@@ -1,0 +1,65 @@
+
+% Chapter Five - Algorithms
+\chapterx[Algorithms]{Algorithms} \label{sec:Algorithms}
+
+To add an algorithm simply select Insert $\rightarrow$ Float $\rightarrow$
+Algorithm. That will give you a float:Algorithm box with a caption
+like Algorithm 1: {[}{]}. Add your caption text. Next, click below
+the caption inside the float:Algorithm box and add your code in your
+format of choice. As with in-table code in \ref{sec:In-Table-Coding},
+there is a double-space between the last two lines. We need to add
+\texttt{\textbackslash{}vspace{*}\{-5mm\}} as a \TeX{} command to
+the line immediately above the last line in the algorithm.
+
+In \TeX{}, the next to last line will look like this:
+
+\noindent \texttt{\textbackslash{}item \textbackslash{}textbf\{\textbackslash{}footnotesize
+end if\}\{\textbackslash{}footnotesize \textbackslash{}vspace{*}\{-5mm\}\}\{\textbackslash{}footnotesize
+\textbackslash{}par\}}
+
+\begin{algorithm}
+\caption{\label{alg:Validate()}Validate($v,\, newCont$)}
+
+\begin{enumerate}
+\item \textbf{\footnotesize{input: }}{\footnotesize{a view $v\in\mathcal{M}$
+and new or continued solution $newCont$}}{\footnotesize \par}
+\item \textbf{\footnotesize{if}}{\footnotesize{ ($newCont=new$) }}\textbf{\footnotesize{then~}}{\footnotesize{~~~~~~~//
+if this is the first view in the solution, initialize the variables}}{\footnotesize \par}
+\item {\footnotesize{~~~$\mathcal{S}(\mathcal{M}):=0$ ~~~~~~~~~//size
+constraint}}{\footnotesize \par}
+\item {\footnotesize{~~~$\mathcal{U}(\mathcal{M}):=0$~~~~~~~~~~//
+update time constraint}}{\footnotesize \par}
+\item \textbf{\footnotesize{end if}}{\footnotesize \par}
+\item {\footnotesize{$valid:=true$}}{\footnotesize \par}
+\item \textbf{\footnotesize{if}}{\footnotesize{ $(\mathcal{S}(\mathcal{M}):=\mathcal{S}(\mathcal{M})+r_{\{v\}})>\mathcal{S}\,\vee\,(\mathcal{U}(\mathcal{M}):=\mathcal{U}(\mathcal{M})+g_{\{v\}}u(\{v\},\mathcal{M}))>\mathcal{U}$
+}}\textbf{\footnotesize{then }}{\footnotesize \par}
+\item {\footnotesize{~~~$valid:=false$}}{\footnotesize \par}
+\item \textbf{\footnotesize{end if}}{\footnotesize{\texttt{\textbackslash{}vspace{*}\{-5mm\}}}}{\footnotesize \par}
+\item \textbf{\footnotesize{return $valid$}}\end{enumerate}
+\end{algorithm}
+
+
+The output is as follows:
+
+\begin{algorithm}
+\caption{\label{alg:Validate()-1}Validate($v,\, newCont$)}
+
+\begin{enumerate}
+\item \textbf{\footnotesize{input: }}{\footnotesize{a view $v\in\mathcal{M}$
+and new or continued solution $newCont$}}{\footnotesize \par}
+\item \textbf{\footnotesize{if}}{\footnotesize{ ($newCont=new$) }}\textbf{\footnotesize{then~}}{\footnotesize{~~~~~~~//
+if this is the first view in the solution, initialize the variables}}{\footnotesize \par}
+\item {\footnotesize{~~~$\mathcal{S}(\mathcal{M}):=0$ ~~~~~~~~~//size
+constraint}}{\footnotesize \par}
+\item {\footnotesize{~~~$\mathcal{U}(\mathcal{M}):=0$~~~~~~~~~~//
+update time constraint}}{\footnotesize \par}
+\item \textbf{\footnotesize{end if}}{\footnotesize \par}
+\item {\footnotesize{$valid:=true$}}{\footnotesize \par}
+\item \textbf{\footnotesize{if}}{\footnotesize{ $(\mathcal{S}(\mathcal{M}):=\mathcal{S}(\mathcal{M})+r_{\{v\}})>\mathcal{S}\,\vee\,(\mathcal{U}(\mathcal{M}):=\mathcal{U}(\mathcal{M})+g_{\{v\}}u(\{v\},\mathcal{M}))>\mathcal{U}$
+}}\textbf{\footnotesize{then }}{\footnotesize \par}
+\item {\footnotesize{~~~$valid:=false$}}{\footnotesize \par}
+\item \textbf{\footnotesize{end if}}{\footnotesize{\vspace*{-5mm}}}{\footnotesize \par}
+\item \textbf{\footnotesize{return $valid$}}\end{enumerate}
+\end{algorithm}
+
+

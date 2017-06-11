@@ -1,0 +1,18 @@
+\section{Introduction} \label{section:simulations_introduction}
+
+\subsection{Simulation Objective} \label{subsection:simulations_introduction_objective}
+Any simulation is an approximation of a certain process. It is a model that we build to try to understand something that we are investigating. It can come in various kinds with different names: virtual reality, avia simulator, computer game or be it any physics simulation. In the end, they are all trying to help us model a process of interest. Therefore, the primary objective of any simulation is to model a certain process as good as this process actually is in reality.
+
+Physics Simulations are not the exceptions - it is how Experimental High Energy Physics Experiments function. We start out by having an objective to measure some quantity or to verify a hypothesis. Typically that means that we already have a model that provides us with signatures and features to look for. We then build a simulation of our system used to measure physical quantities of interest and then we compare our experimental results with simulated predictions. This final step is the most important - if we didn't have the simulation (model), we would not have something to compare our results with and therefore no way to draw conclusions.
+
+\subsection{Geant4} \label{subsection:simulations_introduction_geant4}
+For the purpose of simulating High Energy Physics Calorimeter Systems we utilize Geant4 - a software toolkit which provides an interface for building actual simulation, carrying it out and collecting the results. To be more precise, every simulation has the following features:
+
+\begin{itemize}
+    \item \textbf{Materials}. All the materials that are to be used in the simulation must be defined. All the properties of all of the chemical elements must be also defined. Important to point out, that if for instance we have a material that acts as a scintillator in your calorimeter, we have to also provide its optical characteristics.
+    \item \textbf{Geometry}. Using various geometrical primitives (cube, cone, etc...) we have to provide a geometrical specification of the simulation. Technically speaking, Materials $+$ Geometry $=$ Calorimeter.
+    \item \textbf{Physics}. One of the most important parts of our simulation is the ability to change the physics processes that are being used and see how that affects our calorimeter response. For instance, if you have a scintillation material that is expected to output light upon incoming radiation, then by turning off Scintillation Physics Process you will be getting no response. In Geang4, this is typically done via Physics Lists - that contain the specification of most important physics processes.
+    \item \textbf{Readout}. The whole idea of performing a simulation is to yield some output that you can then analyze further. For that, there are Sensitive Detectors, which get attached to Geometry Volumes and get triggered for every single step of any particle within that volume. What gets stored is up to the user to specify.
+    \item \textbf{Primary Generators}. A special case of the physics is the generation of the primary vertex. For instance, typically, when you study the performance of a calorimeter, you are trying to shoot a single final state particle into your system and deduce basic characateristics.
+    \item \textbf{Simulation Engine}. Finally, Geant4 provides an engine to carry out the simulation itselt: track all the particles for each step, trigger various transitions for readout, apply the physics processes, etc...
+\end{itemize}

@@ -1,0 +1,417 @@
+\chapter{A Search for the Standard Model Higgs Boson} \label{chapter:higgs}
+
+\input{higgs_introduction}
+\input{higgs_cms}
+\input{higgs_data}
+%\input{higgs_mc}
+\input{higgs_selections}
+\input{higgs_bdts}
+\input{higgs_muoncalib}
+\input{higgs_signalModel}
+\input{higgs_bkgModel}
+\input{higgs_systematics}
+\input{higgs_combination}
+\input{higgs_results}
+\input{higgs_conclusions}
+
+% % Chapter One - The Standard Model
+% \chapter{The Standard Model of Particle Physics} \label{chapter:intro}
+
+% \textit{What follows is a very brief and decidedly experiment-centric introduction and history to modern particle physics.  The goal is to give the reader some context for the experiments described in this thesis.  One may consult the references for a more fulfilling treatment. \cite{Griffiths,dodd,quarksLeptons}}
+
+% \section{Survey of the Standard Model}
+% I have chosen to start with a summary of the Standard Model, followed with a brief history of its past, in the hopes of leaving the reader with better context for the history as it is described.
+
+% The Standard Model of particle physics describes the forces and interactions -- except gravity -- of all \textit{known} matter in our universe.  It is a field theory at its heart, and has successfully predicted the existence of many fundamental particles with incredible precision.  The current Standard Model contains 17 fundamental particles, (61 in all their various permutations), listed in Table \ref{tab:SMParticles}.
+
+% %%%%%%%%%%%%%%%%% Table SMParticles %%%%%%%%%%%%%%%%%%%%%%
+% \begin{table}
+% 	\begin{centering}
+% 		\caption{\label{tab:SMParticles}Summary of Standard Model Particles}
+% 		\begin{tabular*}{0.6\textwidth}{@{\extracolsep{\fill}}llll}
+% 			\hline
+% 			Classification		&	Particle										\tabularnewline
+% 			\hline
+% 			Quarks			&	\textit{u, d, s, c, b, t}								\tabularnewline
+% 			Leptons			&	\(\mathit{e, \nu_{e}, \mu, \nu_{\mu}, \tau, \nu_{\tau}}\)		\tabularnewline
+% 			Force Carriers		&	\textit{W, Z, $\gamma$, g, H}						\tabularnewline
+% 			\hline
+% 		\end{tabular*}
+% 	\par\end{centering}
+% \end{table}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% These particles can be grouped into two \textit{families}: bosons and fermions, see Table \ref{tab:SMFermionBoson}.
+
+% %%%%%%%%%%%%%%%%% Table SMFermionBoson %%%%%%%%%%%%%%%%%%%
+% \begin{table}
+% 	\begin{centering}
+% 		\caption{\label{tab:SMFermionBoson}Particle Families}
+% 		\begin{tabular}{llll}
+% 			\hline
+% 			Family			&	Particle										&	Spin			\tabularnewline
+% 			\hline
+% 			Fermions			&	\textit{u, d, s, c, b, t}								&	1/2 Integer	\tabularnewline
+% 							&	\(\mathit{e, \nu_{e}, \mu, \nu_{\mu}, \tau, \nu_{\tau}}\)		&				\tabularnewline
+% 			Bosons			&	\textit{W, Z, $\gamma$, g, H}						&	Integer		\tabularnewline
+% 			\hline
+% 		\end{tabular}
+% 	\par\end{centering}
+% \end{table}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Fermions, the \textit{spin halves}, obey both Fermi statistics and the famous \textit{Pauli Exclusion Principle}, which disallows two fermions from occupying the same space at the same time, (in other words having the same quantum numbers).  Bosons obey Bose-Einstein statistics, where two or more identical particles \textit{may} occupy the same space, meaning they \textit{can} have identical quantum numbers.  This difference between fermions and bosons has to do with a particle's property called \textit{spin}\footnote{Spin is sort of like a particle's version of the angular momentum of a spinning basketball--sort of.  A rotating, charged object, like the earth, creates a magnetic field.  Similarly, an electron is charged and has a measureable magnetic field.  From this we can assign a sort of angular momentum -- spin -- to the electron, (although it isn't literally spinning like a basketball, and a particle does \textit{not} require classical charge to have a spin, nor does it have to generate a magnetic field if it has spin).  Spin simply explains why an electron -- or any charged particle -- has its own magnetic field, and is used to describe how two identical particles will interact with each other.  We await the physicists of the future to discover \textit{why} a particle has spin.}.
+
+% Fermions can be grouped further into two classifications:  \textit{quarks} and \textit{leptons}.  Quarks obey a process called \textit{quark confinement}, and cannot exist independently; they are only found in bound states.  (For example, a neutron is a bound state of one \textit{up} and two \textit{down} quarks \footnote{Technically, a neutron is composed of a \textit{sea} of quarks, anti-quarks, and gluons, but it works out to have \(n\) up quarks and \(n+1\) down quarks.}.)  Leptons, however, are free to roam on their own.  In fact, every second one hundred billion leptons (neutrinos) fly right through your thumb!  The other family, the bosons, the \textit{integer spins}, are the \textit{force carriers}.  They are responsible for \textit{mediating} the fundamental forces and interactions between particles; summarized next.
+
+% The Standard Model describes three fundamental ways particles can interact, listed in Table \ref{tab:SMForces}.  For example, the quarks that make up the neutron are bound together by the \textit{strong force}, mediated by gluons.  A magnetic picture frame sticks to your refrigerator because of the \textit{electromagnetic} force, mediated by virtual photons.  The \textit{weak} interaction allows for the transmutation of a quark of one flavor to a quark of another flavor.  This allows a neutron to decay to a proton, for example, by the transmutation of a down quark to an up quark by emitting the charged boson, W\(^-\), which then decays to an electron, \(e\), and an electron neutrino, \(\nu{_e}\), perhaps recognized as the famous \textit{beta decay}.  The weak force and the electromagnetic force unify at high energy to become the \textit{electroweak} force.
+
+% In technical language, the Standard Model is a gauge theory that can be neatly written as: \[SU(3)_{QCD} \times (SU_{L}(2) \times U(1))_{GWS}\]
+
+% %%%%%%%%%%%%%%%%% Table SMForces %%%% %%%%%%%%%%%%%%%%%%%
+% \begin{table}
+% 	\begin{centering}
+% 		\caption{\label{tab:SMForces}Summary of Standard Model Forces}
+% 		\begin{tabular}{llll}
+% 			\hline
+% 			Force			&	Theory					&	Mediator			&	Example Interactions	\tabularnewline
+% 			\hline
+% 			Strong			&	QCD						&	Gluons			&	Bound quarks			\tabularnewline
+% 			Weak			&	Electroweak 				&	W \& Z Bosons		&	Beta Decay			\tabularnewline
+% 			Electromagnetic	&	QED						&	Photons			&	Magnetism			\tabularnewline
+% 			\hline
+% 		\end{tabular}
+% 	\par\end{centering}
+% \end{table}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% %%%%%%%%%%%%%%%%% Table leptons % %%%% %%%%%%%%%%%%%%%%%%%
+% \begin{table}
+% 	\begin{centering}
+% 		\caption{\label{tab:leptons}Summary of Standard Model Leptons.}
+% 		\begin{tabular}{lcccc}
+% 			\hline
+% 			Lepton 	& Lepton \# 	& Electron \#	& Muon \# 	& Tau \# \tabularnewline
+% 			\hline
+% 			$e^-$ 	& 1 			& 1 			& 0			& 0 \tabularnewline
+% 			$\nu_e$ 	& 1			& 1			& 0			& 0 \tabularnewline
+% 			$\mu^-$ 	& 1			& 0			& 1			& 0 \tabularnewline
+% 			$\nu_\mu$ & 1			& 0			& 1			& 0 \tabularnewline
+% 			$\tau^-$ 	& 1			& 0			& 0			& 1 \tabularnewline
+% 			$\nu_\tau$ & 1			& 0			& 0			& 1 \tabularnewline
+% 			&&&&\tabularnewline
+% 			\hline
+% 			Antilepton 		& Lepton \# 	& Electron \#	& Muon \# 	& Tau \# \tabularnewline
+% 			\hline
+% 			$e^+$ 			& -1 			& -1 			& 0			& 0 \tabularnewline
+% 			$\bar{\nu_e}$ 		& -1			& -1			& 0			& 0 \tabularnewline
+% 			$\mu^+$ 			& -1			& 0			& -1			& 0 \tabularnewline
+% 			$\bar{\nu_\mu}$ 	& -1			& 0			& -1			& 0 \tabularnewline
+% 			$\tau^+$ 			& -1			& 0			& 0			& -1 \tabularnewline
+% 			$\bar{\nu_\tau}$ 	& -1			& 0			& 0			& -1 \tabularnewline
+% 			&&&&\tabularnewline
+% 			\hline
+% 		\end{tabular}
+% 	\par\end{centering}
+% \end{table}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \section{History}
+
+% 	\subsection{The Foundation}
+% 	By most accounts, the era of modern particle physics began in 1897 with the discovery of the electron by J. J. Thomson.  From there, Ernest Rutherford's discovery of the atom's nucleus in 1911 led to a description of the hydrogen atom in 1914 by Niels Bohr consisting of a single electron orbiting the atom's nucleus.  Bohr's calculation of hydrogen's spectrum agreed very well with experiment, but a problem occurred when his model was scaled to heavier atoms -- his theory broke down.
+
+% 	This crisis of sorts was solved more than \textit{15 years later} when James Chadwick (a student of Ernest Rutherford) discovered the neutron.
+
+% 	At this point, in 1932, the atomic world consisted only of the electron, the newly-discovered neutron, and the proton, and what a simple world it was.
+
+% 	\subsection{The Photon}
+% 	Parallel to this effort, Albert Einstein and Max Planck were busy uncovering the secrets of the as-yet-unnamed photon.  Planck showed that the light-energy radiated by a hot object, called a `blackbody', was quantized, or came in discrete bits whose magnitude depended only on the frequency of the radiation\footnote{Planck actually believed his theory was wrong, and insisted that nature didn't work this way.  He often remarked that it would take a future physicist to realize his mistake.  Of course, it turned out that this revolutionary idea became the cornerstone of modern physics.}.  Einstein, in 1905, hypothesized in his Nobel Prize winning paper that it wasn't just in the case of a blackbody that the energy was emitted in bits, but that the electromagnetic field \textit{itself} was quantized.  This result led to the formulation of the well known \textit{Photoelectric Effect}.
+
+% 	More than 10 years later, in 1916, Robert Andrews Millikan showed that Einstein's photoelectric effect perfectly predicted the observed results of his experiments \cite{millikan}.  Though Einstein's theory was validated, he still faced opposition to his radical idea that light not only behaved like a particle, but in fact \textit{was} a particle.  Finally, 18 years after Einstein first proposed the idea, Arthur Compton conducted the definitive experiment, one which provided strong evidence for the existence of the photon by firing x-rays with known energy, E, into a graphite target and measuring the resulting energy, E$^\prime$, as a function of its scattering angle.  Light behaved just like a cue ball in the game of pool, knocking into electrons one by one.
+
+% 	Joining the neutrons, protons, and electrons of the atomic world, the photon took its place in early particle physics as an active player with an unknown origin.
+
+% 	\subsection{Meson: The First Exotic Particle}
+% 	A big question of this time, one that you may (or may not) have asked yourself, is if positive charges repel, what is keeping the protons of the atom's nucleus together?  After all, an iron atom has 26 protons tightly packed together, while a gold atom has 79 protons crammed in there!  In knowing that it must be a mighty force that keeps these protons so tightly bound, physicists dubbed it the \textit{strong force}.
+
+% 	In 1935 Hideki Yukawa was the first to create a theory of the strong force, which required the existence of a particle called a `meson', meaning `middleweight'.  He calculated its mass to be between the electron, (a lepton, meaning `lightweight') and the proton, (a baryon, meaning `heavyweight'), hence the name \textit{meson}.  His particle was discovered in 1937 (along with an anomaly) by studying the tracks of cosmic particles left on photographic plates placed high up on mountain ranges.  It wasn't until 1947 that the anomaly was explained and it was shown that Yukawa's meson was decaying into another middleweight particle, a particle that was later determined to be a muon.  With the discovery of the muon, there were now two mesons in the ranks of middleweight particles.  Yukawa's meson was renamed `pion', and the muon reclassified as a lepton, though many publications during this era continued to refer to the muon as the \textit{mu-meson}.
+
+% 	\subsection{Anti-matter}
+% 	During this foray into cosmic particles and interactions, Paul Dirac was busy working on formulating relativistic quantum mechanics.  His derived and so-named Dirac equation, written in 1927, implied the existence of positive \textit{and} negative energy states.  It wasn't until 1940 that Richard Feynman and Ernst Stuckelberg described the negative energy solutions as positive energy states of a new particle.  While Dirac's equation indeed predicted the existence of the electron, and matched the properties physicists had already measured, it also predicted the existence of an electron's positively charged twin, the \textit{positron}.  In 1932 Carl Anderson discovered a particle with the same mass as the electron, but opposite charge, just as Dirac's equation predicted; see Figure \ref{fig:PosBubble}.  In fact, Dirac's equation predicted the existence of a twin for every particle,  what we now call anti-matter: \textit{for every particle described by some mass and their quantum numbers, an anti-particle exists with the same mass and opposite-signed quantum numbers}.
+
+% 	The world of particles was becoming quite interesting, and quite crowded.
+
+% 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Positron Bubble Chamber %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 	\begin{figure}
+% 		\begin{centering}
+% 			\includegraphics[scale=0.5]{figures/PositronBubble.pdf}
+% 		\par\end{centering}
+% 		\caption[The discovery of the positron in a bubble chamber.]{\label{fig:PosBubble}The discovery of the positron in a bubble chamber. With a magnetic field pointing into the page, this track could be produced by a negatively charged particle traveling top $\rightarrow$ down, or a positively charged particle traveling bottom $\rightarrow$ up.  To differentiate,  Carl Anderson placed a lead plate through the center of the chamber, slowing the particle down and tightening the curve of its trajectory.}
+% 	\end{figure}
+% 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% 	\subsection{Neutrinos and Lepton Number}
+% 	Around the same time that the neutron was discovered (1932), physicists had been tinkering around with the process of beta decay, which occurs when a neutron is converted into a proton and emits an electron, ($n \rightarrow p^+ + e^-$).  When considering a two-body decay like this, the energy of the electron should be fixed.  However, the experiments came back with startling results:  The measured energy of the resulting electron was a \textit{distribution}!
+
+% 	Either the law of conservation of energy had to be thrown out, or a new particle had to be introduced.  Wolfgang Pauli hypothesized the existence of a third particle in the decay products to share energy with the electron.  In 1934 Enrico Fermi produced his theory of beta decay, which proved to be extremely successful and ended up laying the foundation for all \textit{weak} force physics.  In Fermi's formulation, beta decay can be written as ($n \rightarrow p^+ + e^- + \bar{\nu}_e$), and includes the particle he named the neutrino, meaning `little neutral one'.  Despite his theory's successful predictions, it wasn't until 1953 -- almost 20 years later -- that the first direct experimental evidence for neutrinos was produced\footnote{The Nobel Prize winning Cowan-Reines Neutrino experiment was first conducted at the infamous Hanford site, and later moved to the Savannah River nuclear reactor in South Carolina for better shielding from cosmic rays.  These experiments were conducted near nuclear reactors due to the extreme flux of neutrinos they generate.  (Though at the time, they didn't yet know it was actually anti-neutrinos they were detecting).  The Savannah River reactor generated $5 \times 10^{13}$ anti-neutrinos per second per square centimeter; even at this rate, interactions occurred roughly twice per hour.  Cowan and Reines set out to prove the existence of the neutrino using the theory of inverse-beta decay.  This process, predicted using Fermi's theory, requires an anti-neutrino to interact with a proton via the weak force, ($\bar{\nu}_e + p^+ \rightarrow n + e^+ $), creating a detectable final state.  The positron produced immediately annihilates with an electron, producing one flash of light in the detector, and a fraction of a second later the neutron is captured by a cadmium nucleus, producing a second flash of light.  It is this double flash that is the mark of a neutrino, and set in stone the theory of the weak force.  The original paper describing the Hanford setup and a fantastic summary of these experiments is given by \cite{Neutrino} and \cite{NeutrinoANL}.}.
+
+% 	Since the neutrino is neutral, an obvious question is `what is the difference between the neutrino and the anti-neutrino'?  This question touches on the heart of the analysis in this thesis.  E. J. Konopinski and H. M. Mahmoud first proposed the idea of \textit{lepton number} in 1953 \cite{LeptonNumber}.  The first experimental evidence (or lack thereof) that the process ($\bar{\nu}_e + n \rightarrow p^+ + e^- $) was forbidden came in 1959 from Raymond Davis, Jr. and Don Harmer.  A lepton number of +1 is assigned to the electron, muon ($\mu^-$), and neutrino.  A lepton number of -1 is assigned to the positron (or anti-electron), the muon ($\mu^+$), and the anti-neutrino.  Non-leptons have a lepton number of zero. On both sides of the arrow, the sum of the lepton numbers must be the same.  In other words, lepton number must be conserved.  The previous interaction can thus be written ($-1 + 0 \rightarrow 0 + 1$), with a total lepton number of -1 on the left side, and +1 on the right side.
+
+% 	Lepton number conservation ``explained" why Cowan and Reines could see their interaction, while Davis and Harmer could not observe theirs.
+
+% 	It was only after the discovery of \textit{lepton number} that we learned the first difference between an anti-neutrino and a neutrino\footnote{The anti-neutrino and neutrino also differ in their helicity, where the anti-neutrino is `right-handed' and the neutrino is `left-handed'.}.  There are actually two different theoretical treatments used to describe a neutrino: the \textit{Dirac} neutrino formulation, and the \textit{Majorana} neutrino formulation.  In the Dirac formulation, a neutrino and its anti-particle are distinct from one another.  In the Majorana formulation, the neutrino is its own anti-particle.  %More on that in Section \ref{A Majorana Particle}.
+
+% 	Two more ``rules" were discovered that govern the interaction of leptons: \textit{muon number} and \textit{electron number}.  Just like lepton number, muon number and electron number must be conserved.  This implies that there are different \textit{flavors} of neutrinos:  muon neutrinos, $\nu_\mu$, and electron neutrinos, $\nu_e$.   The Brookhaven Alternating Gradient Synchrotron provided the first direct evidence of the two different flavors of neutrinos \cite{MuonNumber}, winning Lederman, Schwartz, and Steinberger the Nobel Prize\footnote{In 1977 Martin Lewis Perl completed the lepton story by discovering the \textit{tau} lepton, earning him a Nobel Prize.  (The tau lepton's discovery immediately implied the existence of a corresponding tau neutrino, but it wasn't until the year 2000 when the Fermilab DONUT collaboration announced its discovery.)}. See Table \ref{tab:leptons} for a summary of the leptons discovered to date.
+
+% 	\subsection{The Particle Zoo}
+% 	In 1900, the only particle known was the electron.  By 1950, the particle world impressively had grown to include the proton, neutron, muon, neutrino, pion, their respective anti-particles, and the photon.
+
+% 	By 1960, the number of particles discovered (and the number of researchers required to discover them) became too many to name.  It started with the discovery of \textit{strange} particles.  The first strange particle discovered was called the neutral \textit{kaon}, \(K^0\), followed by its charged sibling, the \(K^+\), and both were placed into the meson family; see Figure \ref{fig:KaonBubble}.  Three years later, in 1950, another strange particle, a baryon called the $\Lambda$ (lambda), was discovered.  In 1952, the $\Xi$ (cascade) was discovered.  Also in 1952, the Brookhaven Cosmotron (see Figure \ref{fig:Cosmotron}) came online providing the first ability to create and study rare particles in a more controlled environment.
+
+% 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Kaon Bubble Chamber %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 	\begin{figure}
+% 	\begin{centering}
+% 	\includegraphics[scale=0.55]{figures/KaonBubble.pdf}
+% 	\par\end{centering}
+% 	\caption[The discovery of the first strange particle, the neutral Kaon, $K^0$.]{\label{fig:KaonBubble}The discovery of the first Strange particle, the neutral Kaon, $K^0$.  In this image, the $K^0$ decays into a $\pi^+$, and a $\pi^-$, respectively labeled `a' and `b'.  Image from \textit{Evidence for the existence of new unstable elementary particles}, Nature 160, 855-857 (1947).}
+% 	\end{figure}
+% 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Cosmotron Sketch %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 	\begin{figure}[htp]
+% 	\begin{centering}
+% 	\includegraphics[width = \textwidth]{figures/Cosmotron.png}
+% 	\par\end{centering}
+% 	\caption[The Brookhaven Cosmotron, the first of the modern particle accelerators, and the first to reach the GeV scale.]{\label{fig:Cosmotron}The Brookhaven Cosmotron, the first of the modern particle accelerators, and the first to reach the GeV scale.  So-called because its targeted 3 GeV beam energy mimicked that of cosmic rays.  Sketch by \textit{Pearson Scott Foresman}, in the public domain.}
+% 	\end{figure}
+% 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% 	\subsection{Strange Particles and the Eightfold Way}
+% 	After the commissioning of the Cosmotron, and subsequent accelerators like the 6.2 GeV Bevatron in 1955, the world of the strange particles began to open up, and it was a party.  A new property called \textit{strangeness} was posited to explain the difference in time scales of their production ($\sim 10^{-23}$ seconds) and decay ($\sim 10^{-10}$ seconds)\footnote{It is now understood that a strange particle is \textit{created} via the strong force, and \textit{decays} via the weak force.}.
+
+% 	With the discovery of \textit{strangeness}, Murray Gell-Mann was able to combine \textit{charge} and \textit{strangeness} together to create a `periodic table' of sorts describing the relationships and creating the first catalog of baryons and mesons.  He called it the \textit{Eightfold Way} \cite{eightFold}, and introduced it in 1961 \cite{eightfold2}.  Two example arrangements, the spin $\frac{1}{2}$ \textit{baryon octet} and the \textit{meson octet}, can be seen in Figures \ref{fig:baryonOctet} and \ref{fig:mesonOctet}.  Other shapes include triangles as well as stacked geometric shapes known as \textit{supermultiplets}.
+
+% 	The Eightfold Way cemented itself as a serious theory when Gell-Mann used it to predict the existence of the Omega Minus ($\Omega^-$)\footnote{This was a \textit{very} big deal.}.
+
+% 	\subsection{Quarks}
+% 	In technical language, these geometrical shapes can be viewed as \textit{representations} of the $SU(3)$ group, whose transformations generate the possible multiplets, each with distinct quantum numbers.  The Eightfold Way started Gell-Mann on a path that lead him to the \textit{Quark Model} in order to explain \textit{why} these geometric shapes can describe the relationships between the baryons and mesons.  Gell-Mann noticed that the `particles' of the $SU(3)$ representations could be described by using certain combinations of the \textit{fundamental} representation of $SU(3)$.  Inspired by James Joyce's \textit{Finnegan's Wake}, he named them \textit{quarks}.  The three \textit{flavors} of quarks, (\textit{up}, \textit{down}, \textit{strange}), combine to form the mesons and baryons.  Mesons can be described as a combination of a quark-antiquark pair, and Baryons can be described as a combination of three quarks.
+
+% 	\subsection{Color Charge}
+% 	Almost immediately after putting forward the quark model, it was realized that having 3 identical fermions, (as with the 3 strange quarks in the $\Omega^-$), violated the Pauli Exclusion Principle, which, as stated earlier, prevented particles with identical quantum numbers from existing in the same state.  The (now obvious) solution to this quandary was to add another quantum number that uniquely identified the three strange quarks in the $\Omega^-$.  This new quantum number was called \textit{color}, with each quark having its own special charge called \textit{color charge}\footnote{Color charge is a separate charge from classical charge.  Quarks also have classical charge, though its magnitude is fractions of a single unit, called \textit{fractional charge}.}.  The labels for the charge are \textit{red}, \textit{green}, and \textit{blue}.  All particles are colorless, meaning a quark bound state must be `neutral' in color - i.e. a proton that is composed of three quarks must contain a red quark, a blue quark, and a green quark.  A meson like the $\pi^0$ must contain, for example, an anti-blue and a blue quark.  These concepts were formulated into a theory known as \textit{quantum chromodynamics} (QCD).
+
+% 	\subsection{GWS and the Vector Bosons}
+% 	The next major contribution to particle physics came in the form of the unified gauge theory $SU_L(2)\times U(1)$ known as the \textit{Glashow-Weinberg-Salam}, or Electroweak theory.  The authors were awarded the 1979 Nobel Prize in physics for their contributions.  It had been postulated prior that there was a mediator particle involved in weak interactions, but it wasn't until the GWS theory that experimentalists at the European Organization for Nuclear Research (CERN) were given enough information to be able to design an experiment to look for these mediators.  The GWS theory is one of the most successful theories in physics, predicting and leading to the observations of many important physics results, from neutral currents in 1973, to the discovery of the charm quark at the Stanford Linear Accelerator Center (SLAC) in 1974, the bottom quark at Fermilab in 1977, the aforementioned tau lepton at SLAC in 1975, and the top quark at Fermilab in 1995.  Arguably, its most important contribution was the prediction and observation of the intermediate vector bosons at CERN/SPS in 1983:  the $W^+$, $W^-$, and $Z^0$ bosons.
+
+% 	\subsection{The Higgs Boson} %% EDIT: Describe LHC experiment briefly.
+% 	In 2012, one of the most important discoveries ever made in particle physics occurred at CERN.  First theorized in 1964 to explain why the particles of the Standard Model have mass, the Higgs Boson resonance was teased out of data by the CMS and ATLAS collaborations, winning its theorizers the Nobel Prize in Physics, and creating profound implications for its 125 GeV/$c^2$ mass \cite{higgs,higgs2}.  Now is a very exciting time while we wait for the properties of the Higgs to be uncovered.
+
+% 	\subsection{The Present}
+% 	It is this history that brings us to now.  Our theories are older and wiser.  Our experiments are more advanced and more fine-tuned.  Our knowledge is deeper than at any point in the past.  We are asking some of the most fundamental questions that can be asked about our existence.  Some of the most important questions include:  Why does the universe prefer matter over anti-matter?  What is dark matter and dark energy?  How did the universe begin?  What is the fate of the universe?
+
+% 	It is only with a strong partnership between theoretical physics and experimental physics that these answers can be found.  Current contenders that shed light on these questions include SUSY, (Supersymmetry), a theory which requires the existence of a `super partner' for every existing particle.  Though there has not yet been any evidence for SUSY at the LHC, many remain hopeful for a discovery during the 2015 run, while others aren't holding their breath.
+
+% 	String Theory has not yet been shown to be a \textit{natural theory}, and the energy regimes our accelerators currently operate at cannot probe the scales necessary to test String Theory.  That being said, it holds great promise for solving a number of the key issues currently facing physics and cosmology.
+
+% 	The largest hole in the Standard Model is the inclusion of gravity, or its lack thereof.  Many believe that the graviton, a spin 2 particle that mediates the interaction of particles with spacetime, is the answer.  It will require another great feat of scientific achievement to solve this problem, and many of us are looking forward to that day.
+
+% 	\subsection{The Future}
+% 	The field of particle physics is advancing on many fronts and in many labs around the world.  Currently, the hottest action is occurring at CERN in Geneva, Switzerland.
+
+% 	The LHC is preparing to start the 2015 run at nearly twice the beam energy of previous runs, and with higher instantaneous luminosity.  This will allow not only more data to be recorded over a given period of time, but also more interesting data, as the energy regime explored advances.
+
+% 	There are several hints at so-called ``new physics" in data from the LHC.  A new peaking structure first observed in the CDF experiment at Fermilab \cite{jpsiphicdf} has been observed in the CMS experiment \cite{jpsiphicms}.  This could be evidence of a new exotic meson, that cannot be explained with current QCD theory.  The LHCb collaboration has observed the existence of an exotic hadron not predicted by the Standard Model \cite{bquark}.  This state is a four-quark state, referred to as a \textit{tetraquark}, and goes against the current theory that quarks only exist in pairs and triplets.  LHCb has also observed an asymmetry in the production of muons, taus, and electrons from b-quarks.  According to the Standard Model, a b-quark can decay into two leptons and a hadron, with no preference on the flavor of the leptons produced.  In other words, the probability of getting two muons or two electrons or two taus is predicted to be exactly the same.  LHCb has seen, in preliminary results, that electrons are produced 25\% more of the time, hinting at possible new physics.  Like all particle physicists, the LHCb collaboration will have to wait for the 2015 LHC run in order to continue to probe for new physics.
+
+% 	The LHC research program is expected to last at least another 20 years, with several planned upgrades and a goal of delivering 3000 fb$^{-1}$ of data\footnote{The unit fb$^{-1}$ is pronounced \textit{inverse femtobarn}.  More on this in section \ref{femtobarn}.} by 2035.
+
+% 	Beyond the LHC, physicists are preparing for the next big experiment, the International Linear Collider, or ILC \cite{ilc}.  Briefly, the ILC is being designed to complement the LHC by colliding electrons and positrons \footnote{The requirement that it be a linear collider, i.e., a long, straight tube is to limit the energy loss due to \textit{Bremsstrahlung} or \textit{Braking Radiation}.  This is energy radiated by charged particles when forced on a curved path, or decelerated.  Of course, it is a big problem when trying to achieve high energy particle beams, if with every turn energy is being radiated away.  At the LHC, protons radiate about 6.7 KeV per turn.  The energy loss by a particle accelerated in a circle is \(\propto E^4R^{-1}m^{-4}\), meaning a heavier particle like the proton loses much less energy than an electron.}.
+
+% 	%%%%%%%%%%%%%%%%%%%%%%% Baryon Octet %%%%%%%%%%%%%%%%%%
+% 	\begin{figure}
+% 		\begin{centering}
+% 			\begin{picture}(180, 150)(-100, -100)
+% 				\put(-25,42){\line(-3,-5){25}}
+
+% 				\put(-90,42){\vector(1,0){55}}  %S = 0 arrow
+% 				\put(-90,0){\vector(1,0){20}}  %S = -1 arrow
+% 				\put(-90,-42){\vector(1,0){55}}  %S = -2 arrow
+
+% 				\put(-5,-75){\line(-3,5){15}}  %q = -1 arrow
+% 				\put(45,-75){\line(-3,5){15}}  %q = 0 arrow
+% 				\put(95,-75){\line(-3,5){35}}  %q = 1 arrow
+
+% 				\put(-25, 42){\line(1, 0){50}}
+% 				\put(25, 42){\line(3,-5){25}}
+% 				\put(-25, -42){\line(1,0){50}}
+% 				\put(-25, -42){\line(-3, 5){25}}
+% 				\put(25, -42){\line(3, 5){25}}
+
+% 				\put(-25, 42){\circle*{3}}
+% 				\put(-25, -42){\circle*{3}}
+% 				\put(25, 42){\circle*{3}}
+% 				\put(25, -42){\circle*{3}}
+% 				\put(-50, 0){\circle*{3}}
+% 				\put(50, 0){\circle*{3}}
+% 				\put(0, 3){\circle*{3}}
+% 				\put(0, -3){\circle*{3}}
+
+% 				\put(-28, 47){$n$}
+% 				\put(28, 47){$p$}
+% 				\put(-22, -38){$\Xi^{-}$}
+% 				\put(15, -38){$\Xi^{0}$}
+% 				\put(55, -3){$\Sigma^{+}$}
+% 				\put(-67, -3){$\Sigma^{-}$}
+% 				\put(0, 10){$\Sigma^{0}$}
+% 				\put(0, -15){$\Lambda$}
+
+% 				\put(-130, 39){$s=0$}
+% 				\put(-130, -2){$s=-1$}
+% 				\put(-130, -45){$s=-2$}
+
+% 				\put(-20, -85){$q=-1$}
+% 				\put(35, -85){$q=0$}
+% 				\put(90, -85){$q=1$}
+% 			\end{picture}
+% 		\par\end{centering}
+% 		\caption[The Baryon Octet]{\label{fig:baryonOctet}The Baryon Octet}
+% 	\end{figure}
+% 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% 	%%%%%%%%%%%%%%%%%%%%%%% Meson Octet %%%%%%%%%%%%%%%%%%
+% 	\begin{figure}
+% 		\begin{centering}
+% 			\begin{picture}(180, 150)(-100, -100)
+% 				\put(-25,42){\line(-3,-5){25}}
+% 				\put(-90,42){\vector(1,0){55}}  %S = 0 arrow
+% 				\put(-90,0){\vector(1,0){20}}  %S = -1 arrow
+% 				\put(-90,-42){\vector(1,0){55}}  %S = -2 arrow
+% 				\put(-25, 42){\line(1, 0){50}}
+% 				\put(25, 42){\line(3,-5){25}}
+% 				\put(-25, -42){\line(1,0){50}}
+% 				\put(-25, -42){\line(-3, 5){25}}
+% 				\put(25, -42){\line(3, 5){25}}
+
+% 				\put(-25, 42){\circle*{3}}
+% 				\put(-25, -42){\circle*{3}}
+% 				\put(25, 42){\circle*{3}}
+% 				\put(25, -42){\circle*{3}}
+% 				\put(-50, 0){\circle*{3}}
+
+% 				\put(50, 0){\circle*{3}}
+% 				\put(0, 3){\circle*{3}}
+% 				\put(0, -3){\circle*{3}}
+
+% 				\put(-28, 47){$K^{0}$}
+% 				\put(28, 47){$K^{+}$}
+% 				\put(-22, -38){$K^{-}$}
+% 				\put(15, -38){$\overline{K}^{0}$}
+% 				\put(55, 0){$\pi^{+}$}
+% 				\put(-65, 0){$\pi^{-}$}
+% 				\put(0, 10){$\pi^{0}$}
+% 				\put(0, -15){$\eta$}
+
+% 				\put(-130, 39){$s=1$}
+% 				\put(-130, -2){$s=0$}
+% 				\put(-130, -45){$s=-1$}
+
+% 				\put(-5,-75){\line(-3,5){15}}  %q = -1 arrow
+% 				\put(45,-75){\line(-3,5){15}}  %q = 0 arrow
+% 				\put(95,-75){\line(-3,5){35}}  %q = 1 arrow
+
+% 				\put(-20, -85){$q=-1$}
+% 				\put(35, -85){$q=0$}
+% 				\put(90, -85){$q=1$}
+% 			\end{picture}
+% 		\par\end{centering}
+% 		\caption[The Meson Octet]{\label{fig:mesonOctet}The Meson Octet}
+% 	\end{figure}
+% 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% \section{Particle Physics Pertinent to this Analysis}
+% Though the science of particle physics is far too broad to cover completely in this brief introduction, there are a few necessary concepts that must be understood by the reader in order to appreciate the results described in this thesis.
+
+% 	\subsection{Cross Section in Detector-Based Particle Physics}
+% 		At the LHC, two oppositely-aligned bunches of protons are collided into each other.  When a collision occurs and is recorded by the CMS detector, it is called an \textit{event}.  Physicists use the concept of \textit{cross section} to describe the probability of a particular \textit{event} to occur.  Every time a collision happens, it is possible for any number of reactions to be produced.  If a physicist can know what the probability for a certain process to occur is, they can estimate how many events will need to be recorded in order to make a significant measurement.
+
+% 		The cross section ($\sigma$) of a particular process depends on the properties of the particles being collided and the different interactions they can have, as well as the \textit{current} of the particle beam, referred to as its \textit{instantaneous luminosity}, \(\mathcal{L}\).  The beam luminosity describes the number of particles traveling per unit time per unit area down the beam pipe.
+
+% 		Cross section is measured in units of \textit{barns}, where 1 barn = 1$\times$10$^{-24}$cm$^2$.  Generally, cross section is quoted in picobarns (pb), or femtobarns (fb).
+
+% 		Often referred to as the fundamental equation of experimental particle physics, the \textit{event rate} is given by the following equation:
+
+% 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Event Rate %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 		\begin{equation}
+% 			N_{events/second} = \mathcal{L} ~\sigma~ \epsilon
+% 			%\sigma = \frac{R}{\mathcal{L}}
+% 			\label{eq:EventRate}
+% 		\end{equation}
+% 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 		where `N' is the number of events generated per second, `$\mathcal{L}$' is the instantaneous luminosity of the beam, and `$\epsilon$' is the total efficiency for the process.
+
+% 	\subsection{An Example}\label{femtobarn}
+% 		Take for example the production of a Majorana neutrino with a mass of 200 GeV/$c^2$.  The cross section for this process is 0.13 pb.  The design luminosity of the LHC proton-proton beam is $1\times 10^{34} cm^{-2}s^{-1}$.
+
+% 		Assuming optimal LHC design characteristics, and an efficiency of 1,  the event rate for this process is:
+
+% 		\begin{equation}
+% 			N_{events/second} = (1\times 10^{34} cm^{-2}s^{-1})\cdot(0.13\times 10^{-12}barns \cdot 10^{-24}cm^2/barn)
+% 		\end{equation}
+% 		\begin{equation}
+% 			N_{events/second} = 0.0013 \rightarrow 769 ~seconds ~/~ event.
+% 		\end{equation}
+
+% 		The total number of events can be determined by integrating both sides:
+
+% 		\begin{equation}
+% 			N_{events} = \sigma \times \mathcal{L}_{int}
+% 		\end{equation}
+% 		where $\mathcal{L}_{int}$ is the \textit{integrated luminosity}, or the total amount of beam delivered.  This is regularly used to refer to the amount of data collected by collider experiments, and is generally quoted in units of inverse femtobarns, or fb$^{-1}$.
+
+% 	\subsection{Energy Resolution of a Calorimeter}
+% 		The energy resolution of a calorimeter can be described as a quantification of how finely the detector can distinguish between similar energies.  Ideally, every pion with 100 GeV of energy would show up in the detector as a blip at 100 GeV.  In reality, however, the peak has some width and generally has the shape of a Gaussian distribution, as seen in Figure \ref{fig:gaussian}.
+
+% 		The energy resolution of a detector is defined as the ratio of the width of the measured energy distribution to its mean, written as:
+% 		%%%%%%%%%%%%%%%%% Energy Resolution %%%%%%%%%%%%%%%%
+% 		\begin{equation}\label{eq:res}
+% 			Energy~Resolution = \frac{\sigma(E)}{E}
+% 		\end{equation}
+% 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 		Equation \ref{eq:res} is normally expressed as a percentage.
+
+% 		As an example, see Figure \ref{fig:gaussianFit} which shows a simple Gaussian fit to the response of 150 GeV pions in HF.  Also displayed is the sigma and mean of the fit, allowing one to calculate the energy resolution of 150 GeV pions in HF:
+% 		%%%%%%%%%%%%%%%%% Energy Resolution Calc %%%%%%%%%%%%%%
+% 		\begin{equation}\label{eq:res2}
+% 			Energy~Resolution = \frac{\sigma(E)}{E} = \frac{24.13}{132.1} = 18.3\%
+% 		\end{equation}
+% 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% 		%%%%%%%%%%%%%%%%% Figure Gaussian %%%%%%%%%%%%%%%%%
+% 		\begin{figure}
+% 			\begin{centering}
+% 				\includegraphics[scale=0.45]{figures/Ch_1/Jets.png}
+% 			\par\end{centering}
+% 			\caption[HF detector response to 150 GeV jets.]{\label{fig:gaussian}HF detector response to 150 GeV pions.}
+% 		\end{figure}
+% 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 		%%%%%%%%%%%%%%%%% Figure Gaussian %%%%%%%%%%%%%%%%%
+% 		\begin{figure}
+% 			\begin{centering}
+% 				\includegraphics[scale=0.45]{figures/Ch_1/JetsInHF_Fit.png}
+% 			\par\end{centering}
+% 			\caption[A simple Gaussian fit to 150 GeV pions in HF.]{\label{fig:gaussianFit}A Gaussian fit of the HF detector response to 150 GeV pions.}
+% 		\end{figure}
+% 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %
+% %
+% %
+% %
+% %	\subsection{Event Rate}
+% %
+% %	\subsection{The Inverse Femtobarn}\label{femtobarn}
+% %
+% %	\subsection{A Majorana Particle} \label{A Majorana Particle}
+% %
+% %	\subsection{Mixing Elements}
+

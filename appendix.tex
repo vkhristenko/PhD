@@ -1,0 +1,333 @@
+
+% Appendices
+\appendix \label{sec:Appendix}
+
+\chapterx[Formatting Appendices]{Formatting Appendices}
+
+To avoid having multiple appendix files, we can insert a new page.
+In \LyX{}, Insert $\rightarrow$ Formatting $\rightarrow$ New Page.
+In \LaTeX{}, simply add \texttt{\textbackslash{}newpage\{\}}. Immediately
+following the new page, add \texttt{\textbackslash{}chapter\{...\}}
+and continue as if it were a new file.
+
+\newpage{}
+
+\chapter{Table of Contents Issues}
+
+
+\section{Extra Vertical Spaces}
+
+The thesis class file contains code to format the TOC in the manner
+described by the thesis manual. However, there is one caveat. Chapters
+without subheadings (e.g., Chapter 5) produce an extra space. As this
+rarely happens, it probably went overlooked by the previous authors.
+To remedy the situation, a new chapter type is available; \texttt{\textbackslash{}chapterx{[}$title${]}\{$title$\}}.
+Both options are required in order for this to work correctly (i.e.,
+both {[}{]} and \{\} must contain the title).
+
+
+\section{Titles Running into the Page Number Column}
+
+If not an ntheorem entry, use the alt header text and add the appropriate
+\TeX{} commands:
+
+\noindent \texttt{\textbackslash{}chapter{[}Cyclic-Order Neighborhoods
+for Vehicle Routing\textbackslash{}\textbackslash{}Problems{]}\{Cyclic-Order
+Neighborhoods for Vehicle Routing Problems\} \textbackslash{}label\{chp:CNS\}}
+
+If an ntheorem command, the formatting will not work for some strange
+reason. What does is adding a bunch of math spaces \texttt{\$\textasciitilde{}\textasciitilde{}\textasciitilde{}\textasciitilde{}\textasciitilde{}\textasciitilde{}\textasciitilde{}\textasciitilde{}\textasciitilde{}\$}
+at the break point until the rest of the line is pushed to the next
+line.
+
+\newpage{}
+
+\chapter{Example of the Heading Scheme}\label{appendix:headings}
+
+The thesis manual (page 31) requires that all headings must be differentiated
+from one another via formatting and they can be no longer than 4 inches
+in length. The original uithesis.cls file only reached third-order
+headings and did not even cover the length issue. I have extended
+this to fifth-order headings to bring the number of headings to six.
+The formatting is as follows.
+\begin{enumerate}
+\item Chapter: centered and all caps
+\item Section: centered and bold
+\item Subsection: centered
+\item Subsubsection: left-aligned and bold
+\item Paragraph: left-aligned
+\item Subparagraph: left-aligned and italic
+\end{enumerate}
+I have only been able to come up with a work-around for the 4 inch
+requirement and not a true fix. In your code, wrap the section(s)
+that is(are) too long with a minipage of size 4 inches. You will need
+to adjust the alignment and the vspace before and after to match the
+current subheading. The spacing below seems to work in most cases
+for the section subheading. As this can be a little bit annoying to
+perfect, only use it for headings you know are over four inches.
+
+~
+
+\begin{singlespace} % for output formatting only
+\begin{verbatim}
+\begin{center}
+\begin{minipage}[c]{4in}
+\begin{singlespace}
+\vspace{5.2mm}
+\section...
+\end{singlespace}
+\end{minipage}
+\end{center}
+\vspace{1mm}
+\end{verbatim}
+\end{singlespace}
+
+\noindent Below is an example of a subheading that's too long and
+the fix.
+
+
+\section{This Title is Longer than the Alloted Four Inch Maximum}
+
+\begin{center}\begin{minipage}[c]{4in}\begin{singlespace}\vspace{5.2mm}
+\section{This Title is Longer than the Alloted Four Inch Maximum}
+\end{singlespace}\end{minipage}\end{center}\vspace{1.1mm}
+
+\noindent Below is an example of all headings below chapter which
+can be seen at the top of this page.
+
+
+\section{First-Order (section)}
+
+
+\subsection{Second-Order (subsection)}
+
+
+\subsubsection{Third-Order (subsubsection)}
+
+
+\paragraph{Fourth-Order (paragraph)}
+
+
+\subparagraph{Fifth-Order (subparagraph)}
+
+\newpage{}
+
+\chapter{Important Points from the Thesis Manual}
+
+
+\section{Mechanics}
+
+\noindent Text Size
+\begin{itemize}
+\item 12-pt font for all preliminary pages, text, table and figure captions,
+appendices\textquoteright{} headings, references, and page numbers
+(default in uithesis.cls)
+\item Table and figures proper and their footnotes, appendices, and equations
+may be reproduced in different size and style fonts than that of the
+thesis proper
+\item Super- and subscript numbers and letters and footnotes that appear
+at the bottom of the page may be printed in 10-point typeface (default
+in uithesis.cls)
+\end{itemize}
+Style
+\begin{itemize}
+\item Boldface may be used for the title of the thesis, all major headings,
+within the formatting scheme for subheadings, and for all table or
+all figure captions
+\item The use of SMALL CAPS is not allowed within any part of the thesis
+\item Italics may be used as part of the subheading scheme
+\item Italics may also be used sparingly for emphasis, foreign words, technical
+or key terms, mathematical expressions, or book and journal titles
+\end{itemize}
+Margin
+\begin{itemize}
+\item left = 1.5 inch (default in uithesis.cls)
+\item right, top, bottom = 1 inch (default in uithesis.cls)
+\end{itemize}
+~
+
+\noindent Text Spacing
+\begin{itemize}
+\item Double spacing (default in uithesis.cls)
+
+\begin{itemize}
+\item 24-point
+\item 2:1 ratio, the line spacing should be set such that no less than 5
+and no more than 6 single-spaced lines (text or blank lines) are positioned
+within 1 vertical inch (default in uithesis.cls)
+\end{itemize}
+\item Single spacing
+
+\begin{itemize}
+\item 12-point
+\item Single spacing is a requirement for footnotes to text, tables and
+figures; for bibliographic entries. A double space should be used
+to separate individual footnote and reference citations. (default
+in uithesis.cls)
+\item Multi-line major headings, subdivisions, and table and figure captions
+as well as appendix material and information within tables and figures
+may be single spaced if done in a consistent manner. (default in uithesis.cls)
+\item Direct quotations should be single spaced and indented.
+\end{itemize}
+\end{itemize}
+Pagination
+\begin{itemize}
+\item All page numbers on the final-deposit copies must appear in same 12
+point type font used in the thesis proper. (default in uithesis.cls)
+\item Preliminary Pages (default in uithesis.cls)
+
+\begin{itemize}
+\item Number consecutively in lowercase roman numerals beginning with \textquotedblleft{}ii
+on the first page following the Certificate of Approval.
+\item Neither the copyright page nor the Certificate of Approval is counted
+or numbered.
+\item Numbers are centered without punctuation 0.5 inches from the bottom
+of the page.
+\end{itemize}
+\item Text and Reference pages (default in uithesis.cls)
+
+\begin{itemize}
+\item Number consecutively in arabic numerals, beginning with 1 on the first
+page following the preliminaries.
+\item Numbers are placed without punctuation in the upper right-hand corner
+1 inch from the right and 0.5 inches from the top of the page.
+\end{itemize}
+\end{itemize}
+
+\section{Parts of the Thesis}
+\begin{itemize}
+\item Abstract title page (external): mandatory for PhD and DMA thesis candidates
+only (include phd in document class)
+\item Doctoral abstract (external): mandatory for PhD and DMA thesis candidates
+only (include phd in document class)
+
+\begin{itemize}
+\item cannot contain graphs, charts, tables, or illustrations
+\item two-page maximum includes the abstract text and the approval lines
+\end{itemize}
+\item Title page: mandatory (default)
+
+\begin{itemize}
+\item Include only the academic rank \textendash{} but not academic degrees
+\textendash{} of the faculty member (e.g., Associate Professor John
+Doe).
+\end{itemize}
+\item Copyright page: optional (include copyrightpage in document class)
+\item Certificate of Approval: mandatory (default)
+\item Dedication: optional (include dedicationpage in document class)
+
+\begin{itemize}
+\item It customarily begins with the word \textquotedblleft{}To,\textquotedblright{}
+and has no ending punctuation.
+\end{itemize}
+\item Epigraph or Frontispiece: optional (include epigraphpage in document
+class)
+\item Acknowledgments: optional (include ackpage in document class)
+\item Abstract (internal): optional (include abstractpage in document class)
+\item Table of Contents: mandatory (default)
+
+\begin{itemize}
+\item Neither underlining, use of boldface or italics for stylistic purposes
+in text, nor reference numbers appearing with text headings are placed
+in the Table of Contents listing.
+\end{itemize}
+\item List of Tables: when appropriate (include tables in document class)
+\item List of Figures: when appropriate (include figures in document class)
+\item List of Symbols/Abbreviations, etc.: when appropriate (not implemented)
+\item Preface: optional (not implemented that I know of)
+\end{itemize}
+
+\section{Additional information you should know about selected sections}
+
+\noindent Appendix
+\begin{itemize}
+\item Appendices normally precede the bibliography
+\end{itemize}
+Notes at the End of each Major Division
+\begin{itemize}
+\item The notes always begin on a new page. The title, \textquotedblleft{}Notes,\textquotedblright{}
+is placed at the top, 1-inch margin; the established first-order subdivision
+style is used to format the subheading.
+\item Exception: In a numbered subdivision scheme the subheading,\textquotedblleft{}Note,\textquotedblright{}
+is not preceded by a designator (number).
+\end{itemize}
+Notes at the End of the Thesis
+\begin{itemize}
+\item All notes are collected and placed within a major division titled
+NOTES. This heading is typed in all capital letters, centered 1inch
+from the top of the page, with the first entry beginning no less than
+a double space below.
+\item The section NOTES will always directly precede the bibliography.
+\item If notes are arranged by chapters within the NOTES section, it is
+customary to separate the notes for each chapter by first-order subdivision
+titles identifying the chapters. These first-order subdivisions follow
+each other without gaps in text.
+\end{itemize}
+
+\section{Tables and Figures}
+
+\noindent Placement
+\begin{itemize}
+\item According to the practice of the department tables/figures may appear
+in the text near the point of reference, may be grouped at the end
+of each major division (chapter) in which they are mentioned, or presented
+in appendices.
+\item Tables/figures appearing on the same page as other material (text,
+table/figure, etc.) must begin and end on the same page, and must
+be separated from surrounding material above and below by at least
+three blank, single-spaced lines. (default in uithesis.cls)
+\item Tables/figures may be continued to an additional page(s) only if the
+initial table/figure page is devoid of other material.
+\item Several short tables/figures may be grouped on a single page, provided
+that all are started and completed on the same page and that at least
+three blank, single-spaced lines separate one from the other.
+\end{itemize}
+Numbering
+\begin{itemize}
+\item Each table/figure is assigned a unique number in the order of physical
+appearance in the thesis. (default in uithesis.cls)
+\item All tables are numbered in one series within the text; figures are
+numbered in a separate sequential series. (default in uithesis.cls)
+\item The author may elect to use a consecutive arabic or roman numeral
+series or a doublenumbering system (1.1, 1.2, 2.1) when creating table/figure
+designators. (default in uithesis.cls)
+\item For all numbering schemes, tables/figures appearing in appendices
+are to be numbered separately from text table/figures (e.g., A1, A2,
+B1, B2, etc.). (default in uithesis.cls)
+\end{itemize}
+Captions
+\begin{itemize}
+\item Every table/figure must bear a caption that consists of a number preceded
+by the word \textquotedblleft{}Table\textquotedblright{} (\textquotedblleft{}Figure\textquotedblright{})
+and followed by a descriptive title. (default in uithesis.cls)
+\item Captions must be typed in the same size and style font used throughout
+the thesis text, although a figure/table proper may be reproduced
+in another type font, reduced, or enlarged to fit on the page.
+\item Captions throughout must be all single- or double-spaced.
+\item Capitalization, punctuation, and layout of the captions must be consistent
+for all tables/ figures in the series, though the style of table captions
+may differ from the style of figure captions.
+\item If a table/figure continues to one or more following pages, then the
+figure/table number and a \textquotedblleft{}continued\textquotedblright{}
+notation (e.g., Table 3\textemdash{}continued) appears on each page
+after the first. The descriptive title is not repeated in part or
+full on continuation pages. (see long tables)
+\end{itemize}
+Tables (additional specifications)
+\begin{itemize}
+\item All tables must be either boxed or exhibit full-width horizontal beginning
+and end lines.
+\item Footnotes are placed below the end line. Tables should have self-contained
+footnotes that do not rely on the referencing system used for the
+thesis text. A new series of footnote numbers or symbols is begun
+for each table; the chosen style should be used consistently for all
+tables throughout the thesis. Individual footnotes are to be single-spaced,
+with double spacing between notes.
+\end{itemize}
+Figures (additional specifications)
+\begin{itemize}
+\item Keep in mind that although use of color (including color photographs)
+is acceptable, colors become shades of gray in copying and microfilming.
+\item Unlike tables, supplementary descriptive information may be included
+as part of figure captions.
+\end{itemize}

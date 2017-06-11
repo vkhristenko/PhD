@@ -1,0 +1,64 @@
+
+\newtheorem{thm}{Theorem}[chapter]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem*{conjecture}{Conjecture}
+\newtheorem*{ntbd}{Note (to be deleted)}
+\newtheorem*{qfc}{Question for Charlie}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[chapter]
+
+\theoremstyle{remark}
+\newtheorem*{question}{Question}
+\newtheorem*{remark}{Remark}
+\newtheorem{example}{Example}[chapter]
+\newtheorem{problem}{Problem}[chapter]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+\newcommand{\lyxmathsym}[1]{\ifmmode\begingroup\def\b@ld{bold}
+  \text{\ifx\math@version\b@ld\bfseries\fi#1}\endgroup\else#1\fi}
+\providecommand{\LyX}{L\kern-.1667em\lower.25em\hbox{Y}\kern-.125emX\@}
+
+\newcommand{\mH}{\ensuremath{m_\textup{H}}}
+\newcommand{\mmm}{\ensuremath{m_{\mu\mu}}}
+\newcommand{\gev}{\ensuremath{\textrm{GeV}}}
+\newcommand{\Htomm}{\ensuremath{\mathrm{H}\rightarrow\mu\mu}}
+\newcommand{\ttH}{\ensuremath{\mathrm{t\bar{t}}H}}
+\newcommand{\ttbar}{\ensuremath{\mathrm{t\bar{t}}}}
+\newcommand{\pt}{\ensuremath{\mathrm{p_t}}}
+\newcommand{\GeVcc}{\ensuremath{\mathrm{GeV}}}
+\newcommand{\MET}{\ensuremath{\mspace{3mu}/\mspace{-12.0mu}E_{T}}}
+\newcommand{\invfb}{\ensuremath{\textrm{fb}^{\scriptscriptstyle -1}}}
+\makeatletter
+\def\hlinewd#1{%
+    \noalign{\ifnum0=`} \fi \hrule \@height #1 \futurelet %
+   \reserved@a\@xhline}
+\makeatother
+%\newcommand{\ttH}{\ensuremath{\mathrm{t\bar{t}}\PH}\xspace}
+
+
+%
+% the following command can be used to put a remark
+% in the margin of the thesis/paper
+% to include a remark, use \edz{remark}
+% size of the remark font can be changed, not it
+% is set to "scriptsize", can also be "tiny" or "small"
+% or others
+%
+\def\sideremark#1
+{
+\ifvmode\leavevmode\fi\vadjust
+  {\vbox to0pt
+    {\vss\hbox to0pt
+      {\hskip\hsize\hskip1em\vbox
+        {\hsize2cm
+%          \small
+          \scriptsize
+          \raggedright\pretolerance10000\noindent#1\hfill
+        }
+        \hss
+      }
+      \vbox to8pt{\vfil}\vss
+    }
+  }
+}

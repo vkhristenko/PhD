@@ -1,0 +1,109 @@
+%
+% you should only have one "documentclass" line.  the following lines
+% are samples that give various options.  the nofrontmatter option is
+% nice because it suppresses the title and signature pages when you want
+% to focus only on the main body of the thesis
+%
+% Friday April 10 2010 Ray Hylock <ray-hylock@uiowa.edu>
+% documentclass options:
+%   abstractpage            if you want to add an internal abstract (optional)
+%   ackpage                 if you would like to add an acknowledgements page (optional)
+%   algorithms              if you want a list of algorithms (optional)
+%   appendix                if you have an appendix (optional)
+%   copyrightpage           if you wish to copyright your thesis (optional)
+%   dedicationpage          if you wish to make a dedication (optional)
+%   epigraphpage            if you would like to add an epigraph to the beginning of your thesis (optional)
+%   examples                if you want a list of examples (this uses the ntheorem package)
+%   exampleslemmas          if you want a combined list of examples and lemmas (this uses the ntheorem package) (optional)
+%   examplestheorems        if you want a combined list of examples and theorems (this uses the ntheorem package) (optional)
+%   exampleslemmastheorems  if you want a combined list of examples, lemmas, and theorems (this uses the ntheorem package) (optional)
+%   figures                 if you have any figures (this is required if you have even one figure)
+%   lemmas                  if you want a list of lemmas (this uses the ntheorem package) (optional)
+%   lemmastheorems          if you want a combined list of lemmas and theorems (this uses the ntheorem package) (optional)
+%   nofrontmatter           suppresses the title and signiture pages for working on the body
+%   tables                  if you have any tables (this is required if you have even one table)
+%   theorems                if you want a list of theorems (this uses the ntheorem package) (optional)
+%   phd                     if phd student; this will add the doctoral abstract (mandatory for PhD and DMA thesis candidates only)
+%
+\documentclass[abstractpage,ackpage,appendix,copyright,figures,tables,phd,epigraphpage,dedicationpage]{uithesis}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+%\usepackage{amsthm} % included in ntheorem with amsthm option
+\usepackage[amsthm]{ntheorem} % use if going to make theorem lists
+\usepackage{array}
+\usepackage{float}
+\usepackage[toc,page,titletoc]{appendix}
+\usepackage{longtable}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage[font=singlespacing]{caption}
+\usepackage[normalem]{ulem}
+\usepackage{nicefrac}
+\usepackage{units}
+\usepackage{rotating}
+\usepackage{afterpage}
+\usepackage{url} %% added by James
+\usepackage{ mathrsfs } %% added by James
+\usepackage{threeparttable} %% added by James
+\usepackage{ gensymb } %% added by James
+\usepackage{siunitx} %% added by Viktor
+\usepackage{multirow} %% added by Viktor
+\usepackage{lscape} %% added by Viktor
+%\usepackage[]{units} %% added by Viktor
+%\usepackage{lineno} %% added by James
+
+%\linenumbers %% added by James
+
+
+% compress and sort citations as numbers
+% alter uithesis.cls line 355 from plain2 to unsrt to use this
+%\usepackage[numbers,sort&compress]{natbib}
+
+% does not allow citations to be split between pages; requirement
+\usepackage{etoolbox}
+\apptocmd{\thebibliography}{\interlinepenalty 10000\relax}{}{}
+
+% Vertical spacing (singlespace) in itemset and enumerate
+\usepackage{enumitem}
+\setlist{noitemsep,topsep=1pt, partopsep=4pt, parsep=2pt}
+\setenumerate{noitemsep,topsep=1pt, partopsep=4pt, parsep=2pt}
+
+% single spacing for rows in a table (this does not single space
+% within a row; for that, use \\[-5mm]
+\renewcommand\arraystretch{0.5} % 1/2 of the default spacing (double)
+
+\include{mycommands}
+
+\include{prelude}       % Front matter, title page, etc.
+
+\begin{document}
+\extrafloats{100}
+
+\frontmatter
+
+\include{chapterintroduction}
+\include{chapter1}
+\include{chapter2}
+\include{chapter3}
+
+%\include{chapter1}
+%\include{chapter2}
+%\include{chapter3}
+%\include{chapter4}
+%\include{chapter5}
+%\include{appendix}
+
+
+%
+% this command includes the entire bib file in the
+% references section, whether the entry has been
+% cited in the paper or not
+%
+%\nocite{*}
+
+\biblio{thesis}
+
+\end{document}
+
+

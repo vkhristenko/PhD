@@ -1,0 +1,60 @@
+\section{CMS Monte-Carlo Datasets} \label{section:higgs_mc}
+
+
+\subsection{Signal Samples} \label{subsection:higgs_mc_signal}
+We use Signal Samples with three different hypothetical Standard Model Higgs Boson masses. Since we are performing a search and are leaving the mass floating, we need a way to probe various hypotheses. Using three mass points (samples) we can model parameters for a given model and further perform interpolation to deduce the parameters for any mass that falls within our range.
+
+\begin{table}[!h]
+    \caption{Signal Samples}
+    \label{table:higgs_mc_signal}
+    \begin{center}
+        \begin{tabular}{|l|l|}
+            \hline
+            Dataset & Mass\\
+            \hline
+            /GluGlu\_HToMuMu\_M120\_13TeV\_powheg\_pythia8/\\RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_\\TrancheIV\_v6-v1/MINIAODSIM & 120 GeV\\
+            /GluGlu\_HToMuMu\_M125\_13TeV\_powheg\_pythia8/\\RunIISummer16MiniAODv2-PUMoriond17\_80X\_\\mcRun2\_asymptotic\_2016\_TrancheIV\_v6-v1/MINIAODSIM & 125 GeV\\
+            /GluGlu\_HToMuMu\_M130\_13TeV\_powheg\_pythia8/\\RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_\\TrancheIV\_v6-v1/MINIAODSIM & 130 GeV\\
+            \hline
+            /VBF\_HToMuMu\_M120\_13TeV\_powheg\_pythia8/\\RunIISummer16MiniAODv2-PUMoriond17\_80X\_\\mcRun2\_asymptotic\_2016\_TrancheIV\_v6-v1/MINIAODSIM & 120 GeV\\
+            /VBF\_HToMuMu\_M125\_13TeV\_powheg\_pythia8/\\RunIISummer16MiniAODv2-PUMoriond17\_80X\_\\mcRun2\_asymptotic\_2016\_TrancheIV\_v6-v1/MINIAODSIM & 125 GeV\\
+            /VBF\_HToMuMu\_M130\_13TeV\_powheg\_pythia8/\\RunIISummer16MiniAODv2-PUMoriond17\_80X\_\\mcRun2\_asymptotic\_2016\_TrancheIV\_v6-v1/MINIAODSIM & 130 GeV\\
+            \hline
+            /WMinusH\_HToMuMu\_M120\_13TeV\_powheg\_pythia8/\\RunIISummer16MiniAODv2-PUMoriond17\_80X\_\\mcRun2\_asymptotic\_2016\_TrancheIV\_v6-v1/MINIAODSIM & 120 GeV\\
+            /WMinusH\_HToMuMu\_M125\_13TeV\_powheg\_pythia8/\\RunIISummer16MiniAODv2-PUMoriond17\_80X\_\\mcRun2\_asymptotic\_2016\_TrancheIV\_v6-v1/MINIAODSIM & 125 GeV\\
+            /WMinusH\_HToMuMu\_M130\_13TeV\_powheg\_pythia8/\\RunIISummer16MiniAODv2-PUMoriond17\_80X\_\\mcRun2\_asymptotic\_2016\_TrancheIV\_v6-v1/MINIAODSIM & 130 GeV\\
+            \hline
+            /WPlusH\_HToMuMu\_M120\_13TeV\_powheg\_pythia8/\\RunIISummer16MiniAODv2-PUMoriond17\_80X\_\\mcRun2\_asymptotic\_2016\_TrancheIV\_v6-v1/MINIAODSIM & 120 GeV\\
+            /WPlusH\_HToMuMu\_M125\_13TeV\_powheg\_pythia8/\\RunIISummer16MiniAODv2-PUMoriond17\_80X\_\\mcRun2\_asymptotic\_2016\_TrancheIV\_v6-v1/MINIAODSIM & 125 GeV\\
+            /WPlusH\_HToMuMu\_M130\_13TeV\_powheg\_pythia8/\\RunIISummer16MiniAODv2-PUMoriond17\_80X\_\\mcRun2\_asymptotic\_2016\_TrancheIV\_v6-v1/MINIAODSIM & 130 GeV\\
+            \hline
+            /ZH\_HToMuMu\_M120\_13TeV\_powheg\_pythia8/\\RunIISummer16MiniAODv2-PUMoriond17\_80X\_\\mcRun2\_asymptotic\_2016\_TrancheIV\_v6-v1/MINIAODSIM & 120 GeV\\
+            /ZH\_HToMuMu\_M125\_13TeV\_powheg\_pythia8/\\RunIISummer16MiniAODv2-PUMoriond17\_80X\_\\mcRun2\_asymptotic\_2016\_TrancheIV\_v6-v1/MINIAODSIM & 125 GeV\\
+            /ZH\_HToMuMu\_M130\_13TeV\_powheg\_pythia8/\\RunIISummer16MiniAODv2-PUMoriond17\_80X\_\\mcRun2\_asymptotic\_2016\_TrancheIV\_v6-v1/MINIAODSIM & 130 GeV\\
+            \hline
+        \end{tabular}
+    \end{center}
+\end{table}
+
+\subsection{Background Samples} \label{subsection:higgs_mc_background}
+Table~\ref{table:higgs_mc_background} provides a summary of the most dominant contributions among the background processes. Given that we use data-driven approach for our search, background samples are not used in any of the statistical modeling. However, the primary use of background datasets is to compare various kinematic variable distributions from data and theoretical predictions in section~\ref{section:higgs_results}
+
+\begin{table}[!h]
+    \caption{Background Samples}
+    \label{table:higgs_mc_background}
+    \begin{center}
+        \begin{tabular}{|l|}
+            \hline
+            Dataset\\
+            \hline
+            /DYJetsToLL\_M-50\_TuneCUETP8M1\_13TeV-amcatnloFXFX-pythia8/RunIISummer16MiniAODv2-PUMoriond17\_HCALDebug\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6-v1/MINIAODSIM\\
+            /TTJets\_DiLept\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6-v1/MINIAODSIM\\
+            /WJetsToLNu\_TuneCUETP8M1\_13TeV-amcatnloFXFX-pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6-v1/MINIAODSIM\\
+            /WWTo2L2Nu\_13TeV-powheg-herwigpp/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6-v1/MINIAODSIM\\
+            /WZTo3LNu\_TuneCUETP8M1\_13TeV-amcatnloFXFX-pythia8/RunIISummer16MiniAODv2-PUMoriond17\_80X\_mcRun2\_asymptotic\_2016\_TrancheIV\_v6-v1/MINIAODSIM\\
+            \hline
+        \end{tabular}
+    \end{center}
+\end{table}
+
+\subsection{Pile-Up Reweighting} \label{subsection:higgs_mc_pu}

@@ -1,0 +1,103 @@
+\section{Background dimuon mass spectrum modeling}
+\label{bkg_model}
+
+%
+% Outline:
+% - Motivation
+% - General Description of Background Modeling
+% - Choice of Pdfs/bin granularity/mass range
+% - Physics Motivated Models
+% - Polynomial-like Families and F-Test
+% - RooMultiPdf and combining multiple models
+% - All of the parameters are floatin! Normalization as well!
+%
+Given highly dominant nature of background processes, it is important to properly model the background shape as that is the biggest contributor for any physical quantity of interest that we are to compute. In general, our background can be described by means of falling exponential with some polynomial contribution.
+
+% why not MC
+The background is mainly composed by Drell--Yan and top pair production ($t\bar{t}$). MC samples for such processes are available at NLO (2j) and NNLO (incl) in pQCD, but they are not suited to be used for background modeling directly because they have little statistical power with respect to the data in the region of interests as well as large statistical uncertainties due to extra terms in QCD or EW expansions (high $\pt$), as well as resummation (low $\pt$), pdf and scale uncertainties, and unknown modeling of the long range correlation uncertainties.
+Give the smooth nature of the background is natural to proceed to a strategy based on estimating it from data, assuming smooth functional forms.
+
+% Models: Physcs Motivated Models and Polynomial-like Families
+For the purpose of modeling, we identify two classes of models that we consider:
+physics motivated models and
+%families of models that are order-dependent
+general purpose series able to describle any smoothly falling functional forms (polynomials, sum of exponentials).
+The first class contains several pdfs whose  functional forms are driven by the knowledge of background processes contributing the most (Drell--Yan, ttbar). The functions considered are summarized in eqs~\ref{eq:ExpPol2}--\ref{eq:BWZGamma}.
+
+\begin{align}
+        \label{eq:ExpPol2}
+        \text{ExpPolynomial:}& {B(x)} = {e^{a_{1}x + a_{2}x^2}} \\
+        \label{eq:BWZ}
+        \text{BWZ:}& {B(x)} = {\frac{e^{ax}\sigma_{z}}{(x-\mu_{z})^2 + (\frac{\sigma_{z}}{2})^2}} \\
+        \label{eq:BWZRedux}
+        \text{BWZRedux:}& {B(x)} = {\frac{e^{a_{2}x + a_{3}x^2}}{(x-\mu_{z})^{a_{1}} + (\frac{2.5}{2})^{a_{1}}}} \\
+        \label{eq:BWZGamma}
+        \text{BWZGamma:}& {B(x)} = {f\frac{e^{ax}\sigma_{z}}{(x-\mu_{z})^2 + (\frac{\sigma_{z}}{2})^2} + (1-f)\frac{e^{ax}}{x^2}}
+\end{align}
+
+These shapes have been derived and validated fitting the FEWZ (NNLO QCD) generated mass shapes (more on this in appendix~\ref{app:FEWZ}) and the fitted values for the parameters have been used as initial guesses for the modeling procedure.
+The second class of functions we consider comes from general families which are, in principle, capable of describing any functional form by incorporating more and more orders.
+We consider several families, polynomials in the Bernstein basis, power law, and sum of exponentials, summurized in eqs~\ref{eq:Bernstein}--\ref{eq:Laurent}.
+
+\begin{align}
+        \label{eq:Bernstein}
+        \text{Bernsteins:}& {B(x)} = {\sum_{i=0}^{n} \alpha_i[\binom{n}{i}x^{i}(1-x)^{n-i}]} \\
+        \label{eq:SumExponentials}
+        \text{SumExponentials:}& {B(x)} = {\sum_{i=1}^{n} \beta_{i}e^{\alpha_{i}x}}\\
+        \label{eq:SumPowers}
+        \text{SumPowers:}& {B(x)} = {\sum_{i=1}^{n} \beta_{i}x^{\alpha_{i}}}\\
+        \label{eq:Laurent}
+        \text{LaurentSeries:}& {B(x)} = {\sum_{i} \alpha_{i}x^{i}}
+\end{align}
+
+Figure~\ref{bkgmodel:exampleModels} shows several examples of background only fits to the data for various hypothetical functional forms. From left to right, we have functions being fit for the mass ranges [110, 160] \gev, [110, 200] \gev and [110, 250] \gev. For the full list of those, please refer to Appendix \textbf{FIXME}.
+
+\begin{figure}[hbp]
+     \centering
+     \includegraphics[width=0.3\textwidth]{figures/background_model/baseline_p25GeV_110to160/backgroundFits__01JetsTightBB__bkgModels.png}
+     \includegraphics[width=0.3\textwidth]{figures/background_model/baseline_p25GeV_110to200/backgroundFits__01JetsTightBB__bkgModels.png}
+     \includegraphics[width=0.3\textwidth]{figures/background_model/baseline_p25GeV_110to250/backgroundFits__01JetsTightBB__bkgModels.png}
+     \caption{}
+     \label{bkgmodel:exampleModels}
+ \end{figure}
+
+ The background modeling procedure involves the construction of an envelope (RooMultiPdf) of pdfs that can either be used individually or altogether (discrete profile method \cite{CMS-PAS-HIG-13-001}) for the purpose of fitting the signal strength or setting the upper limit.
+ For the physics motivated functions, we simply perform the binned maximum likelihood fit and insert that model into the envelope.
+Nevertheless, the discrite profile method allows to naturally take into account the number of free parameters in the fit,
+the computational time it takes scale linearly with the product $n_\textup{cat}\times n_\textup{family}$, since it performs one fit for all possible combination of choices of functional forms in all categories.
+In order to  limit the number of families in the envelope, an order for a family is choose using the F-Test method at 95\% CL.
+The detail description of the procedure follows:
+% However, for the order-dependent families, the procedure is a bit more involved, given that we are to select a model of certain order. The technique for selecting a particular order from a given family is the F-Test and goes as following:
+
+\begin{itemize}
+    \item for a given category and for a particular family
+    \item $H_0$ hypothesis: order $n$ is the true order.
+        To reject this hypothesis, we have to be at least 95\% confident rejecting it -- $p-\text{value}(\chi^2, ndf) < 5\%$
+    \item perform the background only fit for orders $n$ and $n+1$ to the data
+    \item use $\chi^2 = 2 \Delta \log\mathcal{L}$, as for the asymptotic approximation of the Likelihood function.
+    \item compute the difference in number of degrees of freedom $\text{n.d.f.} = \text{NDF}_{n+1} - \text{NDF}_{n}$
+    \item the $\chi^2$ variable is distributed as a $\chi^2$-distribution with $\text{n.d.f.}$ degrees of freedom,
+    \item compute the $\chi^2$ p-value
+    \item for p-value less than 5\%, we are rejecting n and move on to test n+1
+    \item for p-value greater than 5\%, we stop and select order $n$ for this category, for this functional family.
+\end{itemize}
+
+Figure~\ref{bkgmodel:exampleFTest} shows examples of performing F-Test for Bernstein Polynomials and Sum of Exponentials, respectively.
+
+\begin{figure}[hbp]
+     \centering
+     \includegraphics[width=0.45\textwidth]{figures/background_model/baseline_ftest_p25GeV_110to160/ftest__01JetsTightBB__bernsteinFastModels.png}
+     \includegraphics[width=0.45\textwidth]{figures/background_model/baseline_ftest_p25GeV_110to160/ftest__01JetsTightBB__sumExpModels.png}
+     \caption{}
+     \label{bkgmodel:exampleFTest}
+ \end{figure}
+
+ Figure~\ref{bkgmodel:exampleFTestResults} provides examples of a summary of F-Test results upon which we can select a particular order for a given family.
+
+ \begin{figure}[hbp]
+     \centering
+     \includegraphics[width=0.45\textwidth]{figures/background_model/baseline_ftest_p25GeV_110to160/ftestresults__probability__bernsteinFastModels.png}
+     \includegraphics[width=0.45\textwidth]{figures/background_model/baseline_ftest_p25GeV_110to160/ftestresults__probability__sumExpModels.png}
+     \caption{}
+     \label{bkgmodel:exampleFTestResults}
+ \end{figure}

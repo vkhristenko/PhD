@@ -1,0 +1,530 @@
+
+\chapter{Calibration of the CMS Hadron Forward Calorimeter} \label{chapter:hf}
+
+\input{hf_introduction}
+\input{hf_description}
+\input{hf_hardware}
+\input{hf_campaigns}
+\input{hf_software}
+\input{hf_results}
+\input{hf_systematics}
+\input{hf_conclusions}
+
+% % Chapter Two - Apparatus
+% \chapter{Apparatus} \label{chapter:Tables_and_Figures}
+
+% This chapter describes the experimental apparatus and tools used to perform the analyses in this thesis.  For a fantastically detailed treatment of the LHC machine, see \cite{lhcMachine}.  See \cite{accelerators} for a thorough description of the physics and design of accelerators.
+
+% \section{Introduction}
+% 	The experimental apparatus described herein are located at CERN, on the outskirts of Geneva, Switzerland and across the borders of France and Switzerland.  CERN was first established in 1954, recently celebrating its 60th anniversary.  CERN has a diverse research program, all in support of studying the fundamental aspects of the universe, with an emphasis on providing state-of-the-art accelerator technology to its facilities and the world.  CERN has many secondary sites outside its main campus, the largest of which is the Prevessin site where the University of Iowa CMS group conducts its fixed target research activities.  See Figure \ref{fig:CERNMAP} for a map of the CERN site.
+
+% 	CERN is responsible for many technological achievements, including most famously the development of the World-Wide-Web by Tim Berners-Lee\cite{TBL}.  Many of the most important discoveries in particle physics have occurred at CERN, including the discovery of neutral currents\cite{currents}, the W and Z bosons\cite{WBoson}\cite{ZBoson}, the first creation of anti-hydrogen, the discovery of CP violation, and of course the observation of the Higgs Boson.
+
+% 	The areas of most concern for this thesis include the LHC accelerator complex and the CMS experiment.
+
+% 	\begin{figure}
+% 		\begin{centering}
+% 			\includegraphics[scale=0.5]{figures/CERNMAP.png}
+% 		\par\end{centering}
+% 		\caption[Map of the CERN site]{\label{fig:CERNMAP}Map of the CERN site.  \textit{Map image courtesy of Apple Maps, Apple, Inc.}}
+% 	\end{figure}
+
+
+% \section{The Large Hadron Collider}
+% In order to study the extremely short lived particles allowed by the universe, physicists need to recreate the exotic and controlled environments necessary to produce them.  The Large Hadron Collider at CERN was designed to collide protons at a center-of-mass energy of 14 tera-electronvolts (TeV).  Four separate collision halls were built to house four separate experiments: two general purpose detectors, ATLAS and CMS, and 2 specialty detectors, the b-quark-studying LHCb and the Pb-Pb collision-studying ALICE.  Dedicated \textit{heavy ion} runs are allocated during scheduled beam time, during which the protons in the beam pipe are evacuated and replaced with lead ions in order to study quark-gluon plasmas.
+
+% 	\subsection{Principles of Design}
+% 		The LHC's central feature is its accelerator system composed of a closed ring of 1232 superconducting dipole magnets supercooled to 1.9 Kelvin, evacuated to \(10^{-10}\) Torr, and positioned around the ring to sub-centimeter precision, totaling 27 km.  Figure \ref{fig:dipolexsec} shows a cross section of the main accelerator component, the LHC dipole magnet.  Figure \ref{fig:dipoleField} shows the incredible precision required of the B-field in order to steer the protons.  Table \ref{table:LHCtraits} lists the design characteristics of the LHC.
+
+% 		Figure \ref{fig:acceleratorComplex} schematizes the CERN accelerator complex, including the dates that each accelerator came online.  The research accelerators of the past become the booster accelerators of the future.
+
+% 		%%%%%%%%%%%%%%%%%%%%% LHC Dipole Magnet XSec %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 		\begin{figure}
+% 		\begin{centering}
+% 			\includegraphics[scale=0.47]{figures/CH_2_a_The_LHC/dipolexsec.jpg}
+% 		\par\end{centering}
+% 		\caption[LHC Dipole Magnet Cross Section.]{\label{fig:dipolexsec}LHC Dipole Magnet Cross Section.  [CERN]}
+% 		\end{figure}
+% 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% 		%%%%%%%%%%%%%%%%%%%%% LHC Dipole Magnet Field %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 		\begin{figure}
+% 		\begin{centering}
+% 			\includegraphics[scale=0.47]{figures/CH_2_a_The_LHC/LHC-Dipole-Magnetic-Field.png}
+% 		\par\end{centering}
+% 		\caption[LHC Dipole Magnet B-Field.]{\label{fig:dipoleField}LHC Dipole Magnet B-Field. [CERN]}
+% 		\end{figure}
+% 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% 		%%%%%%%%%%%%%%%%%%%%% LHC Dipole Magnet XSec %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 		\begin{figure}
+% 		\begin{centering}
+% 			\includegraphics[scale=0.49]{figures/CH_2_a_The_LHC/lhc_long_1.jpg}
+% 		\par\end{centering}
+% 		\caption[Inside the LHC Accelerator Tunnel.]{\label{fig:lhcTunnel}Inside the LHC Accelerator Tunnel. [CERN]}
+% 		\end{figure}
+% 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LHC Design Traits %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 		\begin{table}
+% 			\caption{Summary of the LHC design characteristics.}
+% 			\label{table:LHCtraits}
+% 			\begin{center}
+% 				\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}l  l}
+% 					\hline
+% 						\multicolumn{2}{c}{Machine Properties} 					\\
+% 					\hline
+% 					Circumference	 					& 27 km				\\
+% 					Operating Temperature				& 1.9 K				\\
+% 					Energy Usage						& 120 MW			\\
+% 					Liquid Nitrogen Contained			& 10,800 Tons			\\
+% 					Liquid Helium Contained				& 60 Tons				\\
+% 					Tunnel Gradient					& 1.4\%				\\
+% 					Beam Interlock Safety Signals			& Over 10,000			\\
+% 					&\\
+% 					\hline
+% 						\multicolumn{2}{c}{Beam Properties}					\\
+% 					\hline
+% 					Collision Energy 					& 7 + 7 TeV			\\
+% 					\(\gamma\) Factor 					& 7461				\\
+% 					Luminosity						& \(10^{34}cm^{-2}s^{-1}\)	\\
+% 					Injection Energy 					& 450 GeV			\\
+% 					Beam Crossing Points  				& 4					\\
+% 					Number of Bunches					& 2800				\\
+% 					Number of Protons Per Bunch			& \(1.5\times 10^{11}\)	\\
+% 					Time Spacing Per Bunch				& 25 ns				\\
+% 					Beam Crossing Rate				& 40 MHz				\\
+% 					Beam Current						& 2 ${\times}$ 0.58 A	\\
+% 					Stored Energy						& 2 ${\times}$ 334 MJ	\\
+% 					Bunch Width at Intersection			& 16.7 \(\mu m^2\)		\\
+% 					Bunch Length at Intersection			& 11.24 cm			\\
+% 					Amount of Steel for Magnet Yokes		& 55,000 Tons			\\
+% 					Beam Velocity Magnitude				& 0.999999991 c		\\
+% 					&\\
+% 					\hline
+% 						\multicolumn{2}{c}{Magnet Properties}					\\
+% 					\hline
+% 					Dipole Magnetic Field Strength 		& 8.4 T				\\
+% 					Number of Main Dipole Magnets  		& 1232				\\
+% 					Number of Quadrupole Magnets  		& 858				\\
+% 					Number of Correcting Magnets			& 6208				\\
+% 					Total Number of Magnets				& \~9300				\\
+% 					Energy Stored Per Magnet			& 7 MJ				\\
+% 					\hline
+% 				\end{tabular*}
+% 			\end{center}
+% 		\end{table}
+% 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% 		%%%%%%%%%%%%%%%%%%%%% LHC Accelerator Complex %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 		\begin{figure}
+% 		\begin{centering}
+% 			\includegraphics[scale=0.43]{figures/CH_2_a_The_LHC/Cern-Accelerator-Complex.jpg}
+% 		\par\end{centering}
+% 		\caption[The CERN Accelerator Complex.]{\label{fig:acceleratorComplex}The CERN Accelerator Complex. [CERN]}
+% 		\end{figure}
+% 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% 	\subsection{Proton Injection}
+% 		Before any collisions can happen, a complex process of getting the protons to the interaction point must occur.  This sophisticated process begins with a tank of hydrogen gas, and not just any hydrogen gas, but hydrogen gas so pure the impurities are measured in parts per billion.  A 100 kV duoplasmatron collects the hydrogen gas and feeds it to a cathode chamber to strip off the electrons, yielding $\approx$ 70\% protons.   Magnetic fields compress and inject the protons at roughly 4,000 km/s (0.01$c$) into the LINAC2; see Figure \ref{fig:acceleratorComplex}.
+
+% 		The protons then leave the LINAC2 with an energy of 50 MeV (0.31$c$) and enter the Proton Synchrotron Booster (PSB).  The PSB accelerates the protons to 1.4 GeV (0.92$c$)\footnote{At this energy, a proton is about 2.5 times more massive than at rest.} and injects the protons into the Proton Synchrotron (PS)\footnote{The PS was CERN's first accelerator, brought online in 1959.}.  The PS accelerates the protons to 25 GeV (0.9993$c$)\footnote{A proton is now almost 27 times more massive than it is at rest.}.
+
+% 		The PS then hands the protons off to the Super Proton Synchrotron (SPS)\footnote{First turned on in 1976, this machine was responsible for the discovery of the W and Z bosons.} which accelerates the protons to 450 GeV (0.999998$c$)\footnote{A proton is now almost 500 times more massive than it is at rest.  Witness to the speed limit of the universe.}.
+
+% 		After the SPS, the protons are injected into the LHC, which during the 2011 run, brought the protons to 3.5 TeV, 4 TeV during the 2012 run, and will bring them to the full design energy of 7 TeV (0.999999991$c$) during the 2015 run.
+
+
+% 	\subsection{Beam Control}
+% 		Controlling the LHC beam is a precise and involved task, with literally thousands of inputs that need to be tuned.  I invite the reader to consult \textit{LHC Beam Stability and Feedback Control} \cite{beamControl} for the methods and techniques beam scientists use to provide clean proton beams to the experiments.
+
+% 		The LHC accelerator machine uses a system of alternating dipole and quadrupole magnets to accelerate and focus the proton beam.
+
+% 		Figure \ref{fig:rfPhase} shows a longitudinal phase diagram for an accelerating RF system.  Particles are accelerated in bunches located in the blue region of Figure \ref{fig:rfPhase}, representing stability in phase space.
+
+
+% 		%%%%%%%%%%%%%%%%%%%%%%%% RF  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 		\begin{figure}
+% 		\begin{centering}
+% 			\includegraphics[scale=0.37]{figures/CH_2_a_The_LHC/RF_Phase.png}
+% 		\par\end{centering}
+% 		\caption[Longitudinal phase diagram for an accelerating RF system]{\label{fig:rfPhase}Longitudinal phase diagram for an accelerating RF system. [CERN]}
+% 		\end{figure}
+% 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% 		Some of the more bizarre concerns LHC beam physicists have to consider are thermal heating of the beam-pipe support girders, and distortion of the earth's crust due to lunar and solar gravitational forces.  The lunar perturbation affect has a periodicity of \(\approx\)25 hours.  The solar perturbation period is 24 hours with an effect \(\approx\)45\% that of the moon.  The secondary terrestrial tides result in a local shifting of the ground by \(\Delta a\)/\(a\) on the order of \(10^{-8}\) as shown in Figure \ref{fig:lunarSolar}.  The largest impact on the LHC occurs during \textit{spring tides}, when the sun and moon are on the same side of the Earth.  This results in a shift of the proton energy which causes the protons to move on a dispersion orbit on the order of 150\(\mu\)m.  This and other perturbations are compensated with beam stabilization techniques that include machine operator control tools like RF tuning, as well as automatic orbit feedback systems using beam position monitors and dipole corrector magnets.
+
+
+% 		%%%%%%%%%%%%%%%%%%%%%%%% Lunar Solar  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 		\begin{figure}
+% 		\begin{centering}
+% 			\includegraphics[scale=0.4]{figures/CH_2_a_The_LHC/LunarSolar.png}
+% 		\par\end{centering}
+% 		\caption[Tidal deformation of the Earth's surface (left) and resulting LHC tunnel deformation (right).]{\label{fig:lunarSolar}Tidal deformation of the Earth's surface (left) and resulting LHC tunnel deformation (right).  This diagram is not to scale. [CERN]}
+% 		\end{figure}
+% 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% 		%%%%%%%%%%%%%%%%%%%%%%%% CMS Detector  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 		\begin{figure}[H]
+% 		\begin{centering}
+% 			\includegraphics[scale=0.28]{figures/CH_2_b_CMS/CMS.jpg}
+% 		\par\end{centering}
+% 		\caption[The CMS detector in the experimental cavern.]{\label{fig:CMS}The CMS detector in the experimental cavern. [CERN]}
+% 		\end{figure}
+% 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \section{The Compact Muon Solenoid Detector}
+% The CMS Detector is the main experimental apparatus responsible for collecting the data used for the analysis chapter of this thesis, and whose detector elements are the subject of the hardware chapter.  The \textit{Technical Design Report} (TDR)\cite{TDR} of the CMS detector is an excellent resource for those interested in a more thorough treatment of the detector elements.
+
+% 	\subsection{Principles of Design}
+% 		The CMS detector is one of two \textit{general purpose} detectors, along with ATLAS, on the LHC.  CMS is a \(4\pi\) detector, meaning in principle it is able to reconstruct collisions with full r/rho/phi coverage around the interaction point.  CMS is an initialism for Compact Muon Solenoid:
+% 		\bigskip
+% 		\begin{description}
+% 			\item[Compact] for its density of detector elements.
+% 			\item[Muon] due to the large role, both in the physical design and the physics goals, that muons and the muon detectors play.
+% 			\item[Solenoid] for the massive 4 Tesla magnet system at the heart of the detector.
+% 		\end{description}
+
+% 		\bigskip
+
+% 		Figure \ref{fig:CMS} is an image of the CMS detector, without its end caps in place\footnote{A main design goal of the CMS collaboration was to ensure, despite its compactedness, easy access to detector elements for upgrade and maintenance.  Each slice of CMS can be moved independently by forcing pressurized air through its feet, giving it just enough lift to be pushed around.}.  It is the view of the detector a proton would see, looking right down the beam line.  Figure \ref{fig:CMSLabelled} is an isometric cutaway view of CMS, with each of its subdetectors labelled.
+
+% 		A common coordinate system is defined in CMS for locating elements in the detector for use within software and for engineering purposes.
+
+% 		\begin{itemize}
+% 			\item The \textit{z-axis} is defined as the axis along the beam-line, with $z=0$ at the interaction point.  The positive z-direction is from side R56 towards R54, or directionally West towards the Jura mountains.
+% 			\item The \textit{x-axis} points towards the center of the LHC.
+% 			\item The \textit{y-axis} is defined as straight up from the interaction point.
+% 			\item The angle $\phi$, referred to as the \textit{azimuthal angle}, is measured from the $x$-axis in the $x-y$ plane, where $\phi=0$ points towards the center of the LHC ring with radial component $r$.
+% 			\item The polar angle $\theta$ is defined in the $rz$ plane.
+% 			\item The \textit{pseudorapidity} is defined as $\eta = -$ln (tan$(\theta/2)$), and is useful due to the Lorentz invariance of the opening angle between particles.
+% 		\end{itemize}
+
+% 		The sub-detectors of CMS are the tracker, electromagnetic calorimeter (ECAL), hadronic calorimeter (HCAL), and muon system.  As a particle travels from the interaction point through the detector, each detector subsystem is responsible for a part of its reconstruction.  See Figure \ref{fig:particleFlow} for a diagram of the particle flow in CMS and how different particles respond to the different subdetectors.
+
+% 		%%%%%%%%%%%%%%%%%%%%%%%% CMS Detector Labeled %%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 		\begin{figure}
+% 		\begin{centering}
+% 			\includegraphics[scale=0.5]{figures/CH_2_b_CMS/cms_labelled.png}
+% 		\par\end{centering}
+% 		\caption[Cutaway isometric view of the CMS detector]{\label{fig:CMSLabelled}Cutaway isometric view of the CMS detector. [CERN]}
+% 		\end{figure}
+% 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% 		%%%%%%%%%%%%%%%%%%%%%%%%  Particle Flow  %%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 		\begin{figure}
+% 		\begin{centering}
+% 			\includegraphics[scale=0.4]{figures/CH_2_b_CMS/CMS_Slice.png}
+% 		\par\end{centering}
+% 		\caption[Particle flow in the CMS Detector.]{\label{fig:particleFlow}Particle flow in the CMS Detector. [CERN]}
+% 		\end{figure}
+% 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% 		The tracker system is designed to record precision tracks of the particles to help identify individual particle momentum by precisely fitting their trajectories.  The ECAL and HCAL systems are designed to measure the energies of the particles.  The muon system has the very difficult job of reconstructing muons.  The detector software has to stitch the signals from each of these detectors together to create the reconstructed particle objects used for analysis.
+
+
+% 		%%%%%%%%%%%%%%%%%%%%%%%% CMS Tracker System %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 		\begin{figure}[H]
+% 		\begin{centering}
+% 			\includegraphics[scale=0.4]{figures/CH_2_b_CMS/CMS_Tracker.png}
+% 		\par\end{centering}
+% 		\caption[The CMS Tracking System viewed along the beam line.]{\label{fig:CMSTracker}The CMS Tracking System viewed along the beam line. [CERN]}
+% 		\end{figure}
+% 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% 	\subsection{Inner Tracker}
+% 		The main goal of the tracking system in CMS is to record the initial trajectories of the particles prior to reaching the calorimeter systems allowing the precise measurement of the particles' paths and momentums.
+% 		The inner tracker system has a total active area of over 200m$^2$, and is composed of two main subsystems:  the pixel detector (within 0.2m of the beam pipe) and the silicon strip detector (between 0.2-1.2m from the beam pipe), as seen in Figure \ref{fig:CMSTracker}.
+% 		The pixel detector is composed of 1440 pixel modules totaling 66 million individual pixels.  The silicon strip detector contains 15,148 modules containing 9.3 million readout channels.
+
+% 		Precise reconstruction of collision vertices is a major tool to limit pileup contamination.  Pileup is a term used to describe the amount of extemporaneous particles in a detector beyond those of interest in the main event.  Pileup is due to the nature of proton-proton collisions and the high luminosity of the collision environment, causing several interactions in each event.  The higher the beam luminosity, the greater the pileup.  The tracking system is used to precisely reconstruct interaction vertices, limiting the effects of pileup.
+
+% 		Because of its close proximity to the beam line and the high flux of particles to which it is exposed, the tracker system will be the first CMS sub-detector to be replaced due to radiation damage.  Despite the peril of its proximity, its closeness to the interaction point is the tracker system's greatest asset.
+
+% 		%%%%%%%%%%%%%%%%%%%%%%%% CMS Tracker System2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 		\begin{figure}
+% 		\begin{centering}
+% 			\includegraphics[scale=0.3]{figures/CH_2_b_CMS/CMS_Tracker2.png}
+% 		\par\end{centering}
+% 		\caption[The CMS Tracking system schematic.]{\label{fig:CMSTracker2}The CMS Tracking system shematic.  Each line represents a layer of active detector elements.  The submodules listed represent the inner barrel (TIB), outer barrel (TOB), inner disc (TID), and endcap regions (TEC). [CERN]}
+% 		\end{figure}
+% 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% 		%%%%%%%%%%%%%%%%%%%%%%%% CMS Strip Tracker %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 		\begin{figure}
+% 		\begin{centering}
+% 			\includegraphics[scale=0.45]{figures/CH_2_b_CMS/CMS_StripTracker.jpg}
+% 		\par\end{centering}
+% 		\caption[The silicon strip \textit{inner barrel} of the CMS tracking system.]{\label{fig:CMSStripTracker}The silicon strip \textit{inner barrel} of the CMS tracking system. [CERN]}
+% 		\end{figure}
+% 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% 		%Ecal picture Francesca Cavallari
+
+
+% 		%%%%%%%%%%%%%%%%%%%%%%%% CMS ECAL Installation %%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 		\begin{figure}[H]
+% 		\begin{centering}
+% 			\includegraphics[scale=0.5]{figures/CH_2_b_CMS/CMS_ECAL_Install.jpg}
+% 		\par\end{centering}
+% 		\caption[Italian physicist Francesca Cavallari beneath the ECAL Barrel.]{\label{fig:CMSEcalInstall}Italian physicist Francesca Cavallari beneath the ECAL Barrel. [CERN]}
+% 		\end{figure}
+% 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% 	\subsection{Electromagnetic Calorimeter}
+% 		The ECAL Barrel (EB) system's central detector element is a 2.2 $\times$ 2.2 $\times$ 23 cm$^3$  lead tungstate (PbWO$_4$) crystal, read out by avalanche photo diodes (APDs) with an active area of 5 $\times$ 5 mm$^2$.  The response of an APD to an electron changes by 3.8\%/\degree C, requiring a water cooling system in ECAL to maintain a nominal temperature of 18\degree C, and be monitored to a precision of $\pm$0.05\degree C.
+
+% 		The ECAL Endcap (EE) system also uses lead tungstate crystals with a slightly different geometry, 2.86 $\times$ 2.86 $\times$ 22 cm$^3$, read out with vacuum phototriodes (VPT).
+
+% 		Figure \ref{fig:CMSECALcutaway} is a schematic view of the ECAL system, showing the `D' shaped endcaps (each half referred to as a `\textit{Dee}'), and the central barrel.  The cutaway also shows off the PbWO$_4$ crystal arrangement visible as the finely segmented regions in the upper cutaway of the barrel, and horizontally oriented along the edge of the dee end-cap, on the left of the schematic.  Notice the change in gradient of the crystals as they get further from the interaction point (the center of the 3D object).
+
+
+% 		%%%%%%%%%%%%%%%%%%%%%%%% CMS ECAL %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 		\begin{figure}[H]
+% 		\begin{centering}
+% 			\includegraphics[scale=0.35]{figures/CH_2_b_CMS/CMS_ECAL_cutaway.png}
+% 		\par\end{centering}
+% 		\caption[ECAL cutaway showing endcap (EE) and barrel (EB) subdetectors.]{\label{fig:CMSECALcutaway}ECAL cutaway showing endcap (EE) and barrel (EB) subdetectors. [CERN]}
+% 		\end{figure}
+% 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% 		The ECAL system contains 75,848 PbWO$_4$ crystals in order to have high energy resolution and reconstruction ability.  A charged particle passing into the crystal will cause a shower which in turn will cause the crystal to scintillate, depositing its light into the photodetector at the back of the crystal.  See Figure \ref{fig:CMSECALShower} for a simulation of a 24 GeV electron entering a crystal.
+
+
+% 		%%%%%%%%%%%%%%%%%%%%%%%% CMS ECAL Shower %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 		\begin{figure}
+% 		\begin{centering}
+% 			\includegraphics[scale=0.8]{figures/CH_2_b_CMS/CMS_ECAL_Shower.png}
+% 		\par\end{centering}
+% 		\caption[ECAL PbWO$_4$ crystal shower simulation of a 24 GeV $e^-$.]{\label{fig:CMSECALShower}ECAL PbWO$_4$ crystal shower simulation of a 24 GeV $e^-$. [CERN]}
+% 		\end{figure}
+% 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% 	%%%%%%%%%%%%%%%%%%%%%%%% CMS HCAL Shells %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 	\begin{figure}[H]
+% 	\begin{centering}
+% 		\includegraphics[scale=0.2]{figures/CH_2_b_CMS/CMS_HCAL_shells.jpg}
+% 	\par\end{centering}
+% 	\caption[Russian Navy shells used to create the brass tiles of HCAL.]{\label{fig:CMSHCALShells}Russian Navy shells used to create the brass tiles of HCAL.  Over one million brass shell casements were melted down for use in the HCAL detector.  [CERN]}
+% 	\end{figure}
+% 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% 	\subsection{Hadronic Calorimeter}
+% 	The HCAL system is composed of three main subsystems\cite{HCAL}:
+% 	\begin{description}
+% 		\item[HB:] Hadronic Barrel $\eta < 1.3$
+% 		\item[HO:] Hadronic Outer $\eta < 1.3$
+% 		\item[HE:] Hadronic Endcap $1.3 > \eta < 3$
+% 		\item[HF:] Hadronic Forward $3 > \eta < 5.2$
+% 	\end{description}
+% 	\bigskip
+
+% 	Figure \ref{fig:CMSHCALShells} is an image of a Russian crew responsible for decommissioning over one million Russian Navy brass shell casements leftover from WWII.  The Russia and Dubna Member States (RDMS) collaboration was responsible for sourcing the material to be used in HCAL.  Military grade brass turned out to have exactly the right properties, so an agreement was struck between the Russian Navy and CMS to turn over the more than one million shells\footnote{This actually was not enough material to meet the 650 tons of brass required by HCAL.  The remaining material was donated by the US, totalling over \$1 million USD.}.
+
+% 	HCAL is a sampling calorimeter composed of brass wedges embedded with scintillating tiles.  Wavelength shifting fibers are embedded in the scintillator tiles to carry the light generated in the tile by the particles to the hybrid photodiodes for signal readout.  The plastic scintillator tiles will not withstand the radiation environment;  replacement technology is being actively researched.
+
+
+% 	%%%%%%%%%%%%%%%%%%%%%%%% CMS Muon System %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 	\begin{figure}[H]
+% 	\begin{centering}
+% 		\includegraphics[scale=0.4]{figures/CH_2_b_CMS/CMS_MuonSystem.png}
+% 	\par\end{centering}
+% 	\caption[A segment of the CMS muon system.]{\label{fig:CMSMuonSystem}A segment of the CMS muon system.  RPCs and DTs (silver) interspersed between the iron magnet return yokes (red). [CERN]}
+% 	\end{figure}
+% 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% 	\subsection{Muon System}
+% 		A central feature of the CMS detector is the muon detector system; see Figure \ref{fig:CMSMuonSystem}.  The muon system can be divided into three main sub-units:
+% 		\begin{description}
+% 			\item[RPC:] Resistive Plate Chambers
+% 			\item[DT:]	Drift Tubes
+% 			\item[CSC:] Cathodic Strip Chambers
+% 		\end{description}
+% 		\bigskip
+
+% 		The RPCs and DTs are used in the barrel region of CMS, while the RPCs and CSCs are used in the end-cap region, see Figure \ref{fig:CMSMuonSchematic}.  DTs cannot be used in the end-cap region due to the non-homogeneity of the magnetic field; see Figure \ref{fig:CMSBField}.
+
+
+% 		%%%%%%%%%%%%%%%%%%%%%%%% CMS Muon System Schematic%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 		\begin{figure}
+% 		\begin{centering}
+% 			\includegraphics[scale=0.4]{figures/CH_2_b_CMS/CMS_Muon_schematic.png}
+% 		\par\end{centering}
+% 		\caption[Longitudinal quadrant view of the CMS muon system.]{\label{fig:CMSMuonSchematic}Longitudinal quadrant view of the CMS muon system. [CERN]}
+% 		\end{figure}
+% 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% 		%%%%%%%%%%%%%%%%%%%%%%%% CMS Magnet System %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 		\begin{figure}
+% 		\begin{centering}
+% 			\includegraphics[scale=0.4]{figures/CH_2_b_CMS/CMS_Solenoid.png}
+% 		\par\end{centering}
+% 		\caption[Simulated strength (left) and field lines (right) of the B-field in CMS.]{\label{fig:CMSBField}Simulated strength (left) and field lines (right) of the B-field in CMS.}
+% 		\end{figure}
+% 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% 	\subsection{Trigger}
+% 		The target event rate for recorded data in CMS is 100Hz.  The LHC is designed to deliver more than 20 interactions every 25 ns.  The electronics operate at a frequency of $\sim 10^9$Hz and have about $\sim 10^8$ channels to be readout, creating raw data at a rate on the order of 100 TB every second.  The CMS trigger system has the daunting task of reducing this data rate to 100MB/s without discarding meaningful events.  This job is left to the Level 1 (L1) Trigger and the High Level Trigger (HLT).
+
+% 		The HLT can only handle a data input rate of 100 kHz, requiring the L1 trigger to reduce the raw detector data rate by a factor of 10,000.  The L1 trigger processes an event every 3.2$\mu$s, requiring the detector to store a buffer of events totaling 128 bunch crossings.  The L1 trigger makes its decisions taking input from the calorimeter trigger, the muon trigger, the global trigger, and the TTC (timing, trigger, and control system).
+
+% 		The HLT has roughly 1 second to make a final decision on an event passed by the L1 trigger, and can therefore incorporate the full calorimeter granularity and tracker system into the decision making process.  The goal here is to reduce the event rate further by a factor of 1,000.
+
+% 	\subsection{CMS Software}\label{Section:CMSSW}
+% 		This section describes the software tools used for the studies contained within this thesis.  The CMS Experiment has developed a coherent set of data simulation, processing, and analysis software known as CMS Software, or CMSSW.  CMSSW is a modular framework written almost entirely in C++ and Python.  CMSSW was developed entirely alongside the ROOT analysis framework.  ROOT is an object oriented analysis package utilizing objects to contain data.  This makes the task of handling CMS data much simpler and more powerful.
+
+% 		The backbone of the CMSSW system is a class-based architecture known as The Event Data Model, or EDM.  Central to CMSSW is the idea of an \textit{Event} in CMS, in both the literal and virtual sense.  For example, a real muon reconstructed in CMS is referred to as a \textit{physics object} in both the muon software class and in the actual detector.
+
+% 		Information in an event can only be manipulated independently by discrete \textit{modules}, where most often the modules need to be executed on the data in a particular order, as the necessary data formats may not yet exist in the event.  The various modules can be grouped into six separate categories, as follows:
+
+% 		\begin{description}
+% 			\item[Source:] The source modules most generally import RAW data from the detector in the form of a ROOT file in the ROOT data format, though it is modular enough to take in custom data formats.  In the case of MC generation, the source is used as a container to hold the generated events before being processed by other modules.
+
+% 			\item[EDProducer:]  RAW data from CMS is generally not very useful to physicists doing analysis, so EDProducers are used to produce \textit{Event Data}.  Example packages would turn raw hits from the Tracker into a collection of reconstructed \textit{tracks}, which could be used by another EDProducer module to reconstruct an electron from the tracks.  In this case, the causal nature of the EDProducers is apparent.
+
+% 			\item[EDFilter:] Often times a user will want to remove an event or kill a process that is not useful.  The EDFilter reads a single event and returns a boolean that is used by the framework to determine whether or not to continue the process.  An example is the process \textit{StopAfterNEvents}, which will kill the \textit{process path} after reaching the critical number of events set by the user.  Another, NTrackFilter, might kill the event if too many tracks are reconstructed.
+
+% 			\item[EDAnalyzer:] Once the data has been processed and the preferred data formats obtained, a physicist will want to analyze the events without adding or removing information to the event.  An EDAnalyzer module is used to analyze events without altering them, and is typically used to create output histograms in the ROOT format, although any format can be used if programmed by the user.
+
+% 			\item[EDLooper:] Occasionally a physicist will find themselves wanting to tune some parameters and re-processing the source multiple times.  The EDLooper is used for this.
+
+% 			\item[OutputModule:] After all analysis is done, an OutputModule is used to write the data from an event to an external source.  Most commonly, \textit{PoolOutputModule} is used to write the output data to a ROOT file.
+% 		\end{description}
+
+% 		\bigskip
+% 		All object classes and data formats are defined within a given CMSSW release, with versions ranging from CMSSW\_1\_1\_1 up to CMSSW\_7\_0\_0 and beyond, with custom releases for studying specific features or testing upgrades of CMS routinely developed and maintained.  CMSSW is housed in a git repository on GitHub\cite{github}.  The analysis in this thesis uses CMSSW\_5\_3\_8.
+
+% 	\subsection{CMSSW and CMS Simulation}\label{section:fullsim}
+% 		The entire CMS detector has been modeled in the software package GEANT4 and interfaced with CMSSW.  There are two main detector simulation and modeling packages:
+% 		\begin{itemize}
+% 			\item Full Simulation
+% 			\item Fast Simulation
+% 		\end{itemize}
+
+% 		Full simulation is termed \textit{fullSim} and encodes every aspect of CMS into GEANT4, from cabling, detector materials, to detector component efficiencies and noise simulations.  This can make for extremely long simulation run-times.  As a particle is stepped through the detector, each property is simulated, from its interaction with the detector, to possible showering, and the resulting detector response.  A single event can take as much as 20 minutes to be modeled.  Considering that a minimum event set is generally required to be on the order of five thousand events, it can take more than 24 hours to generate a dataset of this size.
+
+% 		Fast simulation is nicknamed \textit{fastSim} and is a parameterization of detector characteristics based on several runs of the more realistic fullSim, test beam results, and other studies.  The advantage is lower run times for simulations while maintaining real detector responses.  Instead of simulating the detector response with every step a particle takes, a parameterization is used that can range from a lookup table, to a functional, or an ntuple.
+
+
+% \section{Particle Identification}
+% 	The CMS Particle Object Groups (POG) are responsible for determining how the detector signals from the previously described detector elements should be reconstructed into real physics objects to be used by physicists in their analysis.  The following describes the processes involved with determining the particles in the final state of the search described in Chapter \ref{HMNSearch}.
+
+% 	\subsection{Muon Reconstruction}
+% 		There are three main methods to reconstruct muons.  The first uses the CMS tracker, referred to as \textit{tracker muons}.  The second uses the main muon subsystem consisting of the RPCs, DTs, and CSCs, referred to as \textit{standalone muons}.  The third and most complete method combines the information from the tracker system and the muon system.
+
+% 		\begin{description}
+% 		\item[Tracker Muons:]  Track seeds produced in the PIXEL detector are propagated to the rest of the detector volume by connecting the tracks to form a trajectory.
+
+% 		\item[Standalone Muons:] Muon hits in the individual layers of RPCs and DTs or CSCs are stitched together to form trajectories.
+
+% 		\item[Global Muons:]  A global fit is applied to the trajectory created between hits in the tracker system and the muon system.
+% 		\end{description}
+
+% 		The equations of motion for a charged particle (like the muon) through CMS is written as:
+% 		\begin{equation}
+% 			\frac{d^2\vec{r}}{ds^2} = \frac{q}{p}\frac{d\vec{r}}{ds}\times \vec{B}(\vec{r})
+% 		\end{equation}
+
+% 		Given that $\vec{B} = B\hat{z}$ in CMS and choosing $ds^2 = dx^2 + dy^2 + dz^2$, the equations of motion can be written as:
+% 		\begin{equation}
+% 			x(s) = x_0 + R_H[cos(\phi_0 + h\cdot s\cdot cos(\lambda / R_H) - cos(\phi_0))]
+% 		\end{equation}
+% 		\begin{equation}
+% 			y(s) = y_0 + R_H[sin(\phi_0 + h\cdot s\cdot cos(\lambda/R_H) - sin(\phi_0))]
+% 		\end{equation}
+% 		\begin{equation}
+% 			z(s) = z_0 + s\cdot sin(\lambda)
+% 		\end{equation}
+% 		\begin{equation}
+% 			R_H = \frac{p\cdot cos(\lambda)}{qB}
+% 		\end{equation}
+% 		\begin{equation}
+% 			\lambda = arcsin(\frac{dz}{ds})
+% 		\end{equation}
+
+% 		where $R_H$ is the helix radius, $\phi_0$ is the azimuthal angle with respect to the helix axis, and $\lambda$ is the slope angle.
+
+% 		This general method is applied in each muon reconstruction algorithm, along with the Kalman filter extrapolation procedure \cite{kalman} which matches a set of hits in one layer to hits in a neighboring layer with algorithms that account for uncertainties (like position resolution) and multiple scattering.
+
+% 		This analysis requires muons to both be \textit{global} muons and satisfy so-called \textit{particle-flow ID} requirements, explained in Section \ref{sec:particleFlow}.
+
+% 	\subsection{Jet Reconstruction}\label{section:jets}
+% 		Jets are complex objects that show up in the detector as large deposits of energy in the calorimeters, resulting from the hadronization of hard parton scattering, even including photons and electrons.  It is therefore important for the CMS software to do a good job in reconstructing and categorizing the jet objects in the CMS detector.
+
+% 		There are several algorithms used to tag jets; this analysis uses the \textit{anti-$k_T$} algorithm.  Each algorithm uses a combination of hits in cells from ECAL and HCAL in neighboring ($\eta,\phi$) space, referred to as calorimeter \textit{towers}.  How the towers are clustered together to form jets depends on the algorithm used.
+
+% 		The anti-$k_T$ algorithm imagines a jet as a cone shape originating from the interaction point.  The two jets chosen for the search described in Section \ref{HMNSearch} require a cone with an angular radius $\Delta R = \sqrt{(\Delta \eta)^2 + (\Delta \phi^2)}$ of 0.5.
+
+% 		The anti-$k_T$ algorithm combines two other general jet clustering algorithms, ones based on iterative cone models and others based on sequential recombination ($k_T$, Cambridge/Aachen).
+
+% 	\subsection{Jet Energy and Resolution Scales}\label{JERC}
+% 		Calorimeters do not respond linearly to particles as a function of their energy, making it a challenge to translate the measured energy in the detector to the true particle energy.  In CMSSW, several tools are available to apply corrections to the jet energies, developed by the Jet Energy Resolution and Corrections Subgroup (JERC).
+
+% 		The two main corrections used in this analysis apply corrections to the jet energy scale (JES) and the jet energy resolution (JER).  The JES can be thought of as the \textit{accuracy} of the jet energy reconstruction, whereas the JER can be thought of as the \textit{precision} of the jet energy reconstruction.  Reference \cite{jesjer} goes into detail on how the jet energy corrections are calculated in CMS.  The JERC maintains an up-to-date list of corrections and data/MC scale factors for use in CMS analyses\cite{jesgroup}.
+
+% 	\subsection{b-Tag Jets}\label{section:btagJets}
+% 		Jets created from $b$-quarks are tagged in CMS with some very clever algorithms, each taking advantage of the b-quark's unusually long lifetime ($\sim 10^{-12}$ s).  The tagging methods generally involve reconstructing the \textit{displaced vertices} between the original collision vertex and the vertex of the jet created from the decay of the b-quark.
+
+% 		This analysis discriminates b-tag jets using the \textit{Combined Secondary Vertex} (CSV) medium working point, as defined by the b-tag POG\cite{btagCSV}.  Briefly, the CSV algorithm considers a number of variables when discriminating potential `b' events from `non-b' events.  The following is a list of discriminating variables used in the CSV algorithm:
+
+% 		\begin{itemize}
+% 			\item Vertex category (real, pseudo, no vertex).
+% 			\item Flight distance significance in the transverse plane.
+% 			\item Vertex mass.
+% 			\item Number of tracks at vertex.
+% 			\item Energy ratio between all tracks in the jet and tracks at the vertex.
+% 			\item Pseudorapidities of the tracks at the vertex with respect to the jet axis.
+% 			\item 2D interaction point significance of the first track that raises the invariant mass above the charm threshold of 1.5 GeV/c$^2$.
+% 			\item 3D interaction point significances for each track in the jet.
+% 			\item The number of tracks in the jet.
+% 		\end{itemize}
+
+% 	\subsection{Particle Flow}\label{sec:particleFlow}
+% 		CMS physicists have implemented a method known as \textit{particle flow} (PF) that attempts to combine the information from \textit{all} detector elements in order to reconstruct all detectable types of particles:  electrons, muons, photons, and jets.  Prior to PF, each type of particle was reconstructed using their own individual algorithms.  Particle flow is a global algorithm designed to reconstruction particles using information from each CMS system.
+
+% 		The PF algorithm starts by reconstructing the \textit{tracks} and \textit{clusters} in the detector.  After the tracking algorithms and clustering algorithms are finished, the PF \textit{link} algorithm iterates through the tracks to compare with clusters in the calorimeters and hits in the muon system.  When clusters and tracks overlap, filters are applied to ensure a quality link is made.
+
+% 		PF objects are superior to physics objects reconstructed using only data from the individual subdetectors, as one might imagine.  See reference \cite{particleFlow} for performance characteristics of jet reconstruction, comparing \textit{CALO jets} (jets reconstructed from only the calorimeters) to \textit{PF jets}.
+
+% 		The analysis described in Section \ref{HMNSearch} uses PF ID for all physics objects.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
