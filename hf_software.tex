@@ -5,8 +5,7 @@ specifically, it is to compute calibration coefficients (so called "HF
 Gains", not to be confused with PMT gains), validate them, and upload the
 results to the offline database for further use. All the data files
 collected during these campaigns are stored on disk at CERN in the EOS
-storage system, currently in /eos/cms/store/group/comm\_hcal/LS1, with the
-naming convention of USC\_(run number).
+storage system.
 
 The general content of the data files is reduced to include pertenant
 information for calibration, such as the indexes of each channel powered
@@ -25,12 +24,11 @@ far away. To gaurantee that the radioactive source is sufficeintly distant
 from a given tower measuring background data, we require the following of
 each tower's $\eta$ index (IEta) for a wedge half with a given $\phi$
 index (IPhi):
-
 \begin{center}
    \begin{eqnarray}
       \label{eq:Tower_Cuts}
-      \textrm{Source present in tower with IEta = 29: Background recorded in towers with IEta $\ge$ 34,} \\
-      \textrm{Source present in tower with IEta = 39: Background recorded in towers with IEta $<$ 34.} \nonumber
+      \textrm{Source in IEta = 29: Record Background for IEta $\ge$ 34,} \\
+      \textrm{Source in IEta = 39: Record Background for IEta $<$ 34.} \nonumber
    \end{eqnarray}
 \end{center}
 
@@ -42,16 +40,8 @@ contains all four capacitors' histograms for each QIE, then we loop over all
 events recorded for a given channel and sum together all four capacitors'
 histograms. To eliminate extraneous data resulting from energy deposition
 in the optical fiber bundles as the radioactive source has yet to fully
-penetrate the absorber, we restrict the loop over events as follows:
-
-\begin{center}
-   \begin{equation}
-      \label{eq:Reel_Cuts}
-      \textrm{Tube Start + 300 mm $<$ Source Reel Position $<$ Tube End - 300 mm}
-   \end{equation}
-\end{center}
-
-where Tube Start and Tube End are the distances from the source driver at
+penetrate the absorber, we restrict the loop over events when source is positioned strictly inside of the calorimeter: [start + 300 mm, end - 300 mm],
+where start and end are the distances from the source driver at
 which the given source tube begins and ends within the absorber, respectively.
 The reason we also exclude data when the radioactive source nears the Tube End
 position is due to extraneous data resulting from some optical fibers extending
@@ -125,7 +115,7 @@ ${\langle{Q}\rangle}^{(s)}_{c}$, as follows:
 To account for energy leakage, due to the restraints on geometric
 containment of the radiated energy from the radioactive source within the tower,
 we must apply the geometric correction factors, $G_c$~, listed in
-Table~\ref{tab:HF_GCFactors} as follows:
+Table~\ref{tab:hf_description_gcfactors} as follows:
 
 \begin{center}
    \begin{equation}
@@ -140,8 +130,8 @@ actual HF Gains), the source energy deposition had to be extracted from 2013 dat
 
 \subsection{Extracting Source Energy Deposition}
 The source energy deposition is the amount of energy deposited by the source in
-units of GeV/25\unit{ns}. The actual source signal is measured (computed) in
-ADC/25\unit{ns}. Therefore, we need a conversion factor GeV/ADC, which comes from
+units of GeV/25 ns. The actual source signal is measured (computed) in
+ADC/25 ns. Therefore, we need a conversion factor GeV/ADC, which comes from
 Run I Conditions. To extract Run I HF Gains and QIE Slopes from the Conditions DataBase (CondDB), we used Run 203777. Since 2013 sourcing was performed with the old PMTs, the
 Calibration Coefficients ${CC}^{Run I}_{c}$~ (GeV/ADC) used during Run I were used to convert
 the signal measured in ADC/25\unit{ns} into GeV/25\unit{ns}. It is important to point out that in our calculation of energy deposition, we didn't include response corrections. That is because we would like to preserve Run I calibration for PMT gains, when extractin the energy, but not the HF response, which is affected by other corrections accumulated in response corrections.
@@ -184,21 +174,17 @@ different from the one to be used, we have to convert the actual source signals 
 the needed voltage, by using gains for the respective voltages. Another factor to
 account for is the firmware setting, either 1TS or 2TS. Taking these 2 arguments
 into account, we compute a source signal at OV2 in units of ADC/25\unit{ns}:
-
 \begin{center}
 	\begin{equation}
 		\label{eq:Sig_OV2}
 		{\langle{Q}\rangle}^{Geom,OV2}_{c} = \frac{{\langle{Q}\rangle}^{Geom}_{c}}{nTS} \times \frac{{GAIN}^{OV2}}{{GAIN}^{OV1,OV1+100}}.
 	\end{equation}
 \end{center}
-
 Finally, we compute the actual Calibration Coefficients (HF Gains) ${CC}^{Run II}_{c}$:
-
 \begin{center}
 	\begin{equation}
 		\label{eq:HF_Gains}
 		{CC}^{Run II}_{c} = \tau \times \frac{{\langle{E}\rangle}^{2013}}{{\langle{Q}\rangle}^{Geom, OV2}_{c}}.
 	\end{equation}
 \end{center}
-
 where $\tau$ is the source radioactivity correction factor, which accounts for exponential source activity decrease. We take 2013 sourcing date as the starting point and compute the decrease for April and July 2014 with respect to that date.

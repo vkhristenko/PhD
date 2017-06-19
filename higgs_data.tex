@@ -2,7 +2,6 @@
 
 \subsection{Collision Datasets}
 For the purpose of our search we use 35.9 fb$^{-1}$ of CMS collisions data collected over the course of 2016 datataking campaign. The full list of the datasets used is presented in the table~\ref{table:higgs_data_collisiondatasets}. The choice of SingleMuon stream (over DoubleMuon) is dictated by having intrinsically higher efficiency of triggering a single muon rather than two muons per a given event.
-
 \begin{table}
     \caption{Datasets for proton-proton collisions recorded at $\sqrt{s}=13$~TeV by CMS at LHC in 2016.}
     \label{table:higgs_data_collisiondatasets}
@@ -25,20 +24,19 @@ For the purpose of our search we use 35.9 fb$^{-1}$ of CMS collisions data colle
 
 \subsection{Monte Carlo Datasets}
 For the Standard Model Higgs Boson Signal, we use samples with three different hypothetical Higgs Boson masses. Since we are performing a search and are leaving the mass floating, we need a way to probe various hypotheses. Using three mass points (samples) we model parameters of each provided mass hypothesis and further perform interpolation to deduce the parameters for any mass point that falls within our range. Table~\ref{table:higgs_data_signaldatasets} provides a summary of CMS signal datasets used along with cross-section of each production process.
-
 \begin{table}
-    \caption{Standard Model 125 GeV Higgs Boson Signal Datasets for 13 TeV. Dataset names for 120/130 GeV are omitted for brevity. Moriond 2017 conditions are used (omitted the conditions specification, replaced by XXX).}
+    \caption{Standard Model 125 GeV Higgs Boson Signal Datasets for 13 TeV. Dataset names for 120/130 GeV are omitted for brevity. Moriond 2017 conditions are used (omitted the conditions specification for brevity).}
     \label{table:higgs_data_signaldatasets}
     \begin{center}
         \begin{tabular}{ l  c}
             \hline
             Datasets & $\sigma$ (pb)\\
             \hline
-            {/GluGlu\_HToMuMu\_M125\_13TeV\_powheg\_pythia8/XXX} & 48.58\\
-            {/VBF\_HToMuMu\_M125\_13TeV\_powheg\_pythia8/XXX} & 3.782\\
-            {/WMinusH\_HToMuMu\_M125\_13TeV\_powheg\_pythia8/XXX} & 0.5331\\
-            {/WPlusH\_HToMuMu\_M125\_13TeV\_powheg\_pythia8/XXX} & 0.851\\
-            {/ZH\_HToMuMu\_M125\_13TeV\_powheg\_pythia8/XXX} & 0.8839 \\
+            {/GluGlu\_HToMuMu\_M125\_13TeV\_powheg\_pythia8} & 48.58\\
+            {/VBF\_HToMuMu\_M125\_13TeV\_powheg\_pythia8} & 3.782\\
+            {/WMinusH\_HToMuMu\_M125\_13TeV\_powheg\_pythia8} & 0.5331\\
+            {/WPlusH\_HToMuMu\_M125\_13TeV\_powheg\_pythia8} & 0.851\\
+            {/ZH\_HToMuMu\_M125\_13TeV\_powheg\_pythia8} & 0.8839 \\
             \hline
         \end{tabular}
     \end{center}
@@ -46,27 +44,28 @@ For the Standard Model Higgs Boson Signal, we use samples with three different h
 The Higgs signal production processes considered in this search are gluon
 fusion (ggH), vector boson fusion (VBF), Higgsstrahlung (VH). Production in
 association with top quarks (\ttH) has been generated privately. The Higgs MC samples are generated using {\sc POWHEG}~\cite{Nason:2004rx}.
-
 \begin{table}[!h]
-    \caption{Background Datasets. Moriond 2017 conditios have been used (omitted the conditions specification, replaced by XXX for brevity).}
+    \caption{Background Datasets. Moriond 2017 conditios have been used (omitted the conditions specification for brevity).}
     \label{table:higgs_data_backgrounddatasets}
     \begin{center}
         \begin{tabular}{ l  c}
             \hline
             Dataset & $\sigma$ (pb)\\
             \hline
-            /DYJetsToLL\_M-50\_TuneCUETP8M1\_13TeV-amcatnloFXFX-pythia8/XXX & 5765\\
-            /ST\_tW\_top\_5f\_NoFullyHadronicDecays\_13TeV-powheg\_TuneCUETP8M1/XXX & 35.85\\
-            /TTJets\_DiLept\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8/XXX & 85.656\\
-            /WJetsToLNu\_TuneCUETP8M1\_13TeV-amcatnloFXFX-pythia8/XXX & 61526.7\\
-            /WWTo2L2Nu\_13TeV-powheg-herwigpp/XXX & 10.481\\
-            /WZTo3LNu\_TuneCUETP8M1\_13TeV-amcatnloFXFX-pythia8/XXX & 4.712\\
+            /DYJetsToLL\_M-50\_TuneCUETP8M1\_13TeV-amcatnloFXFX-pythia8 & 5765\\
+            /ST\_tW\_top\_5f\_NoFullyHadronicDecays\_13TeV-powheg\_TuneCUETP8M1 & 35.85\\
+            /TTJets\_DiLept\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8 & 85.656\\
+            /WJetsToLNu\_TuneCUETP8M1\_13TeV-amcatnloFXFX-pythia8 & 61526.7\\
+            /WWTo2L2Nu\_13TeV-powheg-herwigpp & 10.481\\
+            /WZTo3LNu\_TuneCUETP8M1\_13TeV-amcatnloFXFX-pythia8 & 4.712\\
             \hline
         \end{tabular}
     \end{center}
 \end{table}
 
-Table~\ref{table:higgs_data_backgrounddatasets} provides a summary of the most dominant contributions among the background processes. Given that we use data-driven approach for our search, background samples are not used in any of the statistical modeling. However, the primary use of background datasets is to compare various kinematic variable distributions from data and theoretical predictions in section~\ref{section:higgs_results}. Moreover, as it will be clarified in section~\ref{}, depending on the categorization technique used background samples can be used for training a binary classification algorithm for the purpose of signal discrimination. Single top samples are generated with {\sc POWHEG}, while \ttbar samples and the multi-boson samples are generated either with {\sc madgrapgh}~\cite{Alwall:2011uj} or {amc@NLO}. Spin effects in multi boson processes are simulated using madspin. The parton shower and hadronization processes are modeled by the {\sc Phythia8} generator~\cite{Sjostrand:2007gs} with TuneCUETP8M1.
+Table~\ref{table:higgs_data_backgrounddatasets} provides a summary of the most dominant contributions among the background processes. Given that we use data-driven approach for our search, background samples are not used in any of the statistical modeling. However, the primary use of background datasets is to compare various kinematic variable distributions from data and theoretical predictions in section~\ref{section:higgs_results}. Moreover, as it will be clarified in section~\ref{}, depending on the categorization technique used background samples can be used for training a binary classification algorithm for the purpose of signal discrimination.
+
+Single top samples are generated with {\sc POWHEG}, while \ttbar samples and the multi-boson samples are generated either with {\sc madgrapgh}~\cite{Alwall:2011uj} or {AMC@NLO (Next to Leading Order)}. Spin effects in multi boson processes are simulated using madspin. The parton shower and hadronization processes are modeled by the {\sc Phythia8} generator~\cite{Sjostrand:2007gs} with TuneCUETP8M1.
 
 %The simulated pile up distribution is reweighted to match the observed
 %distribution in data for all MC samples.

@@ -2,23 +2,14 @@
 
 \subsection{Source Driver System}
 To perform calibration of the calorimeter with a radioactive source, a
-specialized source driver system has been developed. It includes devices capable of
-inserting a long thin wire, approximately 11\unit{m} long, tipped with a point-like
-radioactive source into the HF source tubes embedded in the calorimeter. As the
-radioactive source moves through the HF absorber, gamma rays are generated and
-consequently create Compton electrons, which in turn can generate
-Cherenkov photons inside the quartz fibers if they exceed the Cherenkov threshold.
-With the new HF PMTs, the quantum efficiency is such that only 30\% of the photons
-reaching the PMT cathode face will actually be converted into the read out signal.
+specialized source driver system has been developed. It includes devices capable of inserting a long thin wire, approximately 11 m long, tipped with a point-like radioactive source into the HF source tubes embedded in the calorimeter. As the radioactive source moves through the HF absorber, gamma rays are generated and consequently create Compton electrons, which in turn can generate Cherenkov photons inside the quartz fibers if they exceed the Cherenkov threshold. With the new HF PMTs, the quantum efficiency is such that only 30\% of the photons reaching the PMT cathode face will actually be converted into the read out signal.
 
 The thin wire, referred to as the source wire, used by the system is made of
 stainless steel and has an inner and outer diameter of 0.406 mm and 0.711 mm,
 respectively. The end of the wire that penetrates the HF absorber, the front end,
-is melted shut, shaped into a bullet nose, and chemically plated to reduce friction.
-The point-like radioactive source is inserted into the opposite end of
+is melted shut, shaped into a bullet nose, and chemically plated to reduce friction. The point-like radioactive source is inserted into the opposite end of
 the wire, the back end, and held in place against the front end by a fine steel
-piano wire. The outer source wire and inner piano wire are then crimped together at
-the back end in order to fix the position of the radioactive source.
+piano wire. The outer source wire and inner piano wire are then crimped together at the back end in order to fix the position of the radioactive source.
 
 A Lexan polycarbonate reel, belt driven by a DC reversible electric motor, is used
 to insert or retract the source wire into or out of the calorimeter's source tubes.
@@ -27,25 +18,21 @@ transfer of the source wire from the source driver into the absorber. The
 transition between the plastic tube and the metal source tube typically involve
 small-angle conical holes in brass that channel the source wire to the source tube.
 
+\begin{figure}[!h]
+   \begin{center}
+      \includegraphics[width=.5\textwidth]{figures/ch_hfcalibration/Source_Driver.png}
+      \caption{Source Driver System}
+      \label{fig:hf_expsetup_sourcedriver}
+   \end{center}
+\end{figure}
+
 The driver system also contains an additional electric motor that functions to
 select the source tube into which to direct the source wire, an action referred
 to as indexing. The position of the radioactive source, relative to the source
 driver and referred to as the reel position, is provided by an optical rotary
 encoder read out by industrial batch counters. Typical speeds at which the
 radioactive source may be inserted or retracted by the driver are between 5 and
-15\unit{cm/s}. Figure~\ref{fig:Source_Driver} displays the source driver configuration.
-
-\begin{figure}[htb]
-   \begin{center}
-      \includegraphics[width=.5\textwidth]{figures/ch_hfcalibration/Source_Driver.png}
-      \caption{The source wire is spooled on a reel sitting horizontally near
-      the brass-clad pig that houses the radioactive end of the wire during storage.
-      The vertically-oriented black square plate is the indexer system. The DC electric
-      motor that functions with the indexer is seen in top left. Two nylon source tubes
-      are connected to the indexer on the left.}
-      \label{fig:Source_Driver}
-   \end{center}
-\end{figure}
+15 cm/s. Figure~\ref{fig:hf_expsetup_sourcedriver} displays the source driver configuration.
 
 \subsection{HF DAQ Description}
 The PMT analog signals are read out by QIEs, standing for charge (Q),
@@ -72,8 +59,8 @@ weighted 16, 2 bins weighted 32, and 1 bin weighted 62, providing a range from
 0 to 194 ADC counts, with the overflow bin containing all charge above 194 ADC
 counts. Operations are time multiplexed and pipelined to allow signals to
 settle and to make the reset interval the same as the inegration interval.
-Clocking is provided at the frequency of 40\unit{MHz}, with a latency of
-100\unit{ns}, as the pipeline is four clock cycles deep. Each QIE contains a
+Clocking is provided at the frequency of 40 MHz, with a latency of
+100 ns, as the pipeline is four clock cycles deep. Each QIE contains a
 set of four capacitors, and only one capacitor is acquiring charge during a
 given clock cycle. The output is a 5-bit mantissa representing the voltage on
 the particular capacitor, and a 2-bit exponent indicating the range
@@ -94,6 +81,6 @@ i.e. latent cycle, and once $6.5535 x 10^4$ samples are collected the histogram
 is read out by the DAQ, two HTR fibers from each HTR half at a time. Data is
 saved by event, each event containing the histograms read out by all powered HTR
 halves - a given PMT's output is stored in every fourth event. This provides
-that each event represents 6.55\unit{ms} of source data. For 1TS, each sample
-was collected over 25\unit{ns}, and for 2TS each sample was collected over
-50\unit{ns}.
+that each event represents 6.55 ms of source data. For 1TS, each sample
+was collected over 25 ns, and for 2TS each sample was collected over
+50 ns.
