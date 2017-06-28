@@ -1,0 +1,79 @@
+This is LuaTeX, Version beta-0.80.0 (TeX Live 2015) (rev 5238)  (format=lualatex 2015.5.24)  19 JUN 2017 19:09
+ restricted \write18 enabled.
+**limit
+(./limit.tex
+LaTeX2e <2015/01/01>
+Babel <3.9l> and hyphenation patterns for 79 languages loaded.
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 \begin{tabular}
+                 {lcccccc}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 1.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 1.
+! Undefined control sequence.
+l.2 \hlinewd
+          {1.2pt}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.3 \multirow
+           {2}{*}{$m_\textup{h}$ [GeV]} & \multicolumn{5}{c}{Expected Limits...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no ǩ (U+01E9) in font cmr10!
+! Undefined control sequence.
+l.3 ...ulticolumn{5}{c}{Expected Limits} & \multirow
+                                                  {2}{*}{Observed limit} \\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \hlinewd 
+         
+l.12 \hlinewd
+           {1.2pt}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+)
+! Emergency stop.
+<*> limit
+      
+*** (job aborted, no legal \end found)
+
+
+
+Here is how much of LuaTeX's memory you used:
+ 22 strings out of 494693
+ 100000,89155 words of node,token memory allocated 3539 words of node memory still in use:
+   69 hlist, 1 vlist, 11 rule, 12 math, 261 glue, 4 kern, 184 glyph, 136 glue_sp
+ec, 1 temp, 1 local_par, 1 dir nodes
+   avail lists: 2:15,3:4,4:5,6:4,7:1,9:7
+ 3867 multiletter control sequences out of 65536+600000
+ 25 fonts using 994519 bytes
+ 19i,10n,12p,119b,132s stack positions out of 5000i,500n,10000p,200000b,100000s
+!  ==> Fatal error occurred, no output PDF file produced!

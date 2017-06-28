@@ -1,0 +1,32 @@
+{
+//========= Macro generated from object: PMT_Gain_Ratios_OV2_to_OV1+100/PMT Gain Ratios OV2 to OV1+100
+//========= by ROOT version5.34/14
+   
+   TH1D *PMT_Gain_Ratios_OV2_to_OV1+100 = new TH1D("PMT_Gain_Ratios_OV2_to_OV1+100","PMT Gain Ratios OV2 to OV1+100",100,0,1);
+   PMT_Gain_Ratios_OV2_to_OV1+100->SetBinContent(5,1);
+   PMT_Gain_Ratios_OV2_to_OV1+100->SetBinContent(6,6);
+   PMT_Gain_Ratios_OV2_to_OV1+100->SetBinContent(7,349);
+   PMT_Gain_Ratios_OV2_to_OV1+100->SetBinContent(8,859);
+   PMT_Gain_Ratios_OV2_to_OV1+100->SetBinContent(9,381);
+   PMT_Gain_Ratios_OV2_to_OV1+100->SetBinContent(10,108);
+   PMT_Gain_Ratios_OV2_to_OV1+100->SetBinContent(11,19);
+   PMT_Gain_Ratios_OV2_to_OV1+100->SetBinContent(12,5);
+   PMT_Gain_Ratios_OV2_to_OV1+100->SetEntries(1728);
+
+   ci = TColor::GetColor("#000099");
+   PMT_Gain_Ratios_OV2_to_OV1+100->SetLineColor(ci);
+   PMT_Gain_Ratios_OV2_to_OV1+100->GetXaxis()->SetTitle("Gain Ratio OV2/OV1+100");
+   PMT_Gain_Ratios_OV2_to_OV1+100->GetXaxis()->SetLabelFont(42);
+   PMT_Gain_Ratios_OV2_to_OV1+100->GetXaxis()->SetLabelSize(0.035);
+   PMT_Gain_Ratios_OV2_to_OV1+100->GetXaxis()->SetTitleSize(0.035);
+   PMT_Gain_Ratios_OV2_to_OV1+100->GetXaxis()->SetTitleFont(42);
+   PMT_Gain_Ratios_OV2_to_OV1+100->GetYaxis()->SetLabelFont(42);
+   PMT_Gain_Ratios_OV2_to_OV1+100->GetYaxis()->SetLabelSize(0.035);
+   PMT_Gain_Ratios_OV2_to_OV1+100->GetYaxis()->SetTitleSize(0.035);
+   PMT_Gain_Ratios_OV2_to_OV1+100->GetYaxis()->SetTitleFont(42);
+   PMT_Gain_Ratios_OV2_to_OV1+100->GetZaxis()->SetLabelFont(42);
+   PMT_Gain_Ratios_OV2_to_OV1+100->GetZaxis()->SetLabelSize(0.035);
+   PMT_Gain_Ratios_OV2_to_OV1+100->GetZaxis()->SetTitleSize(0.035);
+   PMT_Gain_Ratios_OV2_to_OV1+100->GetZaxis()->SetTitleFont(42);
+   PMT_Gain_Ratios_OV2_to_OV1+100->Draw("");
+}

@@ -1,0 +1,39 @@
+{
+//========= Macro generated from object: PMT_Gain_Ratios_OV2_to_OV1/PMT Gain Ratios OV2 to OV1
+//========= by ROOT version5.34/14
+   
+   TH1D *PMT_Gain_Ratios_OV2_to_OV1 = new TH1D("PMT_Gain_Ratios_OV2_to_OV1","PMT Gain Ratios OV2 to OV1",100,0,1);
+   PMT_Gain_Ratios_OV2_to_OV1->SetBinContent(20,2);
+   PMT_Gain_Ratios_OV2_to_OV1->SetBinContent(21,9);
+   PMT_Gain_Ratios_OV2_to_OV1->SetBinContent(22,17);
+   PMT_Gain_Ratios_OV2_to_OV1->SetBinContent(23,67);
+   PMT_Gain_Ratios_OV2_to_OV1->SetBinContent(24,253);
+   PMT_Gain_Ratios_OV2_to_OV1->SetBinContent(25,520);
+   PMT_Gain_Ratios_OV2_to_OV1->SetBinContent(26,466);
+   PMT_Gain_Ratios_OV2_to_OV1->SetBinContent(27,201);
+   PMT_Gain_Ratios_OV2_to_OV1->SetBinContent(28,106);
+   PMT_Gain_Ratios_OV2_to_OV1->SetBinContent(29,48);
+   PMT_Gain_Ratios_OV2_to_OV1->SetBinContent(30,24);
+   PMT_Gain_Ratios_OV2_to_OV1->SetBinContent(31,12);
+   PMT_Gain_Ratios_OV2_to_OV1->SetBinContent(32,2);
+   PMT_Gain_Ratios_OV2_to_OV1->SetBinContent(33,1);
+   PMT_Gain_Ratios_OV2_to_OV1->SetEntries(1728);
+
+   Int_t ci;   // for color index setting
+   ci = TColor::GetColor("#000099");
+   PMT_Gain_Ratios_OV2_to_OV1->SetLineColor(ci);
+   PMT_Gain_Ratios_OV2_to_OV1->GetXaxis()->SetTitle("Gain Ratio OV2/OV1");
+   PMT_Gain_Ratios_OV2_to_OV1->GetXaxis()->SetLabelFont(42);
+   PMT_Gain_Ratios_OV2_to_OV1->GetXaxis()->SetLabelSize(0.035);
+   PMT_Gain_Ratios_OV2_to_OV1->GetXaxis()->SetTitleSize(0.035);
+   PMT_Gain_Ratios_OV2_to_OV1->GetXaxis()->SetTitleFont(42);
+   PMT_Gain_Ratios_OV2_to_OV1->GetYaxis()->SetLabelFont(42);
+   PMT_Gain_Ratios_OV2_to_OV1->GetYaxis()->SetLabelSize(0.035);
+   PMT_Gain_Ratios_OV2_to_OV1->GetYaxis()->SetTitleSize(0.035);
+   PMT_Gain_Ratios_OV2_to_OV1->GetYaxis()->SetTitleFont(42);
+   PMT_Gain_Ratios_OV2_to_OV1->GetZaxis()->SetLabelFont(42);
+   PMT_Gain_Ratios_OV2_to_OV1->GetZaxis()->SetLabelSize(0.035);
+   PMT_Gain_Ratios_OV2_to_OV1->GetZaxis()->SetTitleSize(0.035);
+   PMT_Gain_Ratios_OV2_to_OV1->GetZaxis()->SetTitleFont(42);
+   PMT_Gain_Ratios_OV2_to_OV1->Draw("");
+}
