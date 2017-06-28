@@ -16,8 +16,8 @@ For the purpose of modeling, we identify two classes of models that we consider:
         \label{eq:BWZGamma}
         \text{BWZGamma:}& {B(x)} = {f\frac{e^{ax}\sigma_{z}}{(x-\mu_{z})^2 + (\frac{\sigma_{z}}{2})^2} + (1-f)\frac{e^{ax}}{x^2}}
 \end{align}
-
-These shapes have been derived and validated fitting the FEWZ (NNLO QCD) generated mass shapes (consult the \cite{CMS-HIG-AN}) and the fitted values for the parameters have been used as initial guesses for the modeling procedure. The second class of functions we consider comes from general families which are, in principle, capable of describing any functional form by incorporating more and more terms. We consider several families, polynomials in the Bernstein basis, power law, and sum of exponentials, summurized in eqs~\ref{eq:Bernstein}-\ref{eq:Laurent}.
+% \cite{CMS-HIG-AN})
+These shapes have been derived and validated fitting the FEWZ (NNLO QCD) generated mass shapes and the fitted values for the parameters have been used as initial guesses for the modeling procedure. The second class of functions we consider comes from general families which are, in principle, capable of describing any functional form by incorporating more and more terms. We consider several families, polynomials in the Bernstein basis, power law, and sum of exponentials, summurized in eqs~\ref{eq:Bernstein}-\ref{eq:Laurent}.
 \begin{align}
         \label{eq:Bernstein}
         \text{Bernsteins:}& {B(x)} = {\sum_{i=0}^{n} \alpha_i[\binom{n}{i}x^{i}(1-x)^{n-i}]} \\
@@ -39,7 +39,7 @@ These shapes have been derived and validated fitting the FEWZ (NNLO QCD) generat
 %      \label{bkgmodel:exampleModels}
 %  \end{figure}
 
- The background modeling procedure involves the construction of an envelope (RooMultiPdf) of pdfs that can either be used individually or altogether (discrete profile method \cite{CMS-PAS-HIG-13-001}) for the purpose of fitting the signal strength or setting the upper limit. For the physics motivated functions, we simply perform the binned maximum likelihood fit and insert that model into the envelope. Nevertheless, the discrite profile method allows to naturally take into account the number of free parameters in the fit, the computational time it takes scales linearly with the product $n_\textup{cat}\times n_\textup{family}$, since it performs one fit for all possible combination of choices of functional forms in all categories. In order to minimize the time it takes to perform the regression, the number of families in the envelope, an order for a family gets choosen using the F-Test (Fisher Test) method at 95\% Confidence Level. The actual algorithm of the order selection for a particular family follows:
+ The background modeling procedure involves the construction of an envelope ({\sc RooMultiPdf} \cite{CMSRooMultiPdf}) of pdfs that can either be used individually or altogether (discrete profile method \cite{CMS-PAS-HIG-13-001}) for the purpose of fitting the signal strength or setting the upper limit. For the physics motivated functions, we simply perform the binned maximum likelihood fit and insert that model into the envelope. Nevertheless, the discrite profile method allows to naturally take into account the number of free parameters in the fit, the computational time it takes scales linearly with the product $n_\textup{cat}\times n_\textup{family}$, since it performs one fit for all possible combination of choices of functional forms in all categories. In order to minimize the time it takes to perform the regression, the number of families in the envelope is reduced by selecting an appropriate order for a family using the F-Test, \textbf{the Fisher Test}, procedure at 95\% Confidence Level. The actual algorithm of the order selection for a particular family can bu summarized as follows:
 \begin{itemize}
     \item For a given category and for a particular family
     \item $H_0$ hypothesis: order $n$ is the true order. To reject this hypothesis, we have to be at least 95\% confident rejecting it, in other words: $p-\text{value}(\chi^2, ndf) < 5\%$
@@ -85,6 +85,6 @@ Figures~\ref{fig:higgs_bmodel_bdtc1c3}-~\ref{fig:higgs_bmodel_bdtc10c12} shows t
   \includegraphics[width=0.65\linewidth]{figures/ch_higgs/backgroundmodel/uf_bdt/backgroundFits__c10__bkgModels.png}\\
   \includegraphics[width=0.65\linewidth]{figures/ch_higgs/backgroundmodel/uf_bdt/backgroundFits__c11__bkgModels.png}\\
   \includegraphics[width=0.65\linewidth]{figures/ch_higgs/backgroundmodel/uf_bdt/backgroundFits__c12__bkgModels.png}
-  \caption{}
+  \caption{Background Modeling envelope of analytic functions fitted to the data (c10 - c12)}
   \label{fig:higgs_bmodel_bdtc10c12}
 \end{figure}

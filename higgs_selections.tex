@@ -18,13 +18,13 @@ The muon candidates are reconstructed using the Particle Flow Algorithm by match
    \end{equation}
 \end{center}
 
-Additionally, we only utilize ``Medium Id'' muons~\cite{CMS-MuonPOG}. As we mentioned previously, muons are reconstructed using clusters of hits from various subsystems (Tracker and Muon Stations); in other words we define a physics object Muon to be a composite cluster of combined hits from Tracker and Muon Systems. It's important to understand the difference between actual particles Muons and our definition of a muon! Moreover, when extracting the momentum of a muon, a certain regression procedure is performed, a fit for instance, from which we can extract the goodness of fit or some other quality metric, using which we can judge upon the quality of the reconstructed candidate. Finally, Muon Id is a set of criteria that define a muon candidate of certain quality and allow us to discriminate candidates based on this feature.
+Additionally, we only utilize ``Medium Id'' muons provided and recommended centrally by the CMS Physics Object Group~\cite{CMSMuonPOG,CMSMuonId}. As we mentioned previously, muons are reconstructed using clusters of hits from various subsystems (Tracker and Muon Stations); in other words we define a physics object Muon to be a composite cluster of combined hits from Tracker and Muon Systems. It's important to understand the difference between actual particles Muons and our definition of a muon! Moreover, when extracting the momentum of a muon, a certain regression procedure is performed, a fit for instance, from which we can extract the goodness of fit or some other quality metric, using which we can judge upon the quality of the reconstructed candidate. Finally, Muon Id is a set of criteria that define a muon candidate of certain quality and allow us to discriminate candidates based on this feature.
 
 \subsection{Muon Corrections}
-Given a very narrow theoretical width of the Higgs Boson, around 5 MeV, the Higgs peak is dominated by the Muon detector resolution which is on the order of a GeV. Therefore, to increase the sensitivity of our search, it's crucial to have the best possible dimuon mass resolution, both in data and Monte Carlo. Moreover, as it is going to be described further in the Statistical Modeling sections, we need to correct for possible dimuon mass scale shifts.
+Given a very narrow theoretical width of the Higgs Boson, $4.2$ MeV, the Higgs peak is dominated by the Muon detector resolution which is on the order of several GeV. Therefore, to increase the sensitivity of our search, it's crucial to have the best possible dimuon mass resolution, both in data and Monte Carlo. Moreover, as it is going to be described further in the Statistical Modeling sections, we need to correct for possible dimuon mass scale shifts.
 
-There are two different sets of Muon corrections tested: Rochester~\cite{CMS-RochesterCorrections} and Kalman~\cite{CMS-KalmanFilter}. Both allow to correct the scale and smear the resolution. For the validation purposes, we look at the Z peak scale and resolution using these two sets. In Figures~\ref{fig:higgs_selections_zscale}, ~\ref{fig:higgs_selections_zresolution}  comparisons of uncorrected with the two types of corrections are shown for the scale and resolution, respectively. Both the Rochester and Kalman muon corrections successfully align Data with MC in terms of the Z peak.
-\begin{figure}[!h]
+There are two different sets of Muon corrections tested: Rochester~\cite{CMSRochesterCorrections} and Kalman~\cite{CMSKalmanCorrections}. Both allow to correct the scale and smear the resolution. For the validation purposes, we look at the Z peak scale and resolution using these two sets. In Figures~\ref{fig:higgs_selections_zscale}, ~\ref{fig:higgs_selections_zresolution}  comparisons of uncorrected with the two types of corrections are shown for the scale and resolution, respectively. Both the Rochester and Kalman muon corrections successfully align Data with MC in terms of the Z peak.
+\begin{figure}[hbp]
   \centering
   \includegraphics[width=0.32\linewidth]{figures/muon_calib/zcal_pf_mc-data_mean_phi_plus.png}
   \includegraphics[width=0.32\linewidth]{figures/muon_calib/zcal_roch_mc-data_mean_phi_plus.png}
@@ -36,7 +36,7 @@ There are two different sets of Muon corrections tested: Rochester~\cite{CMS-Roc
   \label{fig:higgs_selections_zscale}
 \end{figure}
 
-\begin{figure}[!h]
+\begin{figure}[hbp]
   \centering
   \includegraphics[width=0.32\linewidth]{figures/muon_calib/zcal_pf_mc-data_res_phi_plus.png}
   \includegraphics[width=0.32\linewidth]{figures/muon_calib/zcal_roch_mc-data_res_phi_plus.png}

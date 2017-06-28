@@ -1,4 +1,4 @@
-\section{Event Categorization}
+\section{Event Categorization}\label{section:higgs_categorization}
 For the purpose of increasing the sensitivity of our analysis, the next step performed is the categorization of events into different subclasses. The basic idea is that we want to utilize the knowledge about two important characteristics of our search: the physics of interest, differences between the production processes, and the fact that our muon detectors intrinsically have better resolution for certain geometrical regions (barrel vs endcap). Using this information will allow us to substantially increase the significance of the Standard Model signal over the expected background.
 
 \subsection{Baseline Categorization}
@@ -45,7 +45,7 @@ Figures~\ref{fig:higgs_categorization_2jetsall}-~\ref{fig:higgs_categorization_0
   \includegraphics[width=0.65\linewidth]{figures/ch_higgs/distributions/baseline_kalman/distribution__VBFTight__DiMuonMass__logY.png}\\
   \includegraphics[width=0.65\linewidth]{figures/ch_higgs/distributions/baseline_kalman/distribution__ggFTight__DiMuonMass__logY.png}\\
   \includegraphics[width=0.65\linewidth]{figures/ch_higgs/distributions/baseline_kalman/distribution__ggFLoose__DiMuonMass__logY.png}
-  \caption{Mass Distributions VBFTight (Top), GFTight (Middle) and GFLoose (Bottom) Categories. }
+  \caption{Mass Distributions VBFTight (Top), GFTight (Middle) and GFLoose (Bottom) Categories.}
   \label{fig:higgs_categorization_2jetsall}
 \end{figure}
 \begin{figure}[H]
@@ -53,7 +53,7 @@ Figures~\ref{fig:higgs_categorization_2jetsall}-~\ref{fig:higgs_categorization_0
   \includegraphics[width=0.65\linewidth]{figures/ch_higgs/distributions/baseline_kalman/distribution__01JetsTightBB__DiMuonMass__logY.png}\\
   \includegraphics[width=0.65\linewidth]{figures/ch_higgs/distributions/baseline_kalman/distribution__01JetsTightBE__DiMuonMass__logY.png}\\
   \includegraphics[width=0.65\linewidth]{figures/ch_higgs/distributions/baseline_kalman/distribution__01JetsTightBO__DiMuonMass__logY.png}
-  \caption{}
+  \caption{Mass Distributions 01JetsTightBB (Top), 01JetsTightBE (Middle) and 01JetsTightBO (Bottom) Categories.}
   \label{fig:higgs_categorization_01jetstightbbbebo}
 \end{figure}
 \begin{figure}[H]
@@ -61,7 +61,7 @@ Figures~\ref{fig:higgs_categorization_2jetsall}-~\ref{fig:higgs_categorization_0
   \includegraphics[width=0.65\linewidth]{figures/ch_higgs/distributions/baseline_kalman/distribution__01JetsTightEE__DiMuonMass__logY.png}\\
   \includegraphics[width=0.65\linewidth]{figures/ch_higgs/distributions/baseline_kalman/distribution__01JetsTightOE__DiMuonMass__logY.png}\\
   \includegraphics[width=0.65\linewidth]{figures/ch_higgs/distributions/baseline_kalman/distribution__01JetsTightOO__DiMuonMass__logY.png}
-  \caption{}
+  \caption{Mass Distributions 01JetsTightEE (Top), 01JetsTightOE (Middle) and 01JetsTightOO (Bottom) Categories.}
   \label{fig:higgs_categorization_01jetstighteeeooo}
 \end{figure}
 \begin{figure}[H]
@@ -69,7 +69,7 @@ Figures~\ref{fig:higgs_categorization_2jetsall}-~\ref{fig:higgs_categorization_0
   \includegraphics[width=0.65\linewidth]{figures/ch_higgs/distributions/baseline_kalman/distribution__01JetsLooseBB__DiMuonMass__logY.png}\\
   \includegraphics[width=0.65\linewidth]{figures/ch_higgs/distributions/baseline_kalman/distribution__01JetsLooseBE__DiMuonMass__logY.png}\\
   \includegraphics[width=0.65\linewidth]{figures/ch_higgs/distributions/baseline_kalman/distribution__01JetsLooseBO__DiMuonMass__logY.png}
-  \caption{}
+  \caption{Mass Distributions 01JetsLooseBB (Top), 01JetsLooseBE (Middle) and 01JetsLooseBO (Bottom) Categories.}
   \label{fig:higgs_categorization_01jetsloosebbbebo}
 \end{figure}
 \begin{figure}[H]
@@ -77,14 +77,14 @@ Figures~\ref{fig:higgs_categorization_2jetsall}-~\ref{fig:higgs_categorization_0
   \includegraphics[width=0.65\linewidth]{figures/ch_higgs/distributions/baseline_kalman/distribution__01JetsLooseEE__DiMuonMass__logY.png}\\
   \includegraphics[width=0.65\linewidth]{figures/ch_higgs/distributions/baseline_kalman/distribution__01JetsLooseOE__DiMuonMass__logY.png}\\
   \includegraphics[width=0.65\linewidth]{figures/ch_higgs/distributions/baseline_kalman/distribution__01JetsLooseOO__DiMuonMass__logY.png}
-  \caption{}
+  \caption{Mass Distributions 01JetsLooseEE (Top), 01JetsLooseOE (Middle) and 01JetsLooseOO (Bottom) Categories.}
   \label{fig:higgs_categorization_01jetslooseeeeooo}
 \end{figure}
 
 \subsection{Greedy Categorization} \label{bdt_training}
 Another approach taken was to optimize the manually constructed categorization tree, discussed in the previous section, in a more systematic way by, first, training and applying a Boosted Decision Tree (BDT) for the purpose of signal to background discrimination and, then, using the BDT ouput as a new input feature for optimizing the categorization tree using a greedy optimization procedure.
 
-In the first step, the BDT for the signal to background discrimination has been trained using both signal and background Monte Carlo samples. The BDT implementation from the ROOT framework has been successfully used. Given that background samples are not utilized for the statistical analysis (we use data-driven background treatment discussed further), we employ all of the available MC background events for the purpose of training, cross-validation and testing. However, in terms of the Higgs signal, the even-numbered events are used for the categorization optimization. The rest is reserved for the statistical analysis. The following kinematic variables are used as input features for the BDT:
+In the first step, the BDT for the signal to background discrimination has been trained using both signal and background Monte Carlo samples. The BDT implementation from the {\sc ROOT}~\cite{ROOT} framework has been successfully used. Given that background samples are not utilized for the statistical analysis (we use data-driven background treatment discussed further), we employ all of the available MC background events for the purpose of training, cross-validation and testing. However, in terms of the Higgs signal, the even-numbered events are used for the categorization optimization. The rest is reserved for the statistical analysis. The following kinematic variables are used as input features for the BDT:
 \begin{itemize}
   \item The $p_t^{\mu\mu}$ of the dimuon system
   \item The $\eta_{\mu\mu}$ of the dimuon system.
@@ -105,7 +105,7 @@ After the training and cross-validation to tune the hyper parameters of the Deci
   \centering
   \includegraphics[width=0.75\linewidth]{figures/bdt_training/BDT_out_ge0j_all.pdf}\\
   \includegraphics[width=0.75\linewidth]{figures/bdt_training/BDT_ROC_ge0j_all.pdf}
-  \caption{BDT score distribution (Top) and ROC curve (Bottom) - a kind of True Negative/Positive selection efficiency indicator.}
+  \caption{BDT score distribution (Top) and Receiver Operating Curve, ROC, (Bottom) - a kind of True Negative/Positive selection efficiency indicator.}
   \label{fig:higgs_categorization_bdtoutputroc}
 \end{figure}
 

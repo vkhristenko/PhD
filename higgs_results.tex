@@ -1,76 +1,70 @@
-\section{Results}
-\label{results}
+\section{Results} \label{section:higgs_results}
+Expected 95\% Confidence Level upper exclusion limits on the Higgs Boson production cross-section have been derived for the Greedy Categorization. Asymptotic approximation has been used for the actual computation, by following the procedure described in the previous section. For the final results, Rochester corrections have been used, however no significant differences were observed among the two possible sets of corrections. Triple Gaussian analytic form has been used for the modeling of the Standard Model Higgs Boson signal. For the background, the envelope of analytic functions was used and accounts for the potential bias among the forms across all of the categories.
 
-\subsection{Run~I Categorization}
-The expected 95\% CL upper limit on the signal strength modifier has been
-derived considering the Run~I event categories. Figure~\ref{combine:LimitsAsymptotic}
-shows the limits derived using the Asimov data-set ({\bf blind}), including only the statistical
-uncertainties.
+Figure~\ref{fig:higgs_results_limitsvsmass} shows results for the 95\% CL upper limits on the signal strength as a function of the Higgs mass. 11 different mass hypotheses have been tested, in the range [120, 130] GeV with a step of 1 GeV, and interpolated in between. The observed upper limit on the signal strength does not exhibit significant deviations and is within $1\sigma$ from the expectation around the 125 GeV mass. Figure~\ref{fig:higgs_results_limitsBRvsmass} shows the 95\% CL upper limits on the Higgs Boson Branching Fraction, $\mathcal{B}(\Htomm)$, decaying via 2 muons. Standard Model Higgs Boson production cross-section is assumed.
 
-%\begin{figure}[h!]
-%    \centering
-%     %\includegraphics[width=0.45\textwidth]{figures/combine/limitsAsymptotic/baseline_110to160_p25GeV_NoNuis_Viktor/limitsByMass__125__TripleGaus.png}
-%      \includegraphics[width=0.618\textwidth]{figures/combine/limitsAsymptotic/baseline_110to160_p25GeV_NoNuis_Viktor/limitsByCategory__combTotal__TripleGaus.png}
-%    \caption{95\% CL upper limit on the signal strength modifier. Limits are derived using the Asimov dataset ({\bf blind}) including only the statistical uncertainty.}
-%    \label{results:limit}
-%\end{figure}
-
-
-%\clearpage
-\subsection{Bdt Categorization}
-Expected 95\% CL upper limit on the signal strength modifier have been derived
-for the ``Bdt'' category based analysis and presented in
-Fig.~\ref{results:limit}. The expected limits are derived using the Asimov
-data-set ({\bf blind)}, using KF corrections and the following background
-functions:  BWZredux ( cat 0, 2, 3, 7, 8, 9, 10, 11, 12), Bernstein
-polynomial ( cat 1, 6), and SumExponential ( cat 4, 5). The expected
-significance at $\mH=125\,\gev$ for SM Higgs boson is $0.85~\sigma$.
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.681\textwidth]{figures/results/limitPerCategory}
-    \caption{The 95\% CL upper limit on the signal strength modifier. Each
-category is fitted independently. Limits are derived using the Asimov data-set
-({\bf blind}). Systematic uncertainties are considered.}
-    \label{results:limit_splitted}
-\end{figure}
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.681\textwidth]{figures/results/limit}
-    \caption{The 95\% CL upper limit on the signal strength modifier. Limits
-are derived using the Asimov data-set ({\bf blind}). Systematic uncertainties
-are considered.}
-    \label{results:limit}
-\end{figure}
-
-
+Table~\ref{tab:higgs_results_limits} summarizes the results of the exclusion limits calculation.
 \begin{table}[h!]
     \centering
-    \caption{95\% CL on the SM signal strength modifier}
-    \input{figures/results/limit}
+    \caption{95\% CL Upper Limits on the Standard Model Higgs Boson Signal Strength.}
+    \input{figures/ch_higgs/limits/bdt_110to160_withSys_limits_1906/limitsByCategory__combTotal__TripleGaus.tex}
+    \label{tab:higgs_results_limits}
 \end{table}
 
-Figure~\ref{results:mu} shows the best fit strength modifier,
-$\hat{\mu}=1^{+2}_{-1}$.
-\begin{figure}[h!]
+\begin{figure}[hbp]
     \centering
-    \includegraphics[width=0.681\textwidth]{figures/results/mu}
-    \caption{The $2\Delta\log{\mathcal{L}}$ versus $\mu$. Scans are derived using the Asimov data-set ({\bf blind}).}
-    \label{results:mu}
+    \includegraphics[width=0.9\textwidth]{figures/ch_higgs/limits/bdt_110to160_withSys_limits_1906/limitsByCategory__combTotal__TripleGaus.png}
+    \caption{95\% CL Upper Limits on the Standard Model Higgs Boson Signal Strength as a function of mass. 11 mass hypotheses are tested and interpolated in between.}
+    \label{fig:higgs_results_limitsvsmass}
+\end{figure}
+\begin{figure}[hbp]
+    \centering
+    \includegraphics[width=0.9\textwidth]{figures/ch_higgs/limits/bdt_110to160_withSys_limits_1906/limitsOnBRByCategory__combTotal__TripleGaus.png}
+    \caption{95\% CL Upper Limits on the $\mathcal{B}(\Htomm)$ as a function of mass Standard Model Higgs Boson production Cross-section is asssumed. 11 mass hypotheses are tested and interpolated in between.}
+    \label{fig:higgs_results_limitsBRvsmass}
 \end{figure}
 
-Best fit of the strength modifier to the vector boson couplings (rV) and to
-the fermion couplings (rF), floated independently, can be seen
-in Fig.~\ref{results:rvrf}.
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.681\textwidth]{figures/results/rV-rF}
-    \caption{The $2\Delta\log{\mathcal{L}}$ versus rV-rF. Scans are derived
-using the Asimov data-set ({\bf blind})}. Higgs boson mass is used as floating
-parameter.
-    \label{results:rvrf}
-\end{figure}
+
+
+% Expected 95\% CL upper limits on the signal strength modifier have been derived
+% for the ``Bdt'' category based analysis and presented in
+% Fig.~\ref{results:limit}. The expected limits are derived using the Asimov
+% data-set ({\bf blind)}, using KF corrections and the following background
+% functions:  BWZredux ( cat 0, 2, 3, 7, 8, 9, 10, 11, 12), Bernstein
+% polynomial ( cat 1, 6), and SumExponential ( cat 4, 5). The expected
+% significance at $\mH=125\,\gev$ for SM Higgs boson is $0.85~\sigma$.
+% \begin{figure}[h!]
+%     \centering
+%     \includegraphics[width=0.681\textwidth]{figures/results/limitPerCategory}
+%     \caption{The 95\% CL upper limit on the signal strength modifier. Each
+% category is fitted independently. Limits are derived using the Asimov data-set
+% ({\bf blind}). Systematic uncertainties are considered.}
+%     \label{results:limit_splitted}
+% \end{figure}
+
+
+
+
+% Figure~\ref{results:mu} shows the best fit strength modifier,
+% $\hat{\mu}=1^{+2}_{-1}$.
+% \begin{figure}[h!]
+%     \centering
+%     \includegraphics[width=0.681\textwidth]{figures/results/mu}
+%     \caption{The $2\Delta\log{\mathcal{L}}$ versus $\mu$. Scans are derived using the Asimov data-set ({\bf blind}).}
+%     \label{results:mu}
+% \end{figure}
+
+% Best fit of the strength modifier to the vector boson couplings (rV) and to
+% the fermion couplings (rF), floated independently, can be seen
+% in Fig.~\ref{results:rvrf}.
+% \begin{figure}[h!]
+%     \centering
+%     \includegraphics[width=0.681\textwidth]{figures/results/rV-rF}
+%     \caption{The $2\Delta\log{\mathcal{L}}$ versus rV-rF. Scans are derived
+% using the Asimov data-set ({\bf blind})}. Higgs boson mass is used as floating
+% parameter.
+%     \label{results:rvrf}
+% \end{figure}
 
 
 %\clearpage
