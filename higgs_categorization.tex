@@ -1,46 +1,46 @@
 \section{Event Categorization}\label{section:higgs_categorization}
-For the purpose of increasing the sensitivity of our analysis, the next step performed is the categorization of events into different subclasses. The basic idea is that we want to utilize the knowledge about two important characteristics of our search: the physics of interest, differences between the production processes, and the fact that our muon detectors intrinsically have better resolution for certain geometrical regions (barrel vs endcap). Using this information will allow us to substantially increase the significance of the Standard Model signal over the expected background.
+For the purpose of increasing the sensitivity of the analysis, the next step performed is the categorization of events into different subclasses. The basic idea is to utilize the knowledge about two important characteristics of the search needs: the physics of interest, differences between the production processes, and the fact that muon detectors intrinsically have better resolution for certain geometrical regions (barrel vs endcap). Using this information will allow to substantially increase the significance of the Standard Model signal over the expected background.
 
 \subsection{Baseline Categorization}
-During the CMS Run I analysis campaign, the categorization procedure used was optimized to separate VBF like events from the rest by requiring the presence of at least 2 jets, pssing the Jet Selections, and going into the opposite ends of our detector and employing large Missing Transverse Energy (MET) selection. Moreover, the resolution of Muon System is significantly better in the Barrel region than in the Endcap, therefore we subdivide the space in $\eta$ variable by defining:
+During the CMS Run I analysis campaign \cite{CMSHiggsRunI}, the categorization procedure used was optimized to separate VBF like events from the rest by requiring the presence of at least 2 jets, pssing the Jet Selections, and going into the opposite ends of the detector and employing large Missing Transverse Energy (MET) selection. Moreover, the resolution of Muon System is significantly better in the Barrel region than in the Endcap, therefore the space is subdivided in $\eta$ variable by defining:
 \begin{itemize}
   \item Barrel: $|\eta| < 0.8$
   \item Overlap: $|\eta| \ge 0.8$ \& $|\eta| < 1.6$
   \item Endcap: $|\eta| \ge 1.6$ \& $|\eta| < 2.1$
 \end{itemize}
-Furthermore, once we have a Higgs candidate pair, we tag each muon based on the region of the detector it was reconstructed in based on its $\eta$. The exact selections applied in the baseline categorization procedure follow:
+Furthermore, once a Higgs candidate pair is constructed, each muon is tagged according to the region of the detector it was reconstructed in. The exact selections applied in the baseline categorization procedure are:
 \begin{itemize}
-  \item $njets \ge 2$ \& $p_{t}^{j1} > 40$ GeV \& $p_{t}^{MET} < 40$ GeV - require at least 2 jets with thresholds on \pt of the leading jet and Missing Energy Transverse.
+  \item $njets \ge 2$ \& $p_{t}^{j1} > 40$ GeV \& $p_{t}^{MET} < 40$ GeV - require at least 2 jets with thresholds on p$_t$ of the leading jet and Missing Energy Transverse.
     \begin{itemize}
-      \item VBFTight Category: $m_{jj} > 650$ GeV \& $|\Delta \eta| > 3.5$ - category targeting the Vector Boson Fusion production mechanism. The signature is the presence of 2 jets with a large invariant mass and going into opposite ends of CMS.
-      \item GFTight Category: if not VBFTight \& $m_{jj} > 250$ GeV \& $p_{t}^{\mu\mu} > 50$ GeV. In this category, we target Gluon Fusion production together with what does not pass the VBF-like selections.
-      \item GFLoose Category: here collect everything that does not pass the VBFTight and GFTight selections.
+      \item ''VBFTight'' Category: $m_{jj} > 650$ GeV \& $|\Delta \eta| > 3.5$ - category targeting the Vector Boson Fusion production mechanism. The signature is the presence of 2 jets with a large invariant mass and going into opposite ends of CMS.
+      \item ''GFTight'' Category: if not VBFTight \& $m_{jj} > 250$ GeV \& $p_{t}^{\mu\mu} > 50$ GeV. In this category, we target Gluon Fusion production together with what does not pass the VBF-like selections.
+      \item ''GFLoose'' Category: here collect everything that does not pass the VBFTight and GFTight selections.
     \end{itemize}
   \item $njets \le 1$ - the biggest portion of the events will have only 1 or 0 jets total per event (that pass previously discussed selections).
     \begin{itemize}
-      \item 01JetsTight Category - $p_t^{\mu\mu} \ge 25$ GeV. The only discriminating variable we are left with at this point is the \pt of the dimuon system that typically has higher values for the signal events.
+      \item ''01JetsTight'' Category - $p_t^{\mu\mu} \ge 25$ GeV. The only discriminating variable we are left with at this point is the \pt of the dimuon system that typically has higher values for the signal events.
         \begin{itemize}
-          \item 01JetsTightBB: $\mu_{1,2}$ are Barrel
-          \item 01JetsTightBE: $\mu_{1}$ is Barrel \& $\mu_2$ is Endcap
-          \item 01JetsTightBO: $\mu_{1}$ is Barrel \& $\mu_2$ is Overlap
-          \item 01JetsTightEE: $\mu_{1}$ is Endcap \& $\mu_2$ is Endcap
-          \item 01JetsTightEO: $\mu_{1}$ is Endcap \& $\mu_2$ is Overlap
-          \item 01JetsTightOO: $\mu_{1}$ is Overlap \& $\mu_2$ is Overlap
+          \item ''01JetsTightBB'': $\mu_{1,2}$ are Barrel
+          \item ''01JetsTightBE'': $\mu_{1}$ is Barrel \& $\mu_2$ is Endcap
+          \item ''01JetsTightBO'': $\mu_{1}$ is Barrel \& $\mu_2$ is Overlap
+          \item ''01JetsTightEE'': $\mu_{1}$ is Endcap \& $\mu_2$ is Endcap
+          \item ''01JetsTightEO'': $\mu_{1}$ is Endcap \& $\mu_2$ is Overlap
+          \item ''01JetsTightOO'': $\mu_{1}$ is Overlap \& $\mu_2$ is Overlap
         \end{itemize}
-      \item 01JetsLoose Category - Left over events fall into this category.
+      \item ''01JetsLoose'' Category - Left over events fall into this category.
         \begin{itemize}
-          \item 01JetsLooseBB: $\mu_{1,2}$ are Barrel
-          \item 01JetsLooseBE: $\mu_{1}$ is Barrel \& $\mu_2$ is Endcap
-          \item 01JetsLooseBO: $\mu_{1}$ is Barrel \& $\mu_2$ is Overlap
-          \item 01JetsLooseEE: $\mu_{1}$ is Endcap \& $\mu_2$ is Endcap
-          \item 01JetsLooseEO: $\mu_{1}$ is Endcap \& $\mu_2$ is Overlap
-          \item 01JetsLooseOO: $\mu_{1}$ is Overlap \& $\mu_2$ is Overlap
+          \item ''01JetsLooseBB'': $\mu_{1,2}$ are Barrel
+          \item ''01JetsLooseBE'': $\mu_{1}$ is Barrel \& $\mu_2$ is Endcap
+          \item ''01JetsLooseBO'': $\mu_{1}$ is Barrel \& $\mu_2$ is Overlap
+          \item ''01JetsLooseEE'': $\mu_{1}$ is Endcap \& $\mu_2$ is Endcap
+          \item ''01JetsLooseEO'': $\mu_{1}$ is Endcap \& $\mu_2$ is Overlap
+          \item ''01JetsLooseOO'': $\mu_{1}$ is Overlap \& $\mu_2$ is Overlap
         \end{itemize}
     \end{itemize}
 \end{itemize}
 
-Figures~\ref{fig:higgs_categorization_2jetsall}-~\ref{fig:higgs_categorization_01jetslooseeeeooo} show dimuon mass distributions for all of the terminal categories. For the final analysis, given that both Muon Corrections are producing similar results, we utilize Kalman Corrections. Data in all of the categories is modelled well by the included backgrounds.
-\begin{figure}[H]
+Figures~\ref{fig:higgs_categorization_2jetsall}-~\ref{fig:higgs_categorization_01jetslooseeeeooo} show dimuon mass distributions for all of the terminal categories. For the final analysis, given that both Muon Corrections are producing similar results, Rochester Corrections are used. Data in all of the categories is modeled well by the included backgrounds.
+\begin{figure}[htbp]
   \centering
   \includegraphics[width=0.65\linewidth]{figures/ch_higgs/distributions/baseline_kalman/distribution__VBFTight__DiMuonMass__logY.png}\\
   \includegraphics[width=0.65\linewidth]{figures/ch_higgs/distributions/baseline_kalman/distribution__ggFTight__DiMuonMass__logY.png}\\
@@ -48,7 +48,7 @@ Figures~\ref{fig:higgs_categorization_2jetsall}-~\ref{fig:higgs_categorization_0
   \caption{Mass Distributions VBFTight (Top), GFTight (Middle) and GFLoose (Bottom) Categories.}
   \label{fig:higgs_categorization_2jetsall}
 \end{figure}
-\begin{figure}[H]
+\begin{figure}[htbp]
   \centering
   \includegraphics[width=0.65\linewidth]{figures/ch_higgs/distributions/baseline_kalman/distribution__01JetsTightBB__DiMuonMass__logY.png}\\
   \includegraphics[width=0.65\linewidth]{figures/ch_higgs/distributions/baseline_kalman/distribution__01JetsTightBE__DiMuonMass__logY.png}\\
@@ -56,7 +56,7 @@ Figures~\ref{fig:higgs_categorization_2jetsall}-~\ref{fig:higgs_categorization_0
   \caption{Mass Distributions 01JetsTightBB (Top), 01JetsTightBE (Middle) and 01JetsTightBO (Bottom) Categories.}
   \label{fig:higgs_categorization_01jetstightbbbebo}
 \end{figure}
-\begin{figure}[H]
+\begin{figure}[htbp]
   \centering
   \includegraphics[width=0.65\linewidth]{figures/ch_higgs/distributions/baseline_kalman/distribution__01JetsTightEE__DiMuonMass__logY.png}\\
   \includegraphics[width=0.65\linewidth]{figures/ch_higgs/distributions/baseline_kalman/distribution__01JetsTightOE__DiMuonMass__logY.png}\\
@@ -64,7 +64,7 @@ Figures~\ref{fig:higgs_categorization_2jetsall}-~\ref{fig:higgs_categorization_0
   \caption{Mass Distributions 01JetsTightEE (Top), 01JetsTightOE (Middle) and 01JetsTightOO (Bottom) Categories.}
   \label{fig:higgs_categorization_01jetstighteeeooo}
 \end{figure}
-\begin{figure}[H]
+\begin{figure}[htbp]
   \centering
   \includegraphics[width=0.65\linewidth]{figures/ch_higgs/distributions/baseline_kalman/distribution__01JetsLooseBB__DiMuonMass__logY.png}\\
   \includegraphics[width=0.65\linewidth]{figures/ch_higgs/distributions/baseline_kalman/distribution__01JetsLooseBE__DiMuonMass__logY.png}\\
@@ -72,7 +72,7 @@ Figures~\ref{fig:higgs_categorization_2jetsall}-~\ref{fig:higgs_categorization_0
   \caption{Mass Distributions 01JetsLooseBB (Top), 01JetsLooseBE (Middle) and 01JetsLooseBO (Bottom) Categories.}
   \label{fig:higgs_categorization_01jetsloosebbbebo}
 \end{figure}
-\begin{figure}[H]
+\begin{figure}[htbp]
   \centering
   \includegraphics[width=0.65\linewidth]{figures/ch_higgs/distributions/baseline_kalman/distribution__01JetsLooseEE__DiMuonMass__logY.png}\\
   \includegraphics[width=0.65\linewidth]{figures/ch_higgs/distributions/baseline_kalman/distribution__01JetsLooseOE__DiMuonMass__logY.png}\\
@@ -82,9 +82,9 @@ Figures~\ref{fig:higgs_categorization_2jetsall}-~\ref{fig:higgs_categorization_0
 \end{figure}
 
 \subsection{Greedy Categorization} \label{bdt_training}
-Another approach taken was to optimize the manually constructed categorization tree, discussed in the previous section, in a more systematic way by, first, training and applying a Boosted Decision Tree (BDT) for the purpose of signal to background discrimination and, then, using the BDT ouput as a new input feature for optimizing the categorization tree using a greedy optimization procedure.
+Another approach taken was to optimize the manually constructed categorization tree, discussed in the previous section, in a more systematic way by, first, training and applying a Boosted Decision Tree (BDT) for the purpose of signal to background discrimination. Then, use the BDT ouput as a new input feature for optimizing the categorization tree using a greedy optimization procedure.
 
-In the first step, the BDT for the signal to background discrimination has been trained using both signal and background Monte Carlo samples. The BDT implementation from the {\sc ROOT}~\cite{ROOT} framework has been successfully used. Given that background samples are not utilized for the statistical analysis (we use data-driven background treatment discussed further), we employ all of the available MC background events for the purpose of training, cross-validation and testing. However, in terms of the Higgs signal, the even-numbered events are used for the categorization optimization. The rest is reserved for the statistical analysis. The following kinematic variables are used as input features for the BDT:
+In the first step, the BDT for the signal to background discrimination has been trained using both signal and background Monte Carlo samples. The BDT implementation from the {\sc ROOT}~\cite{ROOT} framework has been successfully used. Given that background samples are not utilized for the statistical analysis, all of the available MC background events are employed for the purpose of training, cross-validation and testing. However, in terms of the Higgs signal, the even-numbered events are used for the categorization optimization. The rest is reserved for the statistical analysis. The following kinematic variables are used as input features for the BDT:
 \begin{itemize}
   \item The $p_t^{\mu\mu}$ of the dimuon system
   \item The $\eta_{\mu\mu}$ of the dimuon system.
@@ -98,10 +98,10 @@ In the first step, the BDT for the signal to background discrimination has been 
   \item The number of b-tagged jets - jets passing the CSVv2 medium b-tag working point
   \item The \MET
 \end{itemize}
-As it follows from the above list, there is no dependence on the Higgs candidate mass among the features directly or indirectly. In other words, given the above features, one can not deduce the mass value of the dimuon system. Given that we are performing a search and all of the mass points available will be passed through the same BDT after determining the weights, mass independence is an importan criteria of our discrimination technique.
+As it follows from the above list, there is no dependence on the Higgs candidate mass among the features. In other words, given the above features, one can not deduce the mass value of the dimuon system. Mass independence is an importan tcriteria of this discrimination technique.
 
-After the training and cross-validation to tune the hyper parameters of the Decision Tree itself, we run over the test dataset and figure~\ref{fig:higgs_categorization_bdtoutputroc} shows the BDT ouput distributions for both training and testing subsets, which are in a very good agreement. It is a clear sign that we did not overtrain. Furthermore, the ROC curve from figure~\ref{fig:higgs_categorization_bdtoutputroc}, which is an indicator of the efficiency of our selection and rejection at the same time, shows a definite deviation from the diagonal (no discrimination), however even with 100\% inefficiency on background rejection, we still fall short of 100\% of signal rejection. Finally, given that we are not choosing a turning point and not doing a pure binary classficiation, we preserve the BDT score for the next stage.
-\begin{figure}[hbp]
+After the training and cross-validation to tune the hyper parameters of the decision tree itself, the results for the test dataset are shown in figure~\ref{fig:higgs_categorization_bdtoutputroc}, where the BDT ouput distributions for both training and testing subsets are overlaid and are in a very good agreement. Furthermore, the ROC curve from figure~\ref{fig:higgs_categorization_bdtoutputroc}, which is an indicator of the efficiency of the selection and rejection at the same time, shows a definite deviation from the diagonal (no discrimination). It follows that even with 0 \% efficiency rejecting background, the signal classification is not 100 \% efficient. Finally, given that a pure binary classficiation is not performed, the BDT output score is preserved for the next stage.
+\begin{figure}[htbp]
   \centering
   \includegraphics[width=0.75\linewidth]{figures/bdt_training/BDT_out_ge0j_all.pdf}\\
   \includegraphics[width=0.75\linewidth]{figures/bdt_training/BDT_ROC_ge0j_all.pdf}
@@ -116,13 +116,7 @@ The next step of the Greedy Categorization procedure is to optimize the categori
 \end{itemize}
 Again, only part of the signal has been used for the training, whereas all of the background events have been passed through the custom decision tree.
 
-Before moving forward with the actual algorithm, we have to provide a few definitions. First of all, we have to acknowledge, that the objects we are going to work with are the dimuon mass histogrammes as in figure~\ref{fig:higgs_categorization_massc0}. For a given mass distribution, we define a Signal Significance ($S_{node}$) according to the equation~\ref{eq:higgs_categorization_significance}. $N^{S}_{c,i}$ and $N^{B}_{c,i}$ are the yields (number of entries) for that particular histogram and for that particular bin. Note that we treat all the bins in the distribution separately and only use those that fall in the [120 GeV, 130 GeV] mass range. Futhermore, the metric, based on which we are going to optimize the splitting, is provided in equation~\ref{eq:higgs_categorization_gain}. Roughly speaking, we use the split that gives us the maximum gain across all the splits that have been tried.
-\begin{figure}[hbp]
-  \centering
-  \includegraphics[width=0.9\linewidth]{figures/ch_higgs/distributions/bdt_uf/distribution__c0__DiMuonMass__logY.png}
-  \caption{Mass Distribution for Category ''c0'' - lowest Discriminating BDT score category}
-  \label{fig:higgs_categorization_massc0}
-\end{figure}
+Before moving forward with the actual algorithm, a few definitions are provided. First of all the objects to be used are the dimuon mass histogrammes as in figure~\ref{fig:higgs_categorization_massc0}. For a given mass distribution, define a signal significance ($S_{node}$) according to the equation~\ref{eq:higgs_categorization_significance}. $N^{S}_{c,i}$ and $N^{B}_{c,i}$ are the yields (number of entries) for that particular histogram and for that particular bin. Note that all the bins in the distribution are treated separately and only those that fall in the [120 GeV, 130 GeV] mass range are used. Futhermore, the metric, based on which the splitting is optimized, is provided in equation~\ref{eq:higgs_categorization_gain}. Roughly speaking, the split that gives the maximum gain across all of the possible splits is to be selected.
 \begin{equation}
   {S^2_c} = \sum_{c,i}N^{S2}_{c,i}/N^{B}_{c,i}
   \label{eq:higgs_categorization_significance}
@@ -131,6 +125,12 @@ Before moving forward with the actual algorithm, we have to provide a few defini
   {G} = {S^2_{left}} + {S^2_{right}} - {S^2_{node}}
   \label{eq:higgs_categorization_gain}
 \end{equation}
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.9\linewidth]{figures/ch_higgs/distributions/bdt_uf/distribution__c0__DiMuonMass__logY.png}
+  \caption{Mass Distribution for Category ''c0'' - lowest Discriminating BDT score category}
+  \label{fig:higgs_categorization_massc0}
+\end{figure}
 
 After providing all of the important definitions to work with, the actual procedure for the tree splits optimization can be summarized as follows:
 \begin{itemize}
@@ -143,10 +143,10 @@ After providing all of the important definitions to work with, the actual proced
     \end{itemize}
   \item Stage n. Repeat Stage 2 recursively for each of the new nodes until the tree reaches the limit on the number of categories or runs out of splitting conditions.
 \end{itemize}
-The procedure just described is an example of a greedy algorithm, because we do not perform full parameters' phase space optimization as it is computationally infeasible. We greedily optimize the metric of interest step by step iterating over all of the available features.
+The procedure just described is an example of a greedy algorithm, because full parameters' phase space optimization is not performed as it is computationally infeasible. Rather, the metric of interest is optimized greedily, step by step iterating over all of the available features.
 
 The outcome of this technique is 13 new categories with the categorization tree shown in figure~\ref{fig:higgs_categorization_bdtcategories}. Integer labels are assigned based on the trained sensitivity of a particular subset, going from the category with the lowest sensitivity, ''c0'', to the one with the highest, ''c12''.
-\begin{figure}[hbp]
+\begin{figure}[hbtp]
   \centering
   \includegraphics[width=1.0\linewidth]{figures/bdt_cats/final_categories.png}
   \caption
@@ -154,7 +154,8 @@ The outcome of this technique is 13 new categories with the categorization tree 
   \label{fig:higgs_categorization_bdtcategories}
 \end{figure}
 
-\begin{figure}[H]
+Figures~\ref{fig:higgs_categorization_greedyc1c3}-~\ref{fig:higgs_categorization_greedyc10c12} summarize the resulting dimuon mass distributions. The modeling of the dimuon mass agrees well between data and simulations.
+\begin{figure}[htbp]
   \centering
   \includegraphics[width=0.65\linewidth]{figures/ch_higgs/distributions/bdt_uf/distribution__c1__DiMuonMass__logY.png}\\
   \includegraphics[width=0.65\linewidth]{figures/ch_higgs/distributions/bdt_uf/distribution__c2__DiMuonMass__logY.png}\\
@@ -162,7 +163,7 @@ The outcome of this technique is 13 new categories with the categorization tree 
   \caption{Mass Distributions for c1-c3 subsets from the Greedy Categorization}
   \label{fig:higgs_categorization_greedyc1c3}
 \end{figure}
-\begin{figure}[H]
+\begin{figure}[htbp]
   \centering
   \includegraphics[width=0.65\linewidth]{figures/ch_higgs/distributions/bdt_uf/distribution__c4__DiMuonMass__logY.png}\\
   \includegraphics[width=0.65\linewidth]{figures/ch_higgs/distributions/bdt_uf/distribution__c5__DiMuonMass__logY.png}\\
@@ -170,7 +171,7 @@ The outcome of this technique is 13 new categories with the categorization tree 
   \caption{Msas Distributions for c4-c6 subsets from the Greedy Categorization}
   \label{fig:higgs_categorization_greedyc4c6}
 \end{figure}
-\begin{figure}[H]
+\begin{figure}[htbp]
   \centering
   \includegraphics[width=0.65\linewidth]{figures/ch_higgs/distributions/bdt_uf/distribution__c7__DiMuonMass__logY.png}\\
   \includegraphics[width=0.65\linewidth]{figures/ch_higgs/distributions/bdt_uf/distribution__c8__DiMuonMass__logY.png}\\
@@ -178,7 +179,7 @@ The outcome of this technique is 13 new categories with the categorization tree 
   \caption{Mass Distributions for c7-c9 subsets from the Greedy Categorization}
   \label{fig:higgs_categorization_greedyc7c9}
 \end{figure}
-\begin{figure}[H]
+\begin{figure}[htbp]
   \centering
   \includegraphics[width=0.65\linewidth]{figures/ch_higgs/distributions/bdt_uf/distribution__c10__DiMuonMass__logY.png}\\
   \includegraphics[width=0.65\linewidth]{figures/ch_higgs/distributions/bdt_uf/distribution__c11__DiMuonMass__logY.png}\\
@@ -187,7 +188,48 @@ The outcome of this technique is 13 new categories with the categorization tree 
   \label{fig:higgs_categorization_greedyc10c12}
 \end{figure}
 
-Figures~\ref{fig:higgs_categorization_greedyc1c3}-~\ref{fig:higgs_categorization_greedyc10c12} summarize the resulting dimuon mass distributions. The modeling of the dimuon mass agrees well between data and simulations. Furthermore, figures~\ref{fig:higgs_categorization_bdtinput1_inclusive},~\ref{fig:higgs_categorization_bdtinput2_inclusive} provide the comparison of the data with Monte Carlo for the kinematic variables, input features, that are used for the signal discrimination. Figures~\ref{fig:higgs_categorization_bdtinput1_c12},~\ref{fig:higgs_categorization_bdtinput2_c12} show the same features but compared for the most sensitive category. Overall, good agreement between data and simulations is observed, especially for the dimuon mass distribution. Finally, Table~\ref{tab:higgs_categorization_yields} provides a summary on the statistical properties of dimuon mass shapes provided in figures~\ref{fig:higgs_categorization_greedyc1c3}-~\ref{fig:higgs_categorization_greedyc10c12}. One of the important characteristics of our search, although not obvious, is the signal width, provided in terms of Full Width at Half Maximum (FWHM). It is an important feature because the smaller the width is, the more pronounced the signal is, the less influence the shape of the function, used for the background estimation, will have on our Standard Model Higgs signal.
+Figures~\ref{fig:higgs_categorization_bdtinput1_inclusive},~\ref{fig:higgs_categorization_bdtinput2_inclusive} provide a comparison of the data with MC for the kinematic variables, input features, that are used for the signal discrimination. Figures~\ref{fig:higgs_categorization_bdtinput1_c12},~\ref{fig:higgs_categorization_bdtinput2_c12} show the same features but compared for the most sensitive category, ''c12''. Overall, good agreement between data and simulations is observed, especially for the dimuon mass distributions.
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.49\linewidth]{figures/bdt_cats/dimu_eta_root.png}
+  \includegraphics[width=0.49\linewidth]{figures/bdt_cats/dimu_abs_dEta_root.png}\\
+  \includegraphics[width=0.49\linewidth]{figures/bdt_cats/dimu_abs_dPhi_root.png}
+  \includegraphics[width=0.49\linewidth]{figures/bdt_cats/nJetsCent_root.png}
+  \caption{Data/MC agreement for the BDT input variables before categorization.}
+  \label{fig:higgs_categorization_bdtinput1_inclusive}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.49\linewidth]{figures/bdt_cats/dijet1_mass_root.png}
+  \includegraphics[width=0.49\linewidth]{figures/bdt_cats/dijet1_abs_dEta_root.png}\\
+  \includegraphics[width=0.49\linewidth]{figures/bdt_cats/dijet2_mass_root.png}
+  \includegraphics[width=0.49\linewidth]{figures/bdt_cats/dijet2_abs_dEta_root.png}
+  \caption{Data/MC agreement for the BDT input variables before categorization.}
+  \label{fig:higgs_categorization_bdtinput2_inclusive}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.49\linewidth]{figures/bdt_cats/dimu_eta_c12.png}
+  \includegraphics[width=0.49\linewidth]{figures/bdt_cats/dimu_abs_dEta_c12.png}\\
+  \includegraphics[width=0.49\linewidth]{figures/bdt_cats/dimu_abs_dPhi_c12.png}
+  \includegraphics[width=0.49\linewidth]{figures/bdt_cats/nJetsCent_c12.png}
+  \caption{Data/MC agreement for the BDT input varaibles for the most sensitive category.}
+  \label{fig:higgs_categorization_bdtinput1_c12}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.49\linewidth]{figures/bdt_cats/dijet1_mass_c12.png}
+  \includegraphics[width=0.49\linewidth]{figures/bdt_cats/dijet1_abs_dEta_c12.png}\\
+  \includegraphics[width=0.49\linewidth]{figures/bdt_cats/dijet2_mass_c12.png}
+  \includegraphics[width=0.49\linewidth]{figures/bdt_cats/dijet2_abs_dEta_c12.png}
+  \caption{Data/MC agreement for the BDT input variables for the most sensitive category.}
+  \label{fig:higgs_categorization_bdtinput2_c12}
+\end{figure}
+
+Table~\ref{tab:higgs_categorization_yields} provides a summary of the statistical properties of dimuon mass shapes provided in figures \ref{fig:higgs_categorization_greedyc1c3} - \ref{fig:higgs_categorization_greedyc10c12}. One of the important characteristics of the search, although not obvious, is the signal width, provided in terms of Full Width at Half Maximum (FWHM). It is an important feature because the smaller the width is, the more pronounced the signal is, the less influence the shape of the function, used for the background estimation, will have on the Standard Model Higgs signal.
 \begin{table}[htb]
   \caption{Comparison of Signal and Background Yields for greedily optimized categories.}
   \label{tab:higgs_categorization_yields}
@@ -213,45 +255,7 @@ Figures~\ref{fig:higgs_categorization_greedyc1c3}-~\ref{fig:higgs_categorization
     \end{tabular}
   \end{center}
 \end{table}
-\begin{figure}[hbp]
-  \centering
-  \includegraphics[width=0.49\linewidth]{figures/bdt_cats/dimu_eta_root.png}
-  \includegraphics[width=0.49\linewidth]{figures/bdt_cats/dimu_abs_dEta_root.png}\\
-  \includegraphics[width=0.49\linewidth]{figures/bdt_cats/dimu_abs_dPhi_root.png}
-  \includegraphics[width=0.49\linewidth]{figures/bdt_cats/nJetsCent_root.png}
-  \caption{Data/MC agreement for the BDT input variables before categorization.}
-  \label{fig:higgs_categorization_bdtinput1_inclusive}
-\end{figure}
 
-\begin{figure}[hbp]
-  \centering
-  \includegraphics[width=0.49\linewidth]{figures/bdt_cats/dijet1_mass_root.png}
-  \includegraphics[width=0.49\linewidth]{figures/bdt_cats/dijet1_abs_dEta_root.png}\\
-  \includegraphics[width=0.49\linewidth]{figures/bdt_cats/dijet2_mass_root.png}
-  \includegraphics[width=0.49\linewidth]{figures/bdt_cats/dijet2_abs_dEta_root.png}
-  \caption{Data/MC agreement for the BDT input variables before categorization.}
-  \label{fig:higgs_categorization_bdtinput2_inclusive}
-\end{figure}
-
-\begin{figure}[hbp]
-  \centering
-  \includegraphics[width=0.49\linewidth]{figures/bdt_cats/dimu_eta_c12.png}
-  \includegraphics[width=0.49\linewidth]{figures/bdt_cats/dimu_abs_dEta_c12.png}\\
-  \includegraphics[width=0.49\linewidth]{figures/bdt_cats/dimu_abs_dPhi_c12.png}
-  \includegraphics[width=0.49\linewidth]{figures/bdt_cats/nJetsCent_c12.png}
-  \caption{Data/MC agreement for the BDT input varaibles for the most sensitive category.}
-  \label{fig:higgs_categorization_bdtinput1_c12}
-\end{figure}
-
-\begin{figure}[hbp]
-  \centering
-  \includegraphics[width=0.49\linewidth]{figures/bdt_cats/dijet1_mass_c12.png}
-  \includegraphics[width=0.49\linewidth]{figures/bdt_cats/dijet1_abs_dEta_c12.png}\\
-  \includegraphics[width=0.49\linewidth]{figures/bdt_cats/dijet2_mass_c12.png}
-  \includegraphics[width=0.49\linewidth]{figures/bdt_cats/dijet2_abs_dEta_c12.png}
-  \caption{Data/MC agreement for the BDT input variables for the most sensitive category.}
-  \label{fig:higgs_categorization_bdtinput2_c12}
-\end{figure}
 
 % \begin{figure}
 %   \includegraphics[width=1.0\linewidth]{figures/bdt_training/BDT_in_ge0j_all.pdf}

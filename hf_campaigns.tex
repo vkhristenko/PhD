@@ -4,21 +4,21 @@ A $^{60}$Co radioactive source, RP4118 with a measured activity of 83.46 $\pm$
 during the three sourcing campaigns: HF- in October 2013 with the old PMTs still
 installed; HF+ in April 2014 with new PMTs installed; and HF- in July 2014 with
 new PMTs installed. First, sourcing with the old PMTs was performed to extract
-the source energy deposition in terms of HF calibration durin Run 1. Second, new PMTs were installed and commissioned. Finally, we perfomed sourcing with the newly installed hardware and applied previously extracted source energy deposition to compute the HF gains. Several OVs, which are different from the Voltage that HF is being planned to be operated at during Run II (OV2), were used depending on the histogramming mode (1TS or 2TS) as it was important on one hand to take into account the limitations of the QIE range (would like to avoid having too many events in the overflow bin). On the other hand, we have to have sufficient PMT gain not to lose events under the pedestal peak. All HF gains were adjusted for the difference in OVs.
+the source energy deposition in terms of HF calibration durin Run 1. Second, new PMTs were installed and commissioned. Finally, the sourcing was performed with the newly installed hardware and previously extracted source energy deposition was applied to compute the HF gains. Several OVs, which are different from the Voltage that HF is being planned to be operated at during Run II (OV2), were used depending on the histogramming mode (1 TS or 2 TS) as it was important on one hand to take into account the limitations of the QIE range. On the other hand, we have to have sufficient PMT gain not to lose events under the pedestal peak. All HF gains were adjusted for the difference in OVs.
 
 \subsection{2013 HF- Campaign}
 Quadrants 1 and 4, also referred to as the near side of HF- containing wedges
-1-9, were exposed to the radioactive source on 23-27 October 2013, during
+1-9, were exposed to the radioactive source on 23 - 27 October 2013, during
 which the activity of the source was 72.11 $\pm$ 0.15 MBq. The original
 PMTs were used during this campaign in order to obtain the energy deposition
 within each tower from the provided radioactive source, as well as to provide
-useful data for future studies on radioactive damaging of the HF calorimeters
+useful data for future studies on radiation damage of the HF calorimeter fibers
 precipitating from Run I of the LHC. Data from both quadrants were recorded
-with the 1TS firmware at OV1 (same OV used during Run I), in
-addition to some data recorded with 2TS firmware at OV1+100. For this
+with the 1 TS firmware at OV1 (same OV was used during Run I), in
+addition to some data recorded with 2 TS firmware at OV1+100. For this
 specific campaign the overflow bin must not be included in the analysis
 because certain entries are unrelated to the response charge but instead are
-indicators of hardware error codes.
+indicators of firmware error codes.
 
 Data recording was set to trigger while the radioactive source was within 500 mm
 of a source tube. The source driver inserted the radioactive source into a source
@@ -29,18 +29,11 @@ insert the source until it reached the back end of the tube. The source is then
 immediately retracted from the tube, but in the process the source driver system
 must spool the source wire by periodically alternating from retracting to extending the wire to prevent tangles. Overall, approximately 7-8 minutes of data was collected for each source tube, with the majority of the statistics being recorded while the radioactive source was held stationary in the middle of each tower.
 
-To help better illustrate how the data-taking process went and what kind of objects we are working with upon collecting the data, we refer to Figure~\ref{fig:hf_campaigns_histograms}.
-
-\begin{figure}[!h]
+To help better illustrate how the data-taking process went and what kind of objects the analysis is performed with, refer to Figure~\ref{fig:hf_campaigns_histograms}. The first graph shows the response of a single channel as source is moving along the source tube inside the tower. Note that source enters from the ''Back'' and moves to the ''Front''. That is because this definition is provided with respect to the CMS Center. Second distribution shows examples of ''signal'' and ''background'' histograms: charge distribution when source is moving inside the tower and another charge distribution when source is moving in some other tower sufficiently isolated from the recorded tower.
+\begin{figure}[htb]
     \begin{center}
-        \subfigure[]
-        {
-            \includegraphics[width=.5\textwidth]{figures/ch_hfcalibration/Signal_ReelPos.png}
-        }
-        \subfigure[]
-        {
-            \includegraphics[width=.5\textwidth]{figures/ch_hfcalibration/Signal_Histogram.png}
-        }
+        \includegraphics[width=.8\textwidth]{figures/ch_hfcalibration/Signal_ReelPos.png}
+        \includegraphics[width=.8\textwidth]{figures/ch_hfcalibration/Signal_Histogram.png}
         \caption
         {(a)Source Signal vs Position (b) 32-bin histogram - A basic object of the read out per a given channel}
         \label{fig:hf_campaigns_histograms}
@@ -132,12 +125,11 @@ To help better illustrate how the data-taking process went and what kind of obje
 % \end{table}
 
 \subsection{2014 HF+ Campaign}
-All four quadrants of HF+ were exposed to the radioactive source on 22-27 April
-2014, during which the activity of the source was 67.56 $\pm$ 0.18\unit{MBq}.
+All four quadrants of HF+ were exposed to the radioactive source on 22 - 27 April
+2014, during which the activity of the source was 67.56 $\pm$ 0.18 \unit{MBq}.
 At this stage of HCAL upgrades, the new PMTs were installed and functional.
-All four quadrants were sourced using the 1TS firmware at OV1, in addition to
-Quadrants 1 and 4, also referred to as the near side of HF+ containing wedges
-1-9, sourced with 2TS firmware at OV1+100. In the histogramming mode, the
+All four quadrants were sourced using the 1 TS firmware at OV1. In addition quadrants 1 and 4, also referred to as the near side of HF+ containing wedges
+1-9, were sourced with 2 TS firmware at OV1+100. In the histogramming mode, the
 absorber's response charge is represented across 32 bins, but for this campaign
 the overflow bin could be included in the analysis because previous issues with
 firmware error codes was rectified to exclude any nonphysical entries from the
@@ -286,12 +278,12 @@ point - this procedure differs from that used during the 2013 HF- campaign.
 % \end{table}
 
 \subsection{2014 HF- Campaign}
-All four quadrants of HF- were exposed to the radioactive source on 1-11 July
-2014, during which the activity of the source was 65.81 $\pm$ 0.21\unit{MBq}.
+All four quadrants of HF- were exposed to the radioactive source on 1 - 11 July
+2014, during which the activity of the source was 65.81 $\pm$ 0.21 \unit{MBq}.
 As with HF+, the new PMTs were installed and functional in HF- by this time.
-All four quadrants were sourced using the 1TS and 2TS firmware, separately, at
-OV1 and OV1+100, respectively. For this campaign the overflow bin could be
-included in the analysis because previous issues with firmware error codes was
+All four quadrants were sourced using the 1 TS and 2 TS firmware, separately, at
+OV1 and OV1+100, respectively. For this campaign, the overflow bin could be
+included in the analysis because previous issues with firmware error codes were
 rectified to exclude any nonphysical entries from the 32 bins. Also, during
 this campaign, the radioactive source was extended and retracted into and out
 of the source tubes without being held stationary at any point - this

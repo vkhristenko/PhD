@@ -1,11 +1,11 @@
 \section{Background Modeling}
 \label{bkg_model}
-Given highly dominant nature of background processes, it is important to properly model the background shape as that is the biggest contributor for any physical quantity of interest that we are to compute. In general, our background can be described by means of falling exponential with some polynomial contribution.
+Given highly dominant nature of background processes, it is important to properly model the background shape as that is the biggest contributor for any physical quantity of interest to be computed. In general, background can be described by means of a falling exponential with some polynomial contribution.
 
-The background is mainly composed by Drell--Yan and top pair production ($t\bar{t}$). MC samples for such processes are available at NLO (2j) and NNLO (incl), but they are not suited to be used for background modeling directly because they have little statistical power with respect to the data in the region of interests as well as large statistical uncertainties due to extra terms in QCD or EW expansions (high $\pt$), as well as resummation (low $\pt$), pdf and scale uncertainties, and unknown modeling of the long range correlation uncertainties. Therefore, we choose to treat the modeling of background using smooth functional forms.
+The background is mainly composed by Drell--Yan and top pair production ($t\bar{t}$). MC samples for such processes have been used, but they are not suited for directly modeling background because they have little statistical power with respect to the data in the region of interest as well as large statistical uncertainties due to extra terms in QCD or EW expansions (high $\pt$), as well as resummation (low $\pt$), pdf and scale uncertainties, and unknown modeling of the long range correlation uncertainties. Therefore, the modeling of background is treated using smooth functional forms.
 
 % Models: Physcs Motivated Models and Polynomial-like Families
-For the purpose of modeling, we identify two classes of models that we consider: physics motivated models and general purpose series able to describle any smoothly falling functional forms (polynomials, sum of exponentials). The first class contains several pdfs whose functional forms are driven by the knowledge of background processes contributing the most (Drell-Yan, ttbar). The functions considered are summarized in eqs~\ref{eq:ExpPol2}-\ref{eq:BWZGamma}.
+For the purpose of modeling, two classes of models are identified for consideration: physics motivated models and general purpose series able to describle any smoothly falling functional form (polynomials, sum of exponentials). The first class contains several pdfs whose functional forms are driven by the knowledge of background processes contributing the most (Drell-Yan, ttbar). The functions considered are summarized in equations \ref{eq:ExpPol2} - \ref{eq:BWZGamma}.
 \begin{align}
         \label{eq:ExpPol2}
         \text{ExpPolynomial:}& {B(x)} = {e^{a_{1}x + a_{2}x^2}} \\
@@ -17,7 +17,7 @@ For the purpose of modeling, we identify two classes of models that we consider:
         \text{BWZGamma:}& {B(x)} = {f\frac{e^{ax}\sigma_{z}}{(x-\mu_{z})^2 + (\frac{\sigma_{z}}{2})^2} + (1-f)\frac{e^{ax}}{x^2}}
 \end{align}
 % \cite{CMS-HIG-AN})
-These shapes have been derived and validated fitting the FEWZ (NNLO QCD) generated mass shapes and the fitted values for the parameters have been used as initial guesses for the modeling procedure. The second class of functions we consider comes from general families which are, in principle, capable of describing any functional form by incorporating more and more terms. We consider several families, polynomials in the Bernstein basis, power law, and sum of exponentials, summurized in eqs~\ref{eq:Bernstein}-\ref{eq:Laurent}.
+These shapes have been derived and validated fitting the FEWZ (NNLO generator \cite{Gavin:2010az}) generated mass shapes and fitted values for the parameters have been used as initial guesses for the modeling procedure. The second class of functions considered comes from general families which are, in principle, capable of describing any functional form by incorporating more and more terms. Several families are considered: polynomials in the Bernstein basis, power law, and sum of exponentials; summurized in equations \ref{eq:Bernstein} - \ref{eq:Laurent}.
 \begin{align}
         \label{eq:Bernstein}
         \text{Bernsteins:}& {B(x)} = {\sum_{i=0}^{n} \alpha_i[\binom{n}{i}x^{i}(1-x)^{n-i}]} \\
@@ -39,10 +39,10 @@ These shapes have been derived and validated fitting the FEWZ (NNLO QCD) generat
 %      \label{bkgmodel:exampleModels}
 %  \end{figure}
 
- The background modeling procedure involves the construction of an envelope ({\sc RooMultiPdf} \cite{CMSRooMultiPdf}) of pdfs that can either be used individually or altogether (discrete profile method \cite{CMS-PAS-HIG-13-001}) for the purpose of fitting the signal strength or setting the upper limit. For the physics motivated functions, we simply perform the binned maximum likelihood fit and insert that model into the envelope. Nevertheless, the discrite profile method allows to naturally take into account the number of free parameters in the fit, the computational time it takes scales linearly with the product $n_\textup{cat}\times n_\textup{family}$, since it performs one fit for all possible combination of choices of functional forms in all categories. In order to minimize the time it takes to perform the regression, the number of families in the envelope is reduced by selecting an appropriate order for a family using the F-Test, \textbf{the Fisher Test}, procedure at 95\% Confidence Level. The actual algorithm of the order selection for a particular family can bu summarized as follows:
+ The background modeling procedure involves the construction of an envelope ({\sc RooMultiPdf} \cite{CMSRooMultiPdf}) of functions that can either be used individually or altogether (discrete profile method \cite{CMS-PAS-HIG-13-001}) for the purpose of fitting the signal strength or setting the upper limit. For the physics motivated functions, the binned maximum likelihood fit is performed to provide sensible initial guesses and the model gets inserted into the envelope. Although, the discrite profile method allows to naturally take into account the number of free parameters in the fit, the computational time it takes scales linearly with the product $n_\textup{cat}\times n_\textup{family}$, since it performs one fit for all possible combination of choices of functional forms in all categories. In order to minimize the time it takes to perform the regression, the number of families in the envelope is reduced by selecting an appropriate order for a family using a procedure known as F-Test, \textbf{the Fisher Test}, at 95\% Confidence Level. The actual algorithm of the order selection for a particular family can bu summarized as follows:
 \begin{itemize}
     \item For a given category and for a particular family
-    \item $H_0$ hypothesis: order $n$ is the true order. To reject this hypothesis, we have to be at least 95\% confident rejecting it, in other words: $p-\text{value}(\chi^2, ndf) < 5\%$
+    \item $H_0$ hypothesis: order $n$ is the true order. To reject this hypothesis, one has to be at least 95\% confident rejecting it, in other words: $p-\text{value}(\chi^2, ndf) < 5\%$
     \item Perform the background only fit for orders $n$ and $n+1$ to the data
     \item Compute $\chi^2_{n}$ and $\chi^2_{n+1}$ respectively. $\chi^2 = -2\log\mathcal{L}$
     \item Compute the difference in the number of degrees of freedom: $\Delta NDF = NDF_{n+1} - NDF_{n}$
@@ -50,13 +50,13 @@ These shapes have been derived and validated fitting the FEWZ (NNLO QCD) generat
     % \item use $\chi^2_ = 2 \Delta \log\mathcal{L}$, as for the asymptotic approximation of the Likelihood function.
     % \item compute the difference in number of degrees of freedom $\text{n.d.f.} = \text{NDF}_{n+1} - \text{NDF}_{n}$
     % \item the $\chi^2$ variable is distributed as a $\chi^2$-distribution with $\text{n.d.f.}$ degrees of freedom,
-    \item Compute the $\chi^2$ p-value
-    \item For p-value less than 5\%, we are rejecting n and move on to test n+1
-    \item For p-value greater than 5\%, we stop and select order $n$ for this category, for this functional family.
+    \item Compute the $\chi^2$ p-value.
+    \item For p-value less than 5\%, reject n and move on to test n+1.
+    \item For p-value greater than 5\%, stop and select order $n$ for this category, for this functional family.
 \end{itemize}
 
-Figures~\ref{fig:higgs_bmodel_bdtc1c3}-~\ref{fig:higgs_bmodel_bdtc10c12} shows the dimuon mass distributions together with the background envelope of analytic functions fitted to the data. The binned maximum likelihood fit is performed. The order of a family is chosen using the F-Test procedure described just above and varies depending on the category.
-\begin{figure}[hbp]
+Figures \ref{fig:higgs_bmodel_bdtc1c3} - \ref{fig:higgs_bmodel_bdtc10c12} show the dimuon mass distributions together with various analytic background functions fitted to the data. The binned maximum likelihood fit is performed. The order of a family is chosen using the F-Test procedure described just above and varies depending on the category.
+\begin{figure}[htbp]
   \centering
   \includegraphics[width=0.65\linewidth]{figures/ch_higgs/backgroundmodel/uf_bdt/backgroundFits__c1__bkgModels.png}\\
   \includegraphics[width=0.65\linewidth]{figures/ch_higgs/backgroundmodel/uf_bdt/backgroundFits__c2__bkgModels.png}\\
@@ -64,7 +64,7 @@ Figures~\ref{fig:higgs_bmodel_bdtc1c3}-~\ref{fig:higgs_bmodel_bdtc10c12} shows t
   \caption{Background Modeling envelope of analytic functions fitted to the data (c1 - c3)}
   \label{fig:higgs_bmodel_bdtc1c3}
 \end{figure}
-\begin{figure}[hbp]
+\begin{figure}[htbp]
   \centering
   \includegraphics[width=0.65\linewidth]{figures/ch_higgs/backgroundmodel/uf_bdt/backgroundFits__c4__bkgModels.png}\\
   \includegraphics[width=0.65\linewidth]{figures/ch_higgs/backgroundmodel/uf_bdt/backgroundFits__c5__bkgModels.png}\\
@@ -72,7 +72,7 @@ Figures~\ref{fig:higgs_bmodel_bdtc1c3}-~\ref{fig:higgs_bmodel_bdtc10c12} shows t
   \caption{Background Modeling envelope of analytic functions fitted to the data (c4 - c6)}
   \label{fig:higgs_bmodel_bdtc4c6}
 \end{figure}
-\begin{figure}[hbp]
+\begin{figure}[htbp]
   \centering
   \includegraphics[width=0.65\linewidth]{figures/ch_higgs/backgroundmodel/uf_bdt/backgroundFits__c7__bkgModels.png}\\
   \includegraphics[width=0.65\linewidth]{figures/ch_higgs/backgroundmodel/uf_bdt/backgroundFits__c8__bkgModels.png}\\
@@ -80,7 +80,7 @@ Figures~\ref{fig:higgs_bmodel_bdtc1c3}-~\ref{fig:higgs_bmodel_bdtc10c12} shows t
   \caption{Background Modeling envelope of analytic functions fitted to the data (c7 - c9)}
   \label{fig:higgs_bmodel_bdtc7c9}
 \end{figure}
-\begin{figure}[hbp]
+\begin{figure}[htbp]
   \centering
   \includegraphics[width=0.65\linewidth]{figures/ch_higgs/backgroundmodel/uf_bdt/backgroundFits__c10__bkgModels.png}\\
   \includegraphics[width=0.65\linewidth]{figures/ch_higgs/backgroundmodel/uf_bdt/backgroundFits__c11__bkgModels.png}\\
