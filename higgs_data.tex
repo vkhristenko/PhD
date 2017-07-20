@@ -1,9 +1,14 @@
 \section{CMS Datasets} \label{section:higgs_data}
+At CMS, all of the accumulated data is organized in terms of datasets, which can be logically organized into key-value pairs. A key is the name of a dataset, which uniquely identifies it across the rest of the samples (dataset and sample are used interchangeably). At the same time, a key follows a standard naming convention, which allows to quickly resolve the most important characteristics of the actual data it points to. A value, in turn, is a collection of data files that actually constitute the dataset and are used for the analysis.
+
+Generally speaking, the CMS experiment produces two types of datasets: collision and simulation samples. Collision samples correspond to the actual data recorded from proton-proton collisions at the LHC. A typical collision sample name has three parts: stream identifier, timestamp and format of the data stored. Depending on the format, timestamp can either point to the actual period of datataking or the reconstruction date. The CMS assigns descriptive stream identifiers in order to provide an overview of the physical content of the events that go into a dataset. For instance, in this search, only events that have a good quality muon object are considered and a ''SingleMuon'' identifier signals exactly that. Furthermore, datasets could have identifiers like ''SingleElectron'' or ''SinglePhoton'', which would make them respectively contain events with an electron or a photon.
+
+Simulation samples correspond to the data produced by simulating the collisions environment (production processes and consecutive decays) and the response of the CMS detector. The most important use case of the simulation is to provide a modeling baseline with which collisions data will be compared. For the purpose of the search, simulation datasets can be further divided into the signal and background samples. Signal corresponds to the Higgs Boson production processes with its consecutive decay to two muons. Backgrounds, in turn, are basically all of the processes that can produce the same signature, the same final state. A typical unique simulation sample name, similar to collision sample name, has three parts: production process specifier, conditions identifier and the format of the data stored. The first part specifies a label that summarizes the actual production process and the Monte Carlo event generators used to perform the calculations of the Feynman diagrams. Conditions part carries a label to uniquely specify a campaign when a sample is produced, software versions used, and various calibrations and corrections applied.
 
 \subsection{Collision Datasets}
-For the purpose of our search we use 35.9 fb$^{-1}$ of CMS collisions data collected over the course of 2016 datataking campaign. The full list of the datasets used is presented in the table~\ref{table:higgs_data_collisiondatasets}. The choice of SingleMuon stream (over DoubleMuon) is dictated by having intrinsically higher efficiency of triggering a single muon rather than two muons per a given event.
+For the purpose of the search, datasets with the total integrated luminosity of 35.9 fb$^{-1}$ of CMS collisions data collected over the course of 2016 datataking campaign are utilized and the full list of these samples is provided in the Table~\ref{table:higgs_data_collisiondatasets}. The signature of the search is the presence of two opposite sign muons in the event, therefore, in order to pick up as many as possible events of interest, the choice for the stream identifier is limited to either ''SingleMuon'' or ''DoubleMuon''. The choice of ''SingleMuon'' is dictated by the fact of having intrinsically higher efficiency of triggering a single muon rather than two muons per a given event. By selecting ''DoubleMuon'' trigger, for this particular search, all the events where only one muon triggers the HLT system would be thrown away. Therefore, considering that dimuon final state has a very low branching fraction for the Higgs Boson, the choice is made not to throw away the events.
 \begin{table}[htb]
-    \caption{Datasets for proton-proton collisions recorded at $\sqrt{s}=13$~TeV by CMS at LHC in 2016.}
+    \caption{Datasets, used for the search, from proton-proton collisions recorded at the $\sqrt{s}=13$~TeV by CMS at LHC in 2016}
     \label{table:higgs_data_collisiondatasets}
     \begin{center}
         \begin{tabular}{ l  c}
@@ -22,12 +27,12 @@ For the purpose of our search we use 35.9 fb$^{-1}$ of CMS collisions data colle
     \end{center}
 \end{table}
 
-\subsection{Monte Carlo Datasets}
-For the Standard Model Higgs Boson signal, samples with three different hypothetical Higgs Boson masses are used. Since a search is performed and are leaving the mass floating, one needs a way to probe various hypotheses. Using three mass points (samples) parameters of each provided mass hypothesis are modeled and further the interpolation is performed to deduce the parameters for any mass point that falls within our range. Table~\ref{table:higgs_data_signaldatasets} provides a summary of CMS signal datasets used along with cross-section of each production process.
+\subsection{Signal Datasets}
+For the purpose of testing various hypothetical Standard Model Higgs Boson masses, it is crucial to be able to build signal models for each hypothesis. In this analysis, samples with three different hypothetical Higgs Boson masses are used, 120/125/130 GeV, which allows a mass range [120, 130] GeV to be examined. The process of signal model construction and interpolation of parameters as a function of the Higgs Boson mass is discussed further in detail in Section~\ref{section:higgs_signalmodel}. The choice of the mass range is driven by the evidence obtained from searches for the Higgs Boson in other final states, discussed in Section~\ref{section:higgs_run1results}, where observations of a resonance near 125 GeV mass were made. Table~\ref{table:higgs_data_signaldatasets} provides a summary of the CMS signal samples used along with cross section of each production process for the 125 GeV mass hypothesis.
 \begin{table}[htb]
-    \caption{Standard Model 125 GeV Higgs Boson Signal Datasets for 13 TeV. Dataset names for 120/130 GeV are omitted for brevity. Moriond 2017 conditions are used (omitted the conditions specification for brevity).}
+    \caption{Standard Model 125 GeV Higgs Boson Signal Datasets for 13 TeV. Dataset names for 120/130 GeV are omitted for brevity. Moriond 2017 conditions are used (omitted the conditions specification for brevity)}
     \label{table:higgs_data_signaldatasets}
-    \begin{center}
+        \begin{center}
         \begin{tabular}{ l  c}
             \hline
             Datasets & $\sigma$ (pb)\\
@@ -39,13 +44,16 @@ For the Standard Model Higgs Boson signal, samples with three different hypothet
             {/ZH\_HToMuMu\_M125\_13TeV\_powheg\_pythia8} & 0.8839 \\
             \hline
         \end{tabular}
-    \end{center}
+        \end{center}
 \end{table}
 The Higgs signal production processes considered in this search are gluon
 fusion (ggH), vector boson fusion (VBF), Higgsstrahlung (VH). Production in
 association with top quarks (\ttH) has been generated privately. The Higgs MC samples are generated using {\sc POWHEG}~\cite{Nason:2004rx}.
+
+\subsection{Background Datasets}
+As it has already been stated, background processes are the processes that result in the same final state (at least two muons in the event) as the Higgs Boson samples considered. For this analysis, all the processes that produce two muons in the final state, but not through their coupling to the Higgs field,  are to be considered backgrounds. Table~\ref{table:higgs_data_backgrounddatasets} provides a summary of the most dominant contributions among the background processes. The largest contributor is the Drell-Yan process, which constitutes approximately 90\% of background events, and has a pair of leptons in the final state. The next to leading contributor is the $\mathrm{t\bar{t}}$-production, with subsequent decay of top quarks into lighter bottom quarks and W$^{\pm}$ vector bosons further coupling to 2 fermions. These two mechanisms are responsible for more than 98\% of background events contributing to the dimuon final state.
 \begin{table}[htb]
-    \caption{Background Datasets. Moriond 2017 conditios have been used (omitted the conditions specification for brevity).}
+    \caption{Background Datasets. Moriond 2017 conditions have been used (omitted the conditions specification for brevity)}
     \label{table:higgs_data_backgrounddatasets}
     \begin{center}
         \begin{tabular}{ l  c}
@@ -63,9 +71,11 @@ association with top quarks (\ttH) has been generated privately. The Higgs MC sa
     \end{center}
 \end{table}
 
-Table~\ref{table:higgs_data_backgrounddatasets} provides a summary of the most dominant contributions among the background processes. Given that data-driven approach is used for our search, background samples are not used in any of the statistical modeling. However, the primary use of background datasets is to compare various kinematic variable distributions from data and theoretical predictions. Moreover, as it will be clarified in section~\ref{section:higgs_categorization}, depending on the categorization technique used background samples can be used for training a binary classification algorithm for the purpose of signal discrimination.
+Depending on the analysis strategy, the role of background simulation samples can be two-fold. First, they are used for comparison with collisions data, in particular to make sure that dimuon mass is modeled well by the included backgrounds. The idea is to show that physical quantities of interest (dimuon mass, various kinematic variables) are in line with theoretical predictions. It is important to point out that both data and simulated samples will be further subject to exactly same selections, further described in Section~\ref{section:higgs_selections}. Second, background datasets can be directly used for the hypothesis testing and statistical analysis of the presence of the signal in the data. In such a case, it is common to abbreviate this approach as simulation driven, because the simulated background dimuon mass distributions are directly used in the hypothesis testing. Another approach, commonly named data driven, is to build a model, similar to the construction of a signal model and discussed further in Section~\ref{section:higgs_bkgmodel}, that will be fit to the actual data, constrained and used to estimate the background yield.
 
-Single top samples are generated with {\sc POWHEG}, whereas $\mathrm{t\bar{t}}$ samples and the multi-boson samples are generated either with {\sc madgrapgh}~\cite{Alwall:2011uj} or {\sc amc@NLO} (Next to Leading Order)~\cite{amcatnlo}. Spin effects in multi boson processes are simulated using madspin. The parton shower and hadronization processes are modeled by the {\sc Pythia8} generator~\cite{Sjostrand:2007gs} with TuneCUETP8M1.
+This analysis follows data driven background estimation approach due to the low statistical power of simulated background samples. In other words, significant bin-to-bin fluctuations are present, especially for the categories with lower statistics, that would result in inadequate extraction of the upper limits. Therefore, the primary use of background datasets is to compare various kinematic variable distributions from data and theoretical predictions. Moreover, as it will be clarified in section~\ref{section:higgs_categorization}, depending on the categorization technique used, background samples will be further used for training a binary classification algorithm for the purpose of signal discrimination.
+
+Single top samples are generated with {\sc POWHEG}, whereas $\mathrm{t\bar{t}}$ samples and the multi-boson samples are generated either with {\sc madgrapgh}~\cite{Alwall:2011uj} or {\sc amc@NLO} (Next to Leading Order)~\cite{amcatnlo}. Spin effects in multi boson processes are simulated using {\sc Madspin}. The parton shower and hadronization processes are modeled by the {\sc Pythia8} generator~\cite{Sjostrand:2007gs} with TuneCUETP8M1.
 
 %The simulated pile up distribution is reweighted to match the observed
 %distribution in data for all MC samples.

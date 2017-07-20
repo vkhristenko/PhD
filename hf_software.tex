@@ -7,8 +7,8 @@ results to the offline database for further use. All the data files
 collected during these campaigns are stored on disk at CERN in the EOS
 storage system.
 
-The general content of the data files is reduced to include pertenant
-information for calibration, such as the indexes of each channel powered
+The general content of the data files is reduced to include pertinent
+information for calibration, such as the indicies of each channel powered
 during the campaign, a two-dimensional array containing each channel's
 output signal and capacitor ID (CapID), the name of the source tube being
 sourced during any given event, the position of the radioactive source
@@ -20,7 +20,7 @@ channels per tower (EM or H).
 The output (EM and H channels) from the tower containing the
 radioactive source are considered signal data, while the background data
 is collected for each tower while the radioactive source is sufficiently
-far away. To gaurantee that the radioactive source is sufficeintly distant
+far away. To guarantee that the radioactive source is sufficiently distant
 from a given tower measuring background data, the following requirements for each tower's $\eta$ index (IEta) for a wedge half with a given $\phi$ index (IPhi) were considered:
 \begin{center}
    \begin{eqnarray}
@@ -30,7 +30,7 @@ from a given tower measuring background data, the following requirements for eac
    \end{eqnarray}
 \end{center}
 
-Therefore, for a given channel within a given tower and wedge, signal and background data are colleceted separately based on the location of the
+Therefore, for a given channel within a given tower and wedge, signal and background data are collected separately based on the location of the
 radioactive source described above. Provided that histograms for each channel
 are being read out by the DAQ at a rate of every four events, and each event
 contains all four capacitors' histograms for each QIE. Loop over all
@@ -50,7 +50,7 @@ In combining the histograms from all four capacitors within an event, one can
 then study the newly constructed total histogram as a function of reel position
 of the radioactive source within the absorber - this ability is crucial for
 radiation damage studies within the HF calorimeters. However, for the intent of
-calibrating the new PMTs installed for Run II, the choice is made to focus on comparing the total energy deposition recorded within a given tower with the expected energy deposition provided from the radioactive source. Therefore, we constuct a 32 bin histogram, with similar ADC charge bin ranges as provided by the firmware, that stores the overall sum of all events' 4-capacitor histograms according to the following:
+calibrating the new PMTs installed for Run II, the choice is made to focus on comparing the total energy deposition recorded within a given tower with the expected energy deposition provided from the radioactive source. Therefore, we construct a 32 bin histogram, with similar ADC charge bin ranges as provided by the firmware, that stores the overall sum of all events' 4-capacitor histograms according to the following:
 \begin{center}
    \begin{equation}
       \label{eq:Histo_Sum}
@@ -60,7 +60,7 @@ calibrating the new PMTs installed for Run II, the choice is made to focus on co
 
 where $N_j$ and $n_j$ are the content of the $j^{th}$ bin of their respective
 histograms, and $i$ is the event with $l$ and $m$ restricted according to
-go only over events with souce position within the tower as defined previously.
+go only over events with source position within the tower as defined previously.
 
 The mean ADC charge is defined separately for signal and background data of a
 particular tower by averaging over the bins of the total histogram from all
@@ -117,7 +117,7 @@ Run I Conditions, is needed. To extract Run I HF Gains and QIE Slopes from the C
 Calibration Coefficients ${CC}^{Run I}_{c}$~ (GeV/ADC) used during Run I were used to convert
 the signal measured in ADC/25\unit{ns} into GeV/25\unit{ns}. It is important to point out that in calculation of energy deposition, response corrections are not included. That is because the Run I calibration for PMT gains should be preserved, when extracting the energy, but not the HF response, which is affected by other corrections accumulated in response corrections.
 
-In figure~\ref{fig:QIE_Slope}, correlation plots between the inverted Calibration
+In Figure~\ref{fig:QIE_Slope}, correlation plots between the inverted Calibration
 Coefficients (ADC/GeV) from Run I and Source Signal (ADC/25\unit{ns}) from 2013
 Campaign are presented. Here, a similar strategy to Run I Calibration was used, when
 EM and HAD channels were calibrated separately. Except for some outlier channels,
@@ -137,7 +137,7 @@ Calibration Constants. Therefore, we can extract Source Energy Deposition:
       \caption{(a) Correlation plot between QIE response, in ADC/GeV, and 2013 HF-
                geometry corrected energy deposition, in ADC/25\unit{ns}, per tower
                for the EM channel.
-               (b) Similar correlation is observed for the H channel.}
+               (b) Similar correlation is observed for the H channel}
       \label{fig:QIE_Slope}
    \end{center}
 \end{figure}

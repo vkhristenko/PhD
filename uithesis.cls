@@ -123,6 +123,7 @@
 \newboolean{appendix} % There is an appendix
 \newboolean{ackpage} % There is an acknowledgement page
 \newboolean{abtitlepage} % There is an abstract title pg (required for Ph.D.) Not an option anymore!
+\setboolean{abtitlepage}{false}
 \newboolean{abstractpage} % There is an abstract page
 \newboolean{copyrightpage} % There is a copyright page
 \newboolean{dedicationpage} % There is a dedication page
@@ -510,7 +511,7 @@
 \newcommand{\frontmatter}{
   \ifthenelse{\boolean{nofrontmatter}}{}%
   {
-     \ifthenelse{\boolean{phd}}{\doctoralabstract}{}%
+     %\ifthenelse{\boolean{phd}}{\doctoralabstract}{}%
      \uitprefixpg
      \singlespace
      \titlepg
@@ -523,6 +524,7 @@
         \ackpg
      }{}
      \abstractpg
+     \publicabstractpage
      \setcounter{tocdepth}{6}
      \tableofcontents
      % The vbox is a harmless way of preventing a space being added
@@ -657,7 +659,8 @@
 \def\dedication#1{\gdef\@dedication{#1}}
 \def\epigraph#1{\gdef\@epigraph{#1}}
 \def\ackfile#1{\setboolean{ackpage}{true}\gdef\@ackfile{#1}}
-\def\abstractfile#1{\setboolean{abtitlepage}{true}\gdef\@abstractfile{#1}}
+\def\abstractfile#1{\setboolean{abtitlepage}{false}\gdef\@abstractfile{#1}}
+\def\publicabstractfile#1{\gdef\@publicabstractfile{#1}}
 
 \def\@title{}
 \def\@author{}
@@ -836,6 +839,24 @@
 	\vfill
 	\singlespace\normalsize
 	\newpage
+   }%
+   {}%
+}
+
+\newcommand{\publicabstractpage}{%
+   \ifthenelse{\boolean{abstractpage}}%
+   {%
+      \vspace*{\uitchapadd}%
+% Pain in the ass formatting: the text of the acknowledgement has to
+% appear 4 singlespace lines below the heading, rather than 2 like in
+% the rest of the front matter.
+  {\singlespace\parindent \z@ \reset@font \normalsize \bfseries
+   \centering PUBLIC ABSTRACT\par \nobreak \vskip 2\li }
+  \doublespace
+  \input{\@publicabstractfile}
+  \vfill
+  \singlespace\normalsize
+  \newpage
    }%
    {}%
 }

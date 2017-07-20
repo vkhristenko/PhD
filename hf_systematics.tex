@@ -7,17 +7,17 @@ which provides us a measure of consistency in computing the calibration
 coefficient across different firmware versions and operating voltages.
 To compare these 2 modes of operation, we used ${CC}^{Run II}_{c}$ computed for
 each sourcing configuration, after applying all the required corrections. The
-distributions of ratios (1 TS over 2 TS) is presented in the figures~\ref{fig:HF_1TSto2TS}. Comparing 1 TS OV1 and 2 TS OV1+100 results, the source signals computed need to be corrected for the 25 ns vs 50 ns integration window. After correcting between the firmware gains, the results agree to an order of 1\%.
+distributions of ratios (1 TS over 2 TS) is presented in the Figures~\ref{fig:HF_1TSto2TS}. Comparing 1 TS OV1 and 2 TS OV1+100 results, the source signals computed need to be corrected for the 25 ns vs 50 ns integration window. After correcting between the firmware gains, the results agree to an order of 1\%.
 
 As observed in the Figures~\ref{fig:HF_1TSto2TS},
-1 TS and 2 TS results match both for HF+ (1.4 \%) and HF- (0.3 \%) at the order of under 1.5 \%, which establishes solid indpendence of calibration coefficients from the firmware used.
+1 TS and 2 TS results match both for HF+ (1.4 \%) and HF- (0.3 \%) at the order of under 1.5 \%, which establishes solid independence of calibration coefficients from the firmware used.
 \begin{figure}[htb]
   \centering
   \includegraphics[width=0.45\linewidth]{figures/ch_hfcalibration/HFM_1TSto2TS_woOF.png}
   \includegraphics[width=0.45\linewidth]{figures/ch_hfcalibration/HFP_1TSto2TS_woOF.png}
   \caption
         {(a) Ratio of 1 TS/2 TS results for HF-.
-         (b) Ratio of 1 TS/2 TS results for HF+
+         (b) Ratio of 1 TS/2 TS results for HF+.
          For both sides The compared quantity was ${CC}^{Run II}_{c}$}
   \label{fig:HF_1TSto2TS}
 \end{figure}
@@ -38,7 +38,7 @@ As observed in the Figures~\ref{fig:HF_1TSto2TS},
 Approximately a quarter of HF wedges contains a second sourcing tube, which
 differ in the groove type and as a consequence in the location within a wedge.
 By comparing the obtained calibration coefficients using sourcing data from both
-tubes, it is possible to extract information on the transversal uniformity of the signal within a wedge. Again, as in the case of 1 TS vs 2 TS study, the actual ${CC}^{Run II}_{c}$ are to be compared. The ratios are presented in figure \ref{fig:HF_A2B}. Transversal uniformity between A and B tubes within towers containing them show good agreement between results as well, differing by under 1\%.
+tubes, it is possible to extract information on the transversal uniformity of the signal within a wedge. Again, as in the case of 1 TS vs 2 TS study, the actual ${CC}^{Run II}_{c}$ are to be compared. The ratios are presented in Figure \ref{fig:HF_A2B}. Transversal uniformity between A and B tubes within towers containing them show good agreement between results as well, differing by under 1\%.
 \begin{figure}[htb]
     \centering
     \includegraphics[width=.45\textwidth]{figures/ch_hfcalibration/HFM_A2B_woOF.png}
@@ -100,7 +100,7 @@ tubes, it is possible to extract information on the transversal uniformity of th
 \subsection{Longitudinal Uniformity}
 As the radioactive source is moving along the source tube, it is possible to actually record the spatial information on the location of the source, which provides with yet another tool to estimate the uncertainty of our measurements. The general idea is that several regions along the source tube are defined and histograms for each region respectively are summed up and then charged are extracted and compared.
 
-As it was described in section \ref{section:experimentalsetup}, the tubes' start (tubeStart) and end (tubeEnd) positions are provided. In table~\ref{tab:TubeRegions} definitions of the tubes' regions of interest are formally defined. ''Front'' and ''Back'' are defined so that ''Front'' is closer to IP and ''Back'' is further away. ''Signal'' is the region that has been used as the defining region for extracting
+As it was described in Section \ref{section:experimentalsetup}, the tubes' start (tubeStart) and end (tubeEnd) positions are provided. In Table~\ref{tab:TubeRegions} definitions of the tubes' regions of interest are formally defined. ''Front'' and ''Back'' are defined so that ''Front'' is closer to IP and ''Back'' is further away. ''Signal'' is the region that has been used as the defining region for extracting
 the charge to be used in calibration coefficient calculation. And the ''$\frac{2}{3}$Back''
 is an additional region defined to compare with the ''Signal''. It should be
 noted that ''$\frac{2}{3}$Back'' and ''Signal'' have overlapping and non-overlapping
@@ -123,23 +123,23 @@ regions. Even though overlapping region is the dominant one, using these 2 regio
     \label{tab:TubeRegions}
 \end{table}
 
-From figure \ref{fig:HF_LongUni}, observe that the signal in ''Front'' region is about 94 - 95 \% of the signal in the ''Back'' region. But it is neccessary to be more careful here when attributing this to systematics, as this mean ratio is consistent with the light attenuation in non-damaged fibers. Therefore, this 5 - 6 \% cannot be fully attributed to the systematic uncertainty. Considering the signal in ''$\frac{2}{3}$ Back'' with respect to the "Signal" region, a difference of 2\% on average is observed, which is the the contribution to the systematic uncertainty due to the longitudinal non-uniformity of the signal.
+From Figure \ref{fig:HF_LongUni}, observe that the signal in ''Front'' region is about 94 - 95 \% of the signal in the ''Back'' region. But it is necessary to be more careful here when attributing this to systematics, as this mean ratio is consistent with the light attenuation in non-damaged fibers. Therefore, this 5 - 6 \% cannot be fully attributed to the systematic uncertainty. Considering the signal in ''$\frac{2}{3}$ Back'' with respect to the "Signal" region, a difference of 2\% on average is observed, which is the the contribution to the systematic uncertainty due to the longitudinal non-uniformity of the signal.
 \begin{figure}[htb]
     \centering
     \includegraphics[width=.45\textwidth]{figures/ch_hfcalibration/SFSB_D1_woOF.png}
     \includegraphics[width=.45\textwidth]{figures/ch_hfcalibration/SB23toS_D1_woOF.png}
-    \caption{(a) Ratio of the charge extracted from the ''Front'' region to the charge computed in the region ''Back''. (b) Ratio of the charge computed within ''$\frac{2}{3}$ Back'' region to the ''Signal'' region. }
+    \caption{(a) Ratio of the charge extracted from the ''Front'' region to the charge computed in the region ''Back''. (b) Ratio of the charge computed within ''$\frac{2}{3}$ Back'' region to the ''Signal'' region}
     \label{fig:HF_LongUni}
 \end{figure}
 
-\subsection{Cross Check}
+\subsection{Cross-Check}
 An additional systematic uncertainty is included for the
-methodology described in this note for measuring the absorber response to the source energy. Independent analyses were performed on the same data, and the results were compared and agree within an order of 1 \%, as it can be deduced from figure \ref{fig:Crosscheck}.
+methodology described in this note for measuring the absorber response to the source energy. Independent analyses were performed on the same data, and the results were compared and agree within an order of 1 \%, as it can be deduced from Figure \ref{fig:Crosscheck}.
 \begin{figure}[htb]
     \begin{center}
         \includegraphics[width=.5\textwidth]{figures/ch_hfcalibration/Crosscheck.png}
         \caption{Cross-checking the results for HFM. On average the results agree
-        within 1\%.}
+        within 1\%}
         \label{fig:Crosscheck}
     \end{center}
 \end{figure}

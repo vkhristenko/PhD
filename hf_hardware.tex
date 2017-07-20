@@ -38,10 +38,10 @@ integration (I), and encode (E) \cite{QIE-1}. Each such QIE has 6 differential i
 allow to digitize 6 PMTs simultaneously. Differential inputs are used to subtract
 any externally induced noise in signal cables. Each QIE has also 1 fiber-optic
 output, which transfers the digitized information to HTRs (HCAL Trigger and
-Readout) \cite{HTR}. The output of 8 QIEs is furher bundled up into 1 fiber and digitized information is carried to a HTR. Therefore, each HTR receives input from 48 PMTs: 24 PMTs for each tower's HAD channel and 24 PMTs for each tower's EM channel.
+Readout) \cite{HTR}. The output of 8 QIEs is further bundled up into 1 fiber and digitized information is carried to a HTR. Therefore, each HTR receives input from 48 PMTs: 24 PMTs for each tower's HAD channel and 24 PMTs for each tower's EM channel.
 
 A large dynamic range in PMT signal processing is acquired using
-a multi-range technique. The input current is sumulatenously integrated on all
+a multi-range technique. The input current is simultaneously integrated on all
 four ranges, and comparators are used to isolate the lowest range that is not at
 full scale. The selected voltage representing the integrated charge is then put
 through an on-chip piecewise linear Flash ADC (Analogue to Digital Converter),
@@ -51,7 +51,7 @@ are weighted 1, 6 bins weighted 2, 5 bins weighted 4, 5 bins weighted 8, 3 bins
 weighted 16, 2 bins weighted 32, and 1 bin weighted 62, providing a range from
 0 to 194 ADC counts, with the overflow bin containing all charge above 194 ADC
 counts. Operations are time multiplexed and pipelined to allow signals to
-settle and to make the reset interval the same as the inegration interval.
+settle and to make the reset interval the same as the integration interval.
 Clocking is provided at the frequency of 40 MHz, with a latency of
 100 ns, as the pipeline is four clock cycles deep. Each QIE contains a
 set of four capacitors, and only one capacitor is acquiring charge during a
@@ -64,7 +64,7 @@ given TS histogramming mode and operating voltage (OV). In the histogramming
 mode, the absorber's response charge is represented across 32 histogram bins,
 with the final bin, Bin 32, being the overflow bin containing all data with
 charge beyond the particular range. For 1 TS firmware, each TS was recorded in
-the histogram. For 2 TS firmware, 2 time slices (25 ns each) are summed and the total was recorded in the histogram. To accomodate
+the histogram. For 2 TS firmware, 2 time slices (25 ns each) are summed and the total was recorded in the histogram. To accommodate
 the 2 TS maximum outputs, the expanded QIE bin range described above was used
 with respect to 1TS.
 
@@ -72,7 +72,7 @@ Each capacitor from a QIE set fills a separate histogram at the sampling rate,
 i.e. latent cycle, and once $6.5535$ $\times$ $10^4$ samples are collected the histogram
 is read out by the DAQ (DAQ is a generic acronym used to signify the full chain of data acquisition), two HTR fibers from each HTR half at a time. Data is
 saved into event format. Each event containing the histograms read out by all powered HTR
-halves - a given PMT's output is stored in every fourth event. This provides
+halves - a given PMT's output is stored in every fourth event. This means
 that each event represents 6.55 ms of source data. For 1 TS, each sample
 was collected over 25 ns, and for 2 TS each sample was collected over
 50 ns.

@@ -1,19 +1,19 @@
 \section{Introduction and Motivation} \label{section:higgs_introduction}
-The Standard Model is the leading theoretical description of the elementary particle physics. It incorporates strong, electromagnetic and weak fundamental forces of nature and explains the basic constituents of matter. Very detailed treatement and specification of the Standard Model can be found in references \cite{Peskin,Griffiths,Nikhef}. In what follows, the answers to the following two questions are provided in a simplified and informal manner:
+The Standard Model is the leading theoretical description of elementary particle physics. It incorporates strong, electromagnetic and weak fundamental forces of nature and explains the basic constituents of matter. Very detailed treatment and specification of the Standard Model can be found in references \cite{Peskin,Griffiths,Nikhef}. In what follows, the answers to the following two questions are provided in a simplified and informal manner:
 \begin{itemize}
     \item What the Higgs Boson is and why the search is performed.
-    \item Why probing the Higgs Boson decaying to two muons.
+    \item Why probing the Higgs Boson decaying to two muons is important.
 \end{itemize}
 
-The Standard Model categorizes all of the elementary particles into two groups: bosons and fermions. Bosons with spin $1$ (photons, gluons, W$^{\pm}$ and Z$^{0}$) represent the force carries together with the Higgs Boson, spin $0$. Fermions are the main building blocks of matter and can be further subdivided into two subgroups: $6$ quarks and $6$ leptons. Quarks possess the strong ''charge'', color, and, therefore, participate in the strong interaction and couple to the strong force carriers, gluons. On the other hand, leptons are colorless and therefore do not interact with gluons. Six leptons can be specified in the following way:
+The Standard Model categorizes all of the elementary particles into two groups: bosons and fermions. Bosons with spin $1$ (photons, gluons, W$^{\pm}$ and Z$^{0}$) represent the force carriers together with the Higgs Boson, with spin $0$. Fermions are the main building blocks of matter and can be further subdivided into two subgroups: six quarks and six leptons. Quarks possess the strong ''charge'' (color) and, therefore, participate in the strong interaction and couple to the strong force carriers (gluons). On the other hand, leptons are colorless and therefore do not interact with gluons. The six leptons can be specified in the following way:
 \begin{itemize}
     \item Electron + electron neutrino
     \item Muon + muon neutrino
     \item Tau + tau neutrino
 \end{itemize}
-Neutrinos do not possess any electric charge, therefore they only participate in weak interactions, mediated by W$^{\pm}$ and Z$^{0}$ bosons.
+Neutrinos do not possess any electric charge, therefore they only participate in weak interactions, mediated by the W$^{\pm}$ and Z$^{0}$ bosons.
 
-Mathematically, the Standard Model is a local gauge invariant Quantum Field Theory (QFT). Similarly to the Classical theory, it follows the Lagrangian formulation, by constructing a Lagrangian density and requiring it to satisfy a set of symmetries. To begin with, consider a Lorentz invariant Lagrangian density for a free 4-component Dirac Spinor, $\psi(x)$, that describes a fermion:
+Mathematically, the Standard Model is a local gauge invariant Quantum Field Theory (QFT). Similarly to the Classical theory, it follows the Lagrangian formulation, by constructing a Lagrangian density and requiring it to satisfy a set of symmetries. To begin with, consider a Lorentz invariant Lagrangian density for a free 4-component Dirac Spinor $\psi(x)$ that describes a fermion:
 \begin{equation}
     \label{eq:higgs_introduction_diracLagrangian}
     \mathcal{L} = \bar{\psi}i\gamma^{\mu}\partial_{\mu}\psi - m\bar{\psi}\psi
@@ -25,7 +25,7 @@ and gauge transformations for the fermion field:
     Local:&\quad \psi \rightarrow e^{i\theta(x)}\psi\label{eq:higgs_introduction_localgauge}
 \end{align}
 \end{subequations}
-where $\theta(x)$ is a function of space-time in~\ref{eq:higgs_introduction_localgauge}. Now, for the case of the global transformation of the fermion field, it follows trivially that $\mathcal{L}$ remains unchaged. However, for the case of the local gauge transformation, the symmetry of the $\mathcal{L}$ does not hold:
+where $\theta(x)$ is a function of space-time in Equation~\ref{eq:higgs_introduction_localgauge}. Now, for the case of the global transformation of the fermion field, it follows trivially that $\mathcal{L}$ remains unchanged. However, for the case of the local gauge transformation, the symmetry of the $\mathcal{L}$ does not hold:
 \begin{equation}\label{eq:higgs_introduction_diraclocalgauge}
     \begin{split}
     \mathcal{L}& = \bar{\psi}e^{-i\theta(x)}i\gamma^{\mu}\partial_{\mu}(e^{i\theta(x)}\psi) - m\bar{\psi}\psi\\
@@ -33,14 +33,14 @@ where $\theta(x)$ is a function of space-time in~\ref{eq:higgs_introduction_loca
     & = \bar{\psi}i\gamma^{\mu} \lbrack \partial_{\mu} + i\partial_{\mu}\theta(x) \rbrack \psi - m\bar{\psi}\psi
     \end{split}
 \end{equation}
-To remedy that, 2 additional things are defined; first, a new vector field is introduced, $A^{\mu}$, which under the local gauge transformations, defined in ~\ref{eq:higgs_introduction_localgauge}, transforms according to the equation~\ref{eq:higgs_introduction_photonfieldu1}. Second, in equation~\ref{eq:higgs_introduction_covariantderivative}, the partial derivative is modified to accomodate the new vector field.
+To remedy that, two additional items are defined; first, a new vector field is introduced, $A^{\mu}$, which under the local gauge transformations, defined in Equation~\ref{eq:higgs_introduction_localgauge}, transforms according to the Equation~\ref{eq:higgs_introduction_photonfieldu1}. Second, in Equation~\ref{eq:higgs_introduction_covariantderivative}, the partial derivative is modified to accommodate the new vector field.
 \begin{subequations}\label{eq:higgs_introduction_qedgauge}
 \begin{align}
     A^{\mu}& \rightarrow A^{\mu} - \frac{1}{q}\partial^{\mu}\theta(x)\label{eq:higgs_introduction_photonfieldu1}\\
     D^{\mu}& = \partial^{\mu} + iqA^{\mu}\label{eq:higgs_introduction_covariantderivative}
 \end{align}
 \end{subequations}
-With the above definitions in mind, equation~\ref{eq:higgs_introduction_diraclocalgauge} reduces down to the local gauge invariant definition of the $\mathcal{L}$:
+With the above definitions in mind, Equation~\ref{eq:higgs_introduction_diraclocalgauge} reduces down to the local gauge invariant definition of the $\mathcal{L}$:
 \begin{equation}\label{eq:higgs_introduction_diraclocalgauge}
     \begin{split}
     \mathcal{L}& = \bar{\psi}i\gamma^{\mu} \lbrack \partial_{\mu} + i\partial_{\mu}\theta(x) \rbrack \psi - m\bar{\psi}\psi\\
@@ -62,12 +62,12 @@ The last step here is to note that the mass term of the introduced vector field 
     & \neq A^{\mu}A_{\mu}
     \end{split}
 \end{equation}
-Therefore, the conclusion is that requiring local gauge invaraince~\ref{eq:higgs_introduction_localgauge} for a Dirac field results in the introduction of a massless vector field with the corresponding Lagrangian:
+Therefore, the conclusion is that requiring local gauge invariance (Equation~\ref{eq:higgs_introduction_localgauge}) for a Dirac field results in the introduction of a massless vector field with the corresponding Lagrangian:
 \begin{equation}
     \label{eq:higgs_introduction_diracLagrangianwithoutvectormass}
     \mathcal{L} = \bar{\psi}i\gamma^{\mu}D_{\mu}\psi - m\bar{\psi}\psi - \frac{1}{4}F^{\mu\nu}F_{\mu\nu}
 \end{equation}
-The theory described by the above Lagrangian density is called Quantum Electrodynamics (QED) and explains interactions between fermions and photons, Electromagnetic force carries. It is important to point out that experimental observations confirm the fact, that photons are massless, as it is required by the QED. The symmetry that was imposed on the initial free $\mathcal{L}$ is the most simple possible form, $e^{i\theta(x)}$ is a complex scalar. QED is often called U(1) theory, precisely because a set of local gauge transformations, defined in equation~\ref{eq:higgs_introduction_localgauge}, forms a U(1) group of unitary transformations.
+The theory described by the above Lagrangian density is called Quantum Electrodynamics (QED) and explains interactions between fermions and photons, electromagnetic force carries. It is important to point out that experimental observations confirm the fact that photons are massless, as is required by the QED. The symmetry that was imposed on the initial free $\mathcal{L}$ is the simplest possible form; $e^{i\theta(x)}$ is a complex scalar. QED is often called U(1) theory, precisely because a set of local gauge transformations, defined in Equation~\ref{eq:higgs_introduction_localgauge}, forms a U(1) group of unitary transformations.
 
 The full group specification of the Standard Model is SU(3) $\times$ SU(2)$_L$ $\times$ U(1). It is important to note that all of these groups define the transformations, application of which should leave our Lagrangian invariant, just like it was done above for QED. The guiding principle to generate the rest of the gauge bosons (for SU(3) $\times$ SU(2)) is similar to U(1). Therefore, briefly consider the Yang-Mills theory (generated by the SU(2) group) which allows to introduce the weak bosons. SU(2) can be realized as a group of 2-dimensional unitary matrices with a determinant of $1$. The corresponding gauge transformations will then be defined as follows:
 \begin{subequations}\label{eq:higgs_introduction_gaugesu2}
@@ -76,12 +76,12 @@ The full group specification of the Standard Model is SU(3) $\times$ SU(2)$_L$ $
     Local:&\quad \Psi \rightarrow e^{i\boldsymbol{\theta(x)} \cdot \boldsymbol\sigma}\Psi\label{eq:higgs_introduction_localgaugesu2}
 \end{align}
 \end{subequations}
-where $\sigma_{i}$ are the Pauli matrices. Define the $\Psi$ to be a \textbf{doublet of Dirac Spinors}, which in the most general case can be mixed, therefore the Lagrangian for the free $\Psi$ doublet will be (omit the mass term):
+where $\sigma_{i}$ are the Pauli matrices. Define the $\Psi$ to be a \textbf{doublet of Dirac Spinors}, which in the most general case can be mixed, therefore the Lagrangian for the free $\Psi$ doublet will be (omitting the mass term):
 \begin{equation}
     \label{eq:higgs_introduction_lagrangiagnsu2free}
     \mathcal{L} = \bar{\Psi}i\gamma^{\mu}\partial_{\mu}\Psi
 \end{equation}
-As for U(1), require the $\mathcal{L}$ to be invariant under local SU(2) gauge transformations. The result will be the introduction of $3$ additional massless vector fields (according to the number of generators of the SU(2) group), which under local SU(2) symmetry group transform very similar to equations~\ref{eq:higgs_introduction_qedgauge}. The differences are the direct consequences of the fact that SU(2) transformations are not commutative.
+As for U(1), require the $\mathcal{L}$ to be invariant under local SU(2) gauge transformations. The result will be the introduction of three additional massless vector fields (according to the number of generators of the SU(2) group), which under local SU(2) symmetry group transform very similar to Equations~\ref{eq:higgs_introduction_qedgauge}. The differences are the direct consequences of the fact that SU(2) transformations are not commutative.
 
 Now, first, define the left-handed and right-handed Dirac spinor components to be:
 \begin{subequations}\label{eq:higgs_introduction_chiralprojections}
@@ -94,15 +94,15 @@ Then using the above definitions and the fact that $(\gamma^5)^2 = 1$, the fermi
 \begin{equation}\label{eq:higgs_introduction_fermionmassterm}
     \bar{\psi}\psi = m \bar{\psi_L}\psi_R + m \bar{\psi_R}\psi_L
 \end{equation}
-The point of the above factorization is that the Standard Model Electroweak theory imposes the invariance under local SU(2) gauge transformations, defined in equation~\ref{eq:higgs_introduction_localgaugesu2}, only for the left-handed spinors (the subscript of SU(2)$_L$ is there to signal this property of the SM). Therefore, the mass terms for fermions break SU(2)$_L$ local symmetry and, as a consequence, fermions should be massless. Moreover, the decomposition in equation~\ref{eq:higgs_introduction_fermionmassterm} is mathematically unsound, because $\psi_L$ transforms according to SU(2) and $\psi_R$ according to U(1).
+The point of the above factorization is that the Standard Model Electroweak theory imposes the invariance under local SU(2) gauge transformations, defined in Equation~\ref{eq:higgs_introduction_localgaugesu2}, only for the left-handed spinors (the subscript of SU(2)$_L$ is there to signal this property of the SM). Therefore, the mass terms for fermions break SU(2)$_L$ local symmetry and, as a consequence, fermions should be massless. Moreover, the decomposition in Equation~\ref{eq:higgs_introduction_fermionmassterm} is mathematically unsound, because $\psi_L$ transforms according to SU(2) and $\psi_R$ according to U(1).
 
 At this point, the main consequences of the Electroweak part of the Standard Model, SU(2)$_L$ $\times$ U(1) are manifested in:
 \begin{itemize}
     \item Fermions are massless, contrary to the observations
-    \item 4 gauage bosons (consider Electroweak bosons: $\gamma$, W$^{\pm}$ and Z$^0$) are massless, again contrary to the experimental obvservations where W$^{\pm}$ and Z$^0$ are massive.
+    \item 4 gauge bosons (consider Electroweak bosons: $\gamma$, W$^{\pm}$ and Z$^0$) are massless, again contrary to the experimental observations where W$^{\pm}$ and Z$^0$ are massive.
 \end{itemize}
 
-The Higgs Mechanism is the approach to generate masses for the 3 gauge bosons and fermions by introducing a new field that lives in SU(2)$_L$ $\times$ U(1) space into the Lagrangian with a particular choice of the potential function (factor out the SU(3), QCD theory). Therefore, start with a Lagrangian for a massless fermion with the electroweak interaction terms hiden inside the derivative matrix, $D^{\mu}$, and introduce a new SU(2)$_L$ $\times$ U(1) left-handed doublet, components of which are spin-0 complex fields, in the following way to preserve the original local gauge symmetry:
+The Higgs Mechanism is the approach to generate masses for the 3 gauge bosons and fermions by introducing a new field that lives in SU(2)$_L$ $\times$ U(1) space into the Lagrangian with a particular choice of the potential function (factor out the SU(3), QCD theory). Therefore, start with a Lagrangian for a massless fermion with the electroweak interaction terms hidden inside the derivative matrix, $D^{\mu}$, and introduce a new SU(2)$_L$ $\times$ U(1) left-handed doublet, components of which are spin-0 complex fields, in the following way to preserve the original local gauge symmetry:
 \begin{subequations}\label{eq:higgs_introduction_introhiggs}
 \begin{align}
     V(\Phi)& = \mu^2\Phi^{\dagger}\Phi + \lambda(\Phi^{\dagger}\Phi)^2\\
@@ -110,15 +110,15 @@ The Higgs Mechanism is the approach to generate masses for the 3 gauge bosons an
     & = \bar{\Psi}i\gamma^{\mu}D_{\mu}\Psi + (D^{\mu}\Phi)^{\dagger}D_{\mu}\Phi - \mu^2\Phi^{\dagger}\Phi - \lambda(\Phi^{\dagger}\Phi)^2
 \end{align}
 \end{subequations}
-For the specified potential function, the $\Phi = 0$ is no longer a minimum, however a continuous spectrum of ground states corresponding to the vacuum with non-vanishing expectation value is observed. From this point, the procedure to generate gauge boson masses is:
+For the specified potential function, the $\Phi = 0$ is no longer a minimum, but a continuous spectrum of ground states corresponding to the vacuum with non-vanishing expectation value is observed. From this point, the procedure to generate gauge boson masses is:
 \begin{itemize}
-    \item $\Phi$ is a doublet of complex spin-0 fields $\rightarrow$ has $4$ degrees of freedom ($\phi_1$, $\phi_2$, $\phi_3$, $\phi_4$)
+    \item $\Phi$ is a doublet of complex spin-0 fields $\rightarrow$ has four degrees of freedom ($\phi_1$, $\phi_2$, $\phi_3$, $\phi_4$)
     \item Perturb $\phi$ around a particular choice of vacuum: $\phi_4 = \sqrt{-\frac{\mu^2}{\lambda}} + h$, with the rest of components unchanged.
     \item Expand the $\mathcal{L}$ and select a particular gauge: unitary gauge.
     \item In unitary gauge, $\phi_1$, $\phi_2$ and $\phi_3$ components of $\Phi$ will vanish, however the mass terms for the bosons will be recovered. All of these terms are generated from the kinetic $\Phi$ term.
     \item The perturbation field, $h$, around the selected vacuum is the real field with the mass $m_H = \sqrt{-2\mu^2}$ - Higgs field.
 \end{itemize}
-This procedure is called the Spontaneous Symmetry Breaking of the local SU(2)$_L$ $\times$ U(1) gauge invariance, because, although the original Lagrangian in equations~\ref{eq:higgs_introduction_introhiggs} stays invariant under the symmetry tranformation, the rotation in SU(2)$_L$ $\times$ U(1), the ground state of the system, a particular choice of vacuum, does change to a different state with the same energy.
+This procedure is called the Spontaneous Symmetry Breaking of the local SU(2)$_L$ $\times$ U(1) gauge invariance, because, although the original Lagrangian in Equations~\ref{eq:higgs_introduction_introhiggs} stays invariant under the symmetry transformation, the rotation in SU(2)$_L$ $\times$ U(1), the ground state of the system (a particular choice of vacuum) does change to a different state with the same energy.
 
 So far, only masses for weak bosons were shown to be recovered by the introduction of the Higgs field, with a particular choice of vacuum. These terms come out of expanding the kinetic $\phi$ terms perturbatively around some ground state. In addition, terms involving interactions between the gauge bosons and Higgs are also generated at the same time and from the same kinetic expansion. In order to incorporate the interactions of the Higgs field with fermions, consider to add the following term to the previous SU(2)$_L$ $\times$ U(1) Lagrangian:
 \begin{subequations}\label{eq:higgs_introduction_fermionmasses}
@@ -126,16 +126,16 @@ So far, only masses for weak bosons were shown to be recovered by the introducti
     \mathcal{L}& = - y \lbrack \bar{\psi_L}\phi\psi_R + \bar{\psi_R}\bar{\phi}\psi_L \rbrack
 \end{align}
 \end{subequations}
-Remember that $\phi$ lives in the SU(2)$_L$ $\times$ U(1) and therefore adding it will exactly contract the doublet indices and preserve the local symmetry (assuming the introduced field carries the right quantum numbers). Expanding $\phi$ around one of the vacuum states (applying the Higgs mechanism) will generate the fermion mass and the coupling of the Higgs real field to $2$ Dirac fields:
+Remember that $\phi$ lives in the SU(2)$_L$ $\times$ U(1) and therefore adding it will exactly contract the doublet indices and preserve the local symmetry (assuming the introduced field carries the right quantum numbers). Expanding $\phi$ around one of the vacuum states (applying the Higgs mechanism) will generate the fermion mass and the coupling of the Higgs real field to two Dirac fields:
 \begin{subequations}\label{eq:higgs_introduction_fermionmassterms}
 \begin{align}
     m\bar{\psi}\psi& \rightarrow y \lbrack \bar{\psi_L}\phi\psi_R + \bar{\psi_R}\bar{\phi}\psi_L \rbrack\\
-    & \rightarrow y\sqrt{-\frac{\mu^2}{2\lambda}}\psi_{Dirac}\psi_{Dirac} + \frac{y}{\sqrt{2}}h\psi_{Dirac}\psi_{Dirac}
+    & \rightarrow y\sqrt{-\frac{\mu^2}{2\lambda}}\bar{\psi}_{Dirac}\psi_{Dirac} + \frac{y}{\sqrt{2}}H\bar{\psi}_{Dirac}\psi_{Dirac}
 \end{align}
 \end{subequations}
-where $\psi_{Dirac}$ is to emphasize that they are pure 4-component Dirac spinors. The constant, $y$, is the Yukawa coupling.
+where $\psi_{Dirac}$ is to emphasize that they are pure four-component Dirac spinors. The constant, $y$, is the Yukawa coupling.
 
-The Higgs field is the fundamental aspect of the Standard Model, which would fall short explaining the experimental observations without it. Therefore, the search for the introduced boson is of primary importance for the validity of the Standard Model. The decay of the Higgs into muons is motivated by the following factors:
+The Higgs field is the fundamental aspect of the Standard Model, which would fall short explaining the experimental observations without it. Therefore, the search for the introduced boson is of primary importance for the validity of the Standard Model. The search for the decay of the Higgs into muons is motivated by the following factors:
 \begin{itemize}
     \item Dimuon decay allows to test the Yukawa coupling constant to the 2$^{nd}$ generation of fermions.
     \item At LHC, that is the only way to measure or constrain the Yukawa coupling for this generation.

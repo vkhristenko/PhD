@@ -1,10 +1,10 @@
 \section{Higgs Combination} \label{section:higgs_combination}
-To perform statistical tests in order to extract physical quantities of interest, Higgs Combination Package, \cite{CMSHiggsCombination}, is employed. It allows to perform various tests for each category individually (building a likelihood for a single category) and to combine all of the categories simultaneously as well (single likelihood still, but bins from all of the categories will be used for regression). Given that a search for the SM Higgs Boson is performed, the main objective is to improve the exclusion limits that are to be placed on Stadard Model Higgs Boson signal strength with the data collected during Run~II in 2016. In this section the instrument, Higgs Combination Package, is discussed that is going to be utilized to derive the exclusion limits.
+To perform statistical tests in order to extract physical quantities of interest, Higgs Combination Package, \cite{CMSHiggsCombination}, is employed. It allows to perform various tests for each category individually (building a likelihood for a single category) and to combine all of the categories simultaneously as well (single likelihood still, but bins from all of the categories will be used for regression). Given that a search for the SM Higgs Boson is performed, the main objective is to improve the exclusion limits that are to be placed on the Standard Model Higgs Boson signal strength with the data collected during Run~II in 2016. In this section the instrument, the Higgs Combination Package, is discussed that is going to be utilized to derive the exclusion limits.
 
 At this stage, the parametric model of our signal has been built (in terms of the floating Higgs Boson mass), the Fisher Test for various families has been performed and the actual envelope of analytic functions that will be used further has been selected. The next steps can be summarized as follows:
 \begin{itemize}
-    \item Build the workspaces and datacards for each category in a proper format as specified by the Higgs Combination Package. Datacard is a textual representation of the model, which specifies what signals, backgrounds, data samples are to be used.
-    \item Validate models using Asimov dataset by injecting a signal of some known strength. Asimov dataset is a sample distribution generateed from a given analytical form without applying any Gaussian or Poisson randomization applied to the sampled points.
+    \item Build the workspaces and datacards for each category in a proper format as specified by the Higgs Combination Package. A datacard is a textual representation of the model, which specifies what signals, backgrounds, data samples are to be used.
+    \item Validate models using Asimov dataset by injecting a signal of some known strength. Asimov dataset is a sample distribution generated from a given analytical form without applying any Gaussian or Poisson randomization applied to the sampled points.
     \item Perform the relevant Statistical Tests. The main interest is in the exclusion limits computed using the Asymptotic Approximation \cite{Asymptotic}.
 \end{itemize}
 
@@ -18,12 +18,12 @@ background models. The detailed list of inputs that are used in the combination
  is the following:
 \begin{itemize}
     \item Mass shapes for the actual data for each category.
-    \item Background models for each category. All of models come inside of an envelope (RooMultiPdf) as described earlier. The overall normalization for the background yield as well as the parameters of each functional form are left completely floating, unles they are meant to be constrained by the model.
-    \item Signal models for each category and for each production process. All model parameters are parametric in the Higgs Boson mass. The purpose is to test various mass hypotheses. It is crucial to note that all of the Signal Model parameters are frozen after performing the procedure described in the earlier section~\ref{section:higgs_signalmodel}. However, they are parametric in the Higgs Boson mass. The Standard Model Higgs Boson yield is fixed and the tests performed with respect to this yield - probing for deviations.
+    \item Background models for each category. All of models come inside of an envelope (RooMultiPdf) as described earlier. The overall normalization for the background yield as well as the parameters of each functional form are left completely floating, unless they are meant to be constrained by the model.
+    \item Signal models for each category and for each production process. All model parameters are parametric in the Higgs Boson mass. The purpose is to test various mass hypotheses. It is crucial to note that all of the Signal Model parameters are frozen after performing the procedure described in the earlier Section~\ref{section:higgs_signalmodel}. However, they are parametric in the Higgs Boson mass. The Standard Model Higgs Boson yield is fixed and the tests performed with respect to this yield - probing for deviations.
     \item Nuisances (systematic uncertainties) that influence our measurement (integrated luminosity, pile-up, etc...) have to be considered. Multiplicative nuisance parameters are provided that can modify the Standard Model Higgs yield.
 \end{itemize}
 
-\subsection{Validity Tests against Asimov}
+\subsection{Validity Tests}
 The very first test of the validity of the model to be used is to perform the
 tests against the Asimov Dataset \cite{Asymptotic}. The tests performed can be summarized in the following procedure:
 \begin{itemize}
@@ -37,7 +37,7 @@ Figure \ref{fig:higgs_combination_asimovtests} provides an example of a single c
      \includegraphics[width=0.7\textwidth]{figures/combine/asimovTests/cat6_x_fit_b.png}\\
      %\includegraphics[width=0.3\textwidth]{figures/combine/asimovTests/NLL_asimovTest_1GeV.png}
      \includegraphics[width=0.8\textwidth]{figures/combine/asimovTests/NLL_asimovTest_p25GeV.png}
-     \caption{The generated Asimov dataset fitted with the same functional form it was generated with (top). Must show perfect match. The $-2\Delta\log{\mathcal{L}}$ versus $\mu$ (Higgs Combination Package uses r for $\mu$) profiling (bottom). The minimum is very close to $1$ ($> 0.99$), which confirms the validity of the model. The plot is asymmetric and shifted to the positive values of the signal strength on purpose as negative values are not physical.}
+     \caption{The generated Asimov dataset fitted with the same functional form it was generated with (top). Must show perfect match. The $-2\Delta\log{\mathcal{L}}$ versus $\mu$ (Higgs Combination Package uses r for $\mu$) profiling (bottom). The minimum is very close to $1$ ($> 0.99$), which confirms the validity of the model. The plot is asymmetric and shifted to the positive values of the signal strength on purpose as negative values are not physical}
      \label{fig:higgs_combination_asimovtests}
  \end{figure}
 
