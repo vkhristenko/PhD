@@ -33,10 +33,10 @@ from a given tower measuring background data, the following requirements for eac
 Therefore, for a given channel within a given tower and wedge, signal and background data are collected separately based on the location of the
 radioactive source described above. Provided that histograms for each channel
 are being read out by the DAQ at a rate of every four events, and each event
-contains all four capacitors' histograms for each QIE. Loop over all
+contains all four capacitors' histograms for each QIE, loop over all
 events recorded for a given channel and sum together all four capacitors'
 histograms. To eliminate extraneous data resulting from energy deposition
-in the optical fiber bundles as the radioactive source has yet to fully
+in the optical fiber bundles where the radioactive source has yet to fully
 penetrate the absorber, restrict the loop over events when source is positioned strictly inside of the calorimeter: [start + 300 mm, end - 300 mm],
 where start and end are the distances from the source driver at
 which the given source tube begins and ends within the absorber, respectively.
@@ -79,8 +79,7 @@ the central ADC charge for the $j^{th}$ bin, and $P$ is the Gaussian mean of
 the pedestal region. All sourcing histograms have a clear feature of a pedestal
 peak. That is due to the fact that there is no actual trigger during
 histogramming mode. Every TS data gets recorded. Therefore the number of events
-that fall under the pedestal is several orders of magnitude larger than in the
-beyond pedestal region, and the $\mu$ and $\sigma$ of the pedestal are dominated
+that fall under the pedestal is several orders of magnitude larger than those in the region beyond the pedestal, and the $\mu$ and $\sigma$ of the pedestal are dominated
 by histogram's mean and width. The charge due to pedestal, $P$, is computed by fitting the histogram within the pedestal region [$\mu$ - 4$\sigma$, $\mu$ + 4$\sigma$] (if lower bound falls below 0, take 0 as the min value) with a Gaussian function and extracting the function's mean.
 
 To determine the charge deposition for a given channel of a tower,
@@ -94,7 +93,7 @@ ${\langle{Q}\rangle}^{(s)}_{c}$, as follows:
    \end{equation}
 \end{center}
 
-To account for energy leakage, due to the restraints on geometric
+To account for energy leakage, due to the constraints on geometric
 containment of the radiated energy from the radioactive source within the tower,
 the geometric correction factors must be applied, $G_c$~, listed in
 Table~\ref{tab:hf_description_gcfactors} as follows:
@@ -113,7 +112,7 @@ actual HF Gains), the source energy deposition had to be extracted from 2013 dat
 The source energy deposition is the amount of energy deposited by the source in
 units of GeV/25 ns. The actual source signal is measured (computed) in
 ADC/25 ns. Therefore, a conversion factor GeV/ADC, which comes from
-Run I Conditions, is needed. To extract Run I HF Gains and QIE Slopes from the Conditions DataBase (CondDB), we used Run 203777. Since 2013 sourcing was performed with the old PMTs, the
+Run I Conditions, is needed. To extract Run I HF Gains and QIE Slopes from the Conditions DataBase (CondDB), we used Run 203777. Since the 2013 sourcing was performed with the old PMTs, the
 Calibration Coefficients ${CC}^{Run I}_{c}$~ (GeV/ADC) used during Run I were used to convert
 the signal measured in ADC/25\unit{ns} into GeV/25\unit{ns}. It is important to point out that in calculation of energy deposition, response corrections are not included. That is because the Run I calibration for PMT gains should be preserved, when extracting the energy, but not the HF response, which is affected by other corrections accumulated in response corrections.
 
@@ -137,7 +136,7 @@ Calibration Constants. Therefore, we can extract Source Energy Deposition:
       \caption{(a) Correlation plot between QIE response, in ADC/GeV, and 2013 HF-
                geometry corrected energy deposition, in ADC/25\unit{ns}, per tower
                for the EM channel.
-               (b) Similar correlation is observed for the H channel}
+               (b) Similar correlation is observed for the H channel.}
       \label{fig:QIE_Slope}
    \end{center}
 \end{figure}
@@ -146,8 +145,8 @@ Calibration Constants. Therefore, we can extract Source Energy Deposition:
 During Run II, HF will be operated at the Operational Voltage 2 (OV2). Since
 both 2014 sourcing campaigns were done at voltage settings, OV1 and OV1+100,
 different from the one to be used, the actual source signals should be converted to
-the desired voltage, by using gains for the respective voltages. Another factor to
-account for is the firmware setting, either 1 TS or 2 TS. Taking these 2 arguments
+the desired voltage by using gains for the respective voltages. Another factor to
+account for is the firmware setting, either 1 TS or 2 TS. Taking these two arguments
 into account, compute a source signal at OV2 in units of ADC/25\unit{ns}:
 \begin{center}
 	\begin{equation}
